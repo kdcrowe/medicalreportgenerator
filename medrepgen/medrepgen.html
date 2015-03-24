@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!--
+ DISPATCHED section
+ -->
+<p1>DISPATCHED</p1><hr></hr>
+
+<form>
+Was the patient you were dispatched for...
+<select id="myD001">
+  <option>a conscious, breathing and alert</option>
+  <option>a conscious, breathing and not fully alert</option>
+  <option>an unconscious but breathing</option>
+  <option>an unconscious and not breathing</option>
+</select>
+<br><br>
+</form>
+
+<form>
+Is the patient a male or female?
+<select id="myD002">
+  <option>Male</option>
+  <option>Female</option>
+</select>
+<br><br>
+</form>
+<br></br>
+
+<!--
+ CHIEF COMPLAINT section
+ -->
+<p1>CHIEF COMPLAINT</p1><hr></hr>
+
+<form>
+How did you get the chief complaint?
+<select id="myC001">
+  <option>Pt states, "XXX"</option>
+  <option>Bystanders noted that XXX</option>
+  <option>Pt appears to XXX</option>
+</select>
+<br></br>
+</form>
+
+<br></br>
+
+
+<!--
+ HISTORY section
+ -->
+<p1>HISTORY</p1><hr></hr>
+
+<form>
+Who did you meet on scene, select all that apply TODO...
+<select id="myH001">
+  <option>MPD</option>
+  <option>MFD</option>
+  <option>pt's family</option>
+  <option>the pt</option>
+  <option>bystanders</option>
+  <option>XXX</option>
+</select>
+<br></br>
+</form>
+
+<br></br>
+
+
+
+<!--
+ ASSESSMENT section
+ -->
+<p1>ASSESSMENT</p1><hr></hr>
+
+<form>
+Who did you meet on scene, select all that apply TODO...
+<select id="myA001">
+  <option>MPD</option>
+  <option>MFD</option>
+  <option>pt's family</option>
+  <option>the pt</option>
+  <option>bystanders</option>
+  <option>XXX</option>
+</select>
+<br></br>
+</form>
+
+<br></br>
+
+
+<!--
+ TREATMENT section
+ -->
+<p1>TREATMENT</p1><hr></hr>
+
+<form>
+Who did you meet on scene, select all that apply TODO...
+<select id="myR001">
+  <option>MPD</option>
+  <option>MFD</option>
+  <option>pt's family</option>
+  <option>the pt</option>
+  <option>bystanders</option>
+  <option>XXX</option>
+</select>
+<br></br>
+</form>
+
+<br></br>
+
+
+<!--
+ TRANSPORT section
+ -->
+<p1>TRANSPORT</p1><hr></hr>
+
+<form>
+Who did you meet on scene, select all that apply TODO...
+<select id="myT001">
+  <option>MPD</option>
+  <option>MFD</option>
+  <option>pt's family</option>
+  <option>the pt</option>
+  <option>bystanders</option>
+  <option>XXX</option>
+</select>
+<br></br>
+</form>
+
+<br></br>
+
+
+<!--
+ OTHER section
+ -->
+<p1>OTHER</p1><hr></hr>
+
+<form>
+Who did you meet on scene, select all that apply TODO...
+<select id="myO001">
+  <option>MPD</option>
+  <option>MFD</option>
+  <option>pt's family</option>
+  <option>the pt</option>
+  <option>bystanders</option>
+  <option>XXX</option>
+</select>
+<br></br>
+</form>
+
+<br></br>
+
+
+
+<!--
+  Generate the document by calling javascript function
+  -->
+<input type="button" onclick="getOption()" value="Generate!">
+<br></br><hr></hr>
+
+<!-- Display the "demo" document -->
+<p id="demo"></p>
+
+
+
+<!--
+  SCRIPT section
+  -->
+<script>
+
+function getOption() {
+	
+	//
+	// DISPATCHED
+	var disp1 = "D:  Dispatched for ";
+	var disp2t = document.getElementById("myD001");
+	var disp2 = disp2t.options[disp2t.selectedIndex].text;
+	var disp3 = " XXX YO ";
+    var disp4t = document.getElementById("myD002");
+	var disp4 = disp4t.options[disp4t.selectedIndex].text;
+
+    Dispatched = disp1 + disp2 + disp3 + disp4 + "<br></br><br></br>";
+	
+	//
+	// CHIEF COMPLAINT
+	var comp1 = "C:  ";
+	var comp2t = document.getElementById("myC001");
+	var comp2 = comp2t.options[comp2t.selectedIndex].text;
+	
+	CComplaint = comp1 + comp2 + "<br></br><br></br>";
+	
+	//
+	// HISTORY
+	var hist1 = "H:  ";
+	
+	
+	History = hist1 + "<br></br><br></br>";
+
+	//
+	// ASSESSMENT
+	var asse1 = "A:  ";
+	
+	
+	Assessment = asse1 + "<br></br><br></br>";
+
+	//
+	// TREATMENT
+	var trea1 = "R:  ";
+	
+	
+	Treatment = trea1 + "<br></br><br></br>";
+
+	//
+	// TRANSPORT
+	var tran1 = "T:  ";
+	
+	
+	Transport = tran1 + "<br></br><br></br>";
+
+	//
+	// OTHER
+	var othe1 = "O:  ";
+	
+	Other = othe1 + "<br></br><br></br>";
+
+	
+	// EOR
+	EOR = "EOR; KDC";
+
+	// Assemble all the sections together...
+	document.getElementById("demo").innerHTML = Dispatched + CComplaint +
+		History + Assessment + Treatment + Transport + Other + EOR;
+}
+
+
+function myFunction() {
+
+	var a = "TESTING";
+    var w = window.open();
+    w.document.open();
+    w.document.write("<h1>Hello " + a + " World!</h1>");
+    w.document.close();
+}
+
+</script>
+
+</body>
+</html>
