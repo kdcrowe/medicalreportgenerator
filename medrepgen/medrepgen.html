@@ -26,8 +26,31 @@ Is the patient a male or female?
 </select>
 <br><br>
 </form>
-<br></br>
 
+<form>
+Was there a designation on the call?
+<select id="myD003">
+  <option>N.A.</option>
+  <option>Alpha level</option>
+  <option>Beta level</option>
+  <option>Charlie level</option>
+  <option>Delta level</option>
+  <option>Echo level</option>
+</select>
+<br><br>
+</form>
+
+<form>
+Were there additional dispatch details?
+<select id="myD004">
+  <option>Yes</option>
+  <option>No</option>
+</select>
+<br></br>
+</form>
+
+
+<br></br>
 <!--
  CHIEF COMPLAINT section
  -->
@@ -174,13 +197,28 @@ function getOption() {
 	//
 	// DISPATCHED
 	var disp1 = "D:  Dispatched for ";
-	var disp2t = document.getElementById("myD001");
+	var disp2t = document.getElementById("myD001");	// cba, etc.
 	var disp2 = disp2t.options[disp2t.selectedIndex].text;
 	var disp3 = " XXX YO ";
-    var disp4t = document.getElementById("myD002");
+    var disp4t = document.getElementById("myD002");	// male/female
 	var disp4 = disp4t.options[disp4t.selectedIndex].text;
-
-    Dispatched = disp1 + disp2 + disp3 + disp4 + "<br></br><br></br>";
+	var disp5t = document.getElementById("myD003");	// call level, alpha, etc
+	var disp5 = disp5t.options[disp5t.selectedIndex].text;
+	if (disp5 == "N.A.") {
+		disp5 = "";
+	} else {
+		disp5 = disp5 + " call";
+	}
+	var disp6t = document.getElementById("myD004");	// additional detail yes/no
+	disp6t = disp6t.options[disp6t.selectedIndex].text;
+	if (disp6t == "Yes") {
+		disp6 = ", with a report of XXX.";
+	} else {
+		disp6 = ". No additional details included in dispatch.";
+	}
+	
+	Dispatched = disp1 + disp2 + disp3 + disp4 + ", " + disp5 + disp6 +
+		"<br></br><br></br>";
 	
 	//
 	// CHIEF COMPLAINT
