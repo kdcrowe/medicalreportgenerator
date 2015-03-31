@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
-<body>
+
+<head>
+<style>
+p1 {
+	color: maroon;
+}
+label {
+	margin-left: 40px;
+}
+</style>
+</head>
+
+
+<body onload="PgLoadFunc()">
+
 
 <!--
+ ==============================================================================
  DISPATCHED section
+ ==============================================================================
  -->
-<p1>DISPATCHED</p1><hr></hr>
+<a id="dispatchedsection"></a>
+<p1>DISPATCHED</p1>
+<fieldset>
 
 <form>
 Was the patient you were dispatched for...
@@ -18,43 +36,47 @@ Was the patient you were dispatched for...
 <br><br>
 </form>
 
-<form>
-Is the patient a male or female?
-<select id="myD002">
-  <option>Male</option>
-  <option>Female</option>
-</select>
-<br><br>
-</form>
 
-<form>
-Was there a designation on the call?
-<select id="myD003">
-  <option>N.A.</option>
-  <option>Alpha level</option>
-  <option>Beta level</option>
-  <option>Charlie level</option>
-  <option>Delta level</option>
-  <option>Echo level</option>
-</select>
-<br><br>
-</form>
-
-<form>
-Were there additional dispatch details?
-<select id="myD004">
-  <option>Yes</option>
-  <option>No</option>
-</select>
+<form action="#" method="post" class="myD002" id="myD002">
+Is the patient male or female?<br></br>
+<label><input type="radio" name="sex" value="male" checked />Male</label>
+<label><input type="radio" name="sex" value="Female" />Female</label>
 <br></br>
 </form>
+
+
+<form action="#" method="post" class="myD003" id="myD003">
+Was there a designation on the call?<br></br>
+<label><input type="radio" name="designation" value="" checked />N.A.</label>
+<label><input type="radio" name="designation" value="Alpha level" />Alpha</label>
+<label><input type="radio" name="designation" value="Bravo level" />Bravo</label>
+<label><input type="radio" name="designation" value="Charlie level" />Charlie</label>
+<label><input type="radio" name="designation" value="Delta level" />Delta</label>
+<label><input type="radio" name="designation" value="Echo level" />Echo</label>
+<br><br>
+</form>
+
+<form action="#" method="post" class="myD004" id="myD004">
+Were there additional dispatch details?<br></br>
+<label><input type="radio" name="dispdet" value="Yes" checked />Yes</label>
+<label><input type="radio" name="dispdet" value="No" />No</label>
+<br></br>
+</form>
+
+<a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
+</fieldset>
+
 
 
 <br></br>
 <!--
+ ==============================================================================
  CHIEF COMPLAINT section
+ ==============================================================================
  -->
-<p1>CHIEF COMPLAINT</p1><hr></hr>
+<a id="chiefcomplaintsection"></a>
+<p1>CHIEF COMPLAINT</p1>
+<fieldset>
 
 <form>
 How did you get the chief complaint?
@@ -65,162 +87,334 @@ How did you get the chief complaint?
 </select>
 <br></br>
 </form>
+<a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
+</fieldset>
+
 
 <br></br>
-
-
 <!--
+ ==============================================================================
  HISTORY section
+ ==============================================================================
  -->
-<p1>HISTORY</p1><hr></hr>
+<a id="historysection"></a>
+<p1>HISTORY</p1>
+<fieldset>
 
-<form>
-Who did you meet on scene, select all that apply TODO...
-<select id="myH001">
-  <option>MPD</option>
-  <option>MFD</option>
-  <option>pt's family</option>
-  <option>the pt</option>
-  <option>bystanders</option>
-  <option>XXX</option>
-</select>
-<br></br>
+<form action="#" method="post" class="H001" id="H001">
+Who did you meet on scene?<br></br>
+<label><input type="checkbox" name="meet" value="pt" checked />the patient</label>
+<label><input type="checkbox" name="meet" value="pt's family" />patients family</label>
+<label><input type="checkbox" name="meet" value="MPD" />Milford Police</label>
+<label><input type="checkbox" name="meet" value="MFD" />Milford Fire</label>
+<label><input type="checkbox" name="meet" value="bystanders" />bystanders</label>
+<label><input type="checkbox" name="meet" value="XXX" />Other</label>
+<br><br>
 </form>
 
+
+<form action="#" method="post" class="H002" id="H002">
+Patient was found...<br></br>
+<label><input type="radio" name="found" value="seated" checked />seated</label>
+<label><input type="radio" name="found" value="lying" />lying</label>
+<label><input type="radio" name="found" value="standing" />standing</label>
+<label><input type="radio" name="found" value="walking" />walking</label>
+<label><input type="radio" name="found" value="sleeping" />sleeping</label>
+<label><input type="radio" name="found" value=" XXX" />other</label>
+<br><br>
+</form>
+
+<form action="#" method="post" class="H002a" id="H002a">
+If seated, on what...<br></br>
+<label><input type="radio" name="foundseat" value="" checked />&lt;blank&gt</label>
+<label><input type="radio" name="foundseat" value="on couch" />couch</label>
+<label><input type="radio" name="foundseat" value="on chair" />chair</label>
+<label><input type="radio" name="foundseat" value="onground" />ground</label>
+<label><input type="radio" name="foundseat" value="on XXX" />other</label>
+<br><br>
+</form>
+
+<form action="#" method="post" class="H002b" id="H002b">
+If lying, how...<br></br>
+<label><input type="radio" name="foundlying" value="" checked />&lt;blank&gt</label>
+<label><input type="radio" name="foundlying" value="fowlers" />fowlers</label>
+<label><input type="radio" name="foundlying" value="semi-fowlers" />semi-fowlers</label>
+<label><input type="radio" name="foundlying" value="prone" />prone</label>
+<label><input type="radio" name="foundlying" value="supine" />supine</label>
+<label><input type="radio" name="foundlying" value="XXX lateral recumbent" />XXX lateral recumbent</label>
+<label><input type="radio" name="foundlying" value=" XXX" />other</label>
+<br><br>
+</form>
+
+<form action="#" method="post" class="H003" id="H003">
+What location...<br></br>
+<label><input type="radio" name="location" value="living room" checked />living room</label>
+<label><input type="radio" name="location" value="bedroom" />bedroom</label>
+<label><input type="radio" name="location" value="kitchen" />kitchen</label>
+<label><input type="radio" name="location" value="bathroom" />bathroom</label>
+<label><input type="radio" name="location" value="XXX" />other</label>
+<br><br>
+</form>
+
+
+
+<a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
+</fieldset>
+
+
+
 <br></br>
-
-
-
 <!--
+ ==============================================================================
  ASSESSMENT section
+ ==============================================================================
  -->
-<p1>ASSESSMENT</p1><hr></hr>
+<a id="assessmentsection"></a>
+<p1>ASSESSMENT</p1>
+<fieldset>
 
-<form>
-Who did you meet on scene, select all that apply TODO...
-<select id="myA001">
-  <option>MPD</option>
-  <option>MFD</option>
-  <option>pt's family</option>
-  <option>the pt</option>
-  <option>bystanders</option>
-  <option>XXX</option>
-</select>
-<br></br>
-</form>
-
-<br></br>
+<form action="#" method="post" class="A001" id="A001">
+<p><input type="checkbox" name="HtoT" id="HtoT" value="1" />Was there a physical exam?</p>
+    <div id="HtoT_sub">
+        <p><span>Check which types</span>
+        <label><input type="checkbox" name="bparts[]" value="Head" />Head</label>
+        <label><input type="checkbox" name="bparts[]" value="Neck" />Neck</label>
+        <label><input type="checkbox" name="bparts[]" value="Chest" />Chest</label>
+        <label><input type="checkbox" name="bparts[]" value="Abdomen" />Abdomen</label>
+        <label><input type="checkbox" name="bparts[]" value="Legs" />Legs</label>
+        <label><input type="checkbox" name="bparts[]" value="Arms" />Arms</label></p>
+    </div>
 
 
+<a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
+</fieldset>
+
+
+
+<br></br>	
 <!--
+ ==============================================================================
  TREATMENT section
+ ==============================================================================
  -->
-<p1>TREATMENT</p1><hr></hr>
+<a id="treatmentsection"></a>
+<p1>TREATMENT</p1>
+<fieldset>
 
-<form>
-Who did you meet on scene, select all that apply TODO...
-<select id="myR001">
-  <option>MPD</option>
-  <option>MFD</option>
-  <option>pt's family</option>
-  <option>the pt</option>
-  <option>bystanders</option>
-  <option>XXX</option>
-</select>
-<br></br>
-</form>
+
+<a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
+</fieldset>
+
+
 
 <br></br>
-
-
 <!--
+ ==============================================================================
  TRANSPORT section
+ ==============================================================================
  -->
-<p1>TRANSPORT</p1><hr></hr>
+<a id="transportsection"></a>
+<p1>TRANSPORT</p1>
+<fieldset>
 
 <form>
-Who did you meet on scene, select all that apply TODO...
+How was patient during transport?
 <select id="myT001">
-  <option>MPD</option>
-  <option>MFD</option>
-  <option>pt's family</option>
-  <option>the pt</option>
-  <option>bystanders</option>
-  <option>XXX</option>
+  <option>Transport was otherwise uneventful</option>
+  <option>Pt remained talkative and cooperative throughout transport</option>
+  <option>Pt appeared agitated throughout transport</option>
+  <option>Pt appeared uncomfortable throughout transport</option>
+  <option>Pt appeared in pain throughout transport</option>
+  <option>Transport was XXX</option>
 </select>
 <br></br>
 </form>
 
+
+<form action="#" method="post" class="myT002" id="myT002">
+Which hospital did you transport to?<br></br>
+<label><input type="radio" name="hospital" value="SNHMC" checked />SNHMC</label>
+<label><input type="radio" name="hospital" value="St Joseph" />St Joseph</label>
+<label><input type="radio" name="hospital" value="the Elliot" />Elliot</label>
+<label><input type="radio" name="hospital" value="CMC" />CMC</label>
+<label><input type="radio" name="hospital" value="Monadnock Community" />Monadnock</label>
 <br></br>
+</form>
 
 
+<a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
+</fieldset>
+
+
+
+<br></br>
 <!--
+ ==============================================================================
  OTHER section
+ ==============================================================================
  -->
-<p1>OTHER</p1><hr></hr>
+<a id="othersection"></a>
+<p1>OTHER</p1>
+<fieldset>
 
-<form>
-Who did you meet on scene, select all that apply TODO...
-<select id="myO001">
-  <option>MPD</option>
-  <option>MFD</option>
-  <option>pt's family</option>
-  <option>the pt</option>
-  <option>bystanders</option>
-  <option>XXX</option>
-</select>
-<br></br>
-</form>
+Other field automatically filled in with primary care physician & ER Doctor XXX fields.<br></br>
+
+<a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
+</fieldset>
+
 
 <br></br>
-
-
-
 <!--
+ ==============================================================================
   Generate the document by calling javascript function
+ ==============================================================================
   -->
-<input type="button" onclick="getOption()" value="Generate!">
+<a id="generatesection">
+
+  <input type="button" onclick="getOption()" value="Generate!">
 <br></br><hr></hr>
 
-<!-- Display the "demo" document -->
+
+<!-- 
+ ==============================================================================
+ Display the "demo" document
+ ==============================================================================
+ -->
 <p id="demo"></p>
+
+<hr></hr>
+<a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
 
 
 
 <!--
+ ==============================================================================
   SCRIPT section
+ ==============================================================================
   -->
 <script>
 
+//
+// Get Radiobutton data
+//
+function getRadioVal(form, name) {
+    var val;
+    // get list of radio buttons with specified name
+    var radios = form.elements[name];
+    
+    // loop through list of radio buttons
+    for (var i = 0, len = radios.length; i < len; i++) {
+        if ( radios[i].checked ) { // radio checked?
+            val = radios[i].value; // if so, hold its value in val
+            break; // and break out of for loop
+        }
+    }
+    return val; // return value of checked radio or undefined if none checked
+}
+
+
+//
+// Get Checkbox data
+//
+function getCheckData(form, name) {
+    var val = "";
+    var join = "";
+	var len = 0;
+	var totalchecked = 0;
+	var timesthrough = 0;
+	// get list of radio buttons with specified name
+    var cboxes = form.elements[name];
+
+	// Find out how many checkboxes are checked:
+	for (var j = 0, len = cboxes.length; j < len; j++) {
+		// console.log("j = ", j);
+        if ( cboxes[j].checked ) { // check box checked?
+			totalchecked++;
+		}
+	}
+
+    // loop through list of check boxes
+    for (var i = 0, len = cboxes.length; i < len; i++) {
+        if ( cboxes[i].checked ) { // check box checked?
+			if (timesthrough > 0) {
+				join = ", ";
+			}
+			if ( (timesthrough != 0) && (timesthrough == (totalchecked - 1)) ) {
+				join = " and ";
+			}
+            val = val + join + cboxes[i].value; // if so, add its value in val
+			timesthrough++;
+        }
+    }
+    return val; // return value of checked radio or undefined if none checked
+}
+
+
+
+//
+// This function runs when the page first loads
+//
+function PgLoadFunc() {
+	toggleSub('HtoT', 'HtoT_sub');
+}
+
+//
+// assign function to onclick property of checkbox
+//	
+document.getElementById('HtoT').onclick = function() {
+	// call toggleSub when checkbox clicked
+	// toggleSub args: checkbox clicked on (this), id of element to show/hide
+	toggleSub(this, 'HtoT_sub');
+};
+
+
+//
+// called onclick of checkbox
+//
+function toggleSub(box, id) {
+    // get reference to related content to display/hide
+    var el = document.getElementById(id);
+    
+    if ( box.checked ) {
+        el.style.display = 'block';
+    } else {
+        el.style.display = 'none';
+    }
+}
+
+
+//
+// GetOptions
+//
 function getOption() {
+	const sp2 = "&nbsp;&nbsp";
 	
-	//
+	// ************************************************************************
 	// DISPATCHED
 	var disp1 = "D:  Dispatched for ";
 	var disp2t = document.getElementById("myD001");	// cba, etc.
 	var disp2 = disp2t.options[disp2t.selectedIndex].text;
 	var disp3 = " XXX YO ";
-    var disp4t = document.getElementById("myD002");	// male/female
-	var disp4 = disp4t.options[disp4t.selectedIndex].text;
-	var disp5t = document.getElementById("myD003");	// call level, alpha, etc
-	var disp5 = disp5t.options[disp5t.selectedIndex].text;
-	if (disp5 == "N.A.") {
-		disp5 = "";
-	} else {
-		disp5 = disp5 + " call";
+	var gender = getRadioVal(document.getElementById("myD002"), "sex");
+	var desig = getRadioVal(document.getElementById("myD003"), "designation");
+	if (desig != "") {
+		desig = ", " + desig + " call";
 	}
-	var disp6t = document.getElementById("myD004");	// additional detail yes/no
-	disp6t = disp6t.options[disp6t.selectedIndex].text;
-	if (disp6t == "Yes") {
-		disp6 = ", with a report of XXX.";
+	var dispdetail = getRadioVal(document.getElementById("myD004"), "dispdet");
+	//var disp6t = document.getElementById("myD004");	// additional detail yes/no
+	//disp6t = disp6t.options[disp6t.selectedIndex].text;
+	if (dispdetail == "Yes") {
+		dispdetail = " with a report of XXX.";
+		if (desig != "")
+			dispdetail = "," + dispdetail;
 	} else {
-		disp6 = ". No additional details included in dispatch.";
+		dispdetail = ". No additional details included in dispatch.";
 	}
 	
-	Dispatched = disp1 + disp2 + disp3 + disp4 + ", " + disp5 + disp6 +
+	Dispatched = disp1 + disp2 + disp3 + gender + desig + dispdetail +
 		"<br></br><br></br>";
 	
-	//
+	// ************************************************************************
 	// CHIEF COMPLAINT
 	var comp1 = "C:  ";
 	var comp2t = document.getElementById("myC001");
@@ -228,39 +422,56 @@ function getOption() {
 	
 	CComplaint = comp1 + comp2 + "<br></br><br></br>";
 	
-	//
+	// ************************************************************************
 	// HISTORY
 	var hist1 = "H:  ";
+	var metonscene = getCheckData(document.getElementById("H001"), "meet");
+	var UOA = "UOA were met on-scene by ";
+	if (metonscene == "") {
+		UOA = "";
+	} else {
+		metonscene = metonscene + ".";
+	}
+	var PtFound = getRadioVal(document.getElementById("H002"), "found");
+	PtFound =  "Pt was found " + PtFound;
 	
-	
-	History = hist1 + "<br></br><br></br>";
+	History = hist1 + UOA + metonscene + sp2 + PtFound + "<br></br><br></br>";
 
-	//
+	// ************************************************************************
 	// ASSESSMENT
 	var asse1 = "A:  ";
-	
+
+
 	
 	Assessment = asse1 + "<br></br><br></br>";
 
-	//
+	// ************************************************************************
 	// TREATMENT
 	var trea1 = "R:  ";
 	
 	
 	Treatment = trea1 + "<br></br><br></br>";
 
-	//
+	// ************************************************************************
 	// TRANSPORT
 	var tran1 = "T:  ";
-	
-	
-	Transport = tran1 + "<br></br><br></br>";
+	var tran2t = document.getElementById("myT001");	// pt state during transport
+	var tran2 = tran2t.options[tran2t.selectedIndex].text;
+	var tran3 = " to ";
+	var hospital = getRadioVal(document.getElementById("myT002"), "hospital");
+	//var tran4t = document.getElementById("myT002"); // hospital
+	//var tran4 = tran4t.options[tran4t.selectedIndex].text;
+	var tran5 = ". ";
 
-	//
+	Transport = tran1 + tran2 + tran3 + hospital + tran5 + "<br></br><br></br>";
+
+	// ************************************************************************
 	// OTHER
 	var othe1 = "O:  ";
+	var othe2 = "Pt's PCP:  XXX; ";
+	var othe3 = "ER Doctor:  XXX";
 	
-	Other = othe1 + "<br></br><br></br>";
+	Other = othe1 + othe2 + othe3 + "<br></br><br></br>";
 
 	
 	// EOR
