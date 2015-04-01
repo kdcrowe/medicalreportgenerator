@@ -27,7 +27,7 @@ label {
 
 <form>
 Was the patient you were dispatched for...
-<select id="myD001">
+<select id="D001">
   <option>a conscious, breathing and alert</option>
   <option>a conscious, breathing and not fully alert</option>
   <option>an unconscious but breathing</option>
@@ -37,7 +37,7 @@ Was the patient you were dispatched for...
 </form>
 
 
-<form action="#" method="post" class="myD002" id="myD002">
+<form action="#" method="post" class="D002" id="D002">
 Is the patient male or female?<br></br>
 <label><input type="radio" name="sex" value="male" checked />Male</label>
 <label><input type="radio" name="sex" value="Female" />Female</label>
@@ -45,7 +45,7 @@ Is the patient male or female?<br></br>
 </form>
 
 
-<form action="#" method="post" class="myD003" id="myD003">
+<form action="#" method="post" class="D003" id="D003">
 Was there a designation on the call?<br></br>
 <label><input type="radio" name="designation" value="" checked />N.A.</label>
 <label><input type="radio" name="designation" value="Alpha level" />Alpha</label>
@@ -56,7 +56,7 @@ Was there a designation on the call?<br></br>
 <br><br>
 </form>
 
-<form action="#" method="post" class="myD004" id="myD004">
+<form action="#" method="post" class="D004" id="D004">
 Were there additional dispatch details?<br></br>
 <label><input type="radio" name="dispdet" value="Yes" checked />Yes</label>
 <label><input type="radio" name="dispdet" value="No" />No</label>
@@ -115,11 +115,9 @@ Who did you meet on scene?<br></br>
 
 <form action="#" method="post" class="H002" id="H002">
 Patient was found...<br></br>
-<label><input type="radio" name="found" value="seated" checked />seated</label>
-<label><input type="radio" name="found" value="lying" />lying</label>
-<label><input type="radio" name="found" value="standing" />standing</label>
-<label><input type="radio" name="found" value="walking" />walking</label>
-<label><input type="radio" name="found" value="sleeping" />sleeping</label>
+<label><input type="radio" name="found" value=" seated" checked />seated</label>
+<label><input type="radio" name="found" value=" lying" />lying</label>
+<label><input type="radio" name="found" value=" standing" />standing</label>
 <label><input type="radio" name="found" value=" XXX" />other</label>
 <br><br>
 </form>
@@ -127,35 +125,56 @@ Patient was found...<br></br>
 <form action="#" method="post" class="H002a" id="H002a">
 If seated, on what...<br></br>
 <label><input type="radio" name="foundseat" value="" checked />&lt;blank&gt</label>
-<label><input type="radio" name="foundseat" value="on couch" />couch</label>
-<label><input type="radio" name="foundseat" value="on chair" />chair</label>
-<label><input type="radio" name="foundseat" value="onground" />ground</label>
-<label><input type="radio" name="foundseat" value="on XXX" />other</label>
+<label><input type="radio" name="foundseat" value=" on couch" />couch</label>
+<label><input type="radio" name="foundseat" value=" on a chair" />chair</label>
+<label><input type="radio" name="foundseat" value=" on the floor" />floor</label>
+<label><input type="radio" name="foundseat" value=" on the ground" />ground</label>
+<label><input type="radio" name="foundseat" value=" on XXX" />other</label>
 <br><br>
 </form>
 
 <form action="#" method="post" class="H002b" id="H002b">
 If lying, how...<br></br>
 <label><input type="radio" name="foundlying" value="" checked />&lt;blank&gt</label>
-<label><input type="radio" name="foundlying" value="fowlers" />fowlers</label>
-<label><input type="radio" name="foundlying" value="semi-fowlers" />semi-fowlers</label>
-<label><input type="radio" name="foundlying" value="prone" />prone</label>
-<label><input type="radio" name="foundlying" value="supine" />supine</label>
-<label><input type="radio" name="foundlying" value="XXX lateral recumbent" />XXX lateral recumbent</label>
+<label><input type="radio" name="foundlying" value=", fowlers" />fowlers</label>
+<label><input type="radio" name="foundlying" value=", semi-fowlers" />semi-fowlers</label>
+<label><input type="radio" name="foundlying" value=", prone" />prone</label>
+<label><input type="radio" name="foundlying" value=", supine" />supine</label>
+<label><input type="radio" name="foundlying" value=", XXX lateral recumbent" />XXX lateral recumbent</label>
 <label><input type="radio" name="foundlying" value=" XXX" />other</label>
+<br><br>
+</form>
+
+<form action="#" method="post" class="H002c" id="H002c">
+If lying, on what...<br></br>
+<label><input type="radio" name="foundlyingon" value="" checked />&lt;blank&gt</label>
+<label><input type="radio" name="foundlyingon" value=", on a bed" />bed</label>
+<label><input type="radio" name="foundlyingon" value=", on the couch" />couch</label>
+<label><input type="radio" name="foundlyingon" value=", on the floor" />floor</label>
+<label><input type="radio" name="foundlyingon" value=", on the ground" />ground</label>
+<label><input type="radio" name="foundlyingon" value=", on the stairs" />stairs</label>
+<label><input type="radio" name="foundlying" value=" on the XXX" />other</label>
 <br><br>
 </form>
 
 <form action="#" method="post" class="H003" id="H003">
 What location...<br></br>
-<label><input type="radio" name="location" value="living room" checked />living room</label>
-<label><input type="radio" name="location" value="bedroom" />bedroom</label>
-<label><input type="radio" name="location" value="kitchen" />kitchen</label>
-<label><input type="radio" name="location" value="bathroom" />bathroom</label>
-<label><input type="radio" name="location" value="XXX" />other</label>
+<label><input type="radio" name="location" value=" living room" checked />living room</label>
+<label><input type="radio" name="location" value=" bedroom" />bedroom</label>
+<label><input type="radio" name="location" value=" kitchen" />kitchen</label>
+<label><input type="radio" name="location" value=" bathroom" />bathroom</label>
+<label><input type="radio" name="location" value=" XXX" />other</label>
 <br><br>
 </form>
 
+
+<!-- 2nd paragraph -->
+<form action="#" method="post" class="H100" id="H100">
+Did anything happen prior to your arrival that should be noted?<br></br>
+<label><input type="radio" name="PTA" value="Yes" checked />Yes</label>
+<label><input type="radio" name="PTA" value="No" />No</label>
+<br></br>
+</form>
 
 
 <a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
@@ -219,7 +238,7 @@ What location...<br></br>
 
 <form>
 How was patient during transport?
-<select id="myT001">
+<select id="T001">
   <option>Transport was otherwise uneventful</option>
   <option>Pt remained talkative and cooperative throughout transport</option>
   <option>Pt appeared agitated throughout transport</option>
@@ -231,13 +250,13 @@ How was patient during transport?
 </form>
 
 
-<form action="#" method="post" class="myT002" id="myT002">
+<form action="#" method="post" class="T002" id="T002">
 Which hospital did you transport to?<br></br>
-<label><input type="radio" name="hospital" value="SNHMC" checked />SNHMC</label>
-<label><input type="radio" name="hospital" value="St Joseph" />St Joseph</label>
-<label><input type="radio" name="hospital" value="the Elliot" />Elliot</label>
-<label><input type="radio" name="hospital" value="CMC" />CMC</label>
-<label><input type="radio" name="hospital" value="Monadnock Community" />Monadnock</label>
+<label><input type="radio" name="hospital" value=" to SNHMC." checked />SNHMC</label>
+<label><input type="radio" name="hospital" value=" to St Joseph." />St Joseph</label>
+<label><input type="radio" name="hospital" value=" to the Elliot." />Elliot</label>
+<label><input type="radio" name="hospital" value=" to CMC." />CMC</label>
+<label><input type="radio" name="hospital" value=" to Monadnock Community." />Monadnock</label>
 <br></br>
 </form>
 
@@ -388,20 +407,23 @@ function toggleSub(box, id) {
 //
 function getOption() {
 	const sp2 = "&nbsp;&nbsp";
+	const newP = "<br><br>";
+	const newP3 = "<br><br><br>";
+	
 	
 	// ************************************************************************
 	// DISPATCHED
-	var disp1 = "D:  Dispatched for ";
-	var disp2t = document.getElementById("myD001");	// cba, etc.
+	var disp1 = "D:" + sp2 + "Dispatched for ";
+	var disp2t = document.getElementById("D001");	// cba, etc.
 	var disp2 = disp2t.options[disp2t.selectedIndex].text;
 	var disp3 = " XXX YO ";
-	var gender = getRadioVal(document.getElementById("myD002"), "sex");
-	var desig = getRadioVal(document.getElementById("myD003"), "designation");
+	var gender = getRadioVal(document.getElementById("D002"), "sex");
+	var desig = getRadioVal(document.getElementById("D003"), "designation");
 	if (desig != "") {
 		desig = ", " + desig + " call";
 	}
-	var dispdetail = getRadioVal(document.getElementById("myD004"), "dispdet");
-	//var disp6t = document.getElementById("myD004");	// additional detail yes/no
+	var dispdetail = getRadioVal(document.getElementById("D004"), "dispdet");
+	//var disp6t = document.getElementById("D004");	// additional detail yes/no
 	//disp6t = disp6t.options[disp6t.selectedIndex].text;
 	if (dispdetail == "Yes") {
 		dispdetail = " with a report of XXX.";
@@ -412,19 +434,21 @@ function getOption() {
 	}
 	
 	Dispatched = disp1 + disp2 + disp3 + gender + desig + dispdetail +
-		"<br></br><br></br>";
+		newP3;
 	
 	// ************************************************************************
 	// CHIEF COMPLAINT
-	var comp1 = "C:  ";
+	var comp1 = "C:" + sp2;
 	var comp2t = document.getElementById("myC001");
 	var comp2 = comp2t.options[comp2t.selectedIndex].text;
 	
-	CComplaint = comp1 + comp2 + "<br></br><br></br>";
+	CComplaint = comp1 + comp2 + newP3;
 	
 	// ************************************************************************
 	// HISTORY
-	var hist1 = "H:  ";
+	
+	// UOA
+	var hist1 = "H:" + sp2;
 	var metonscene = getCheckData(document.getElementById("H001"), "meet");
 	var UOA = "UOA were met on-scene by ";
 	if (metonscene == "") {
@@ -432,46 +456,67 @@ function getOption() {
 	} else {
 		metonscene = metonscene + ".";
 	}
-	var PtFound = getRadioVal(document.getElementById("H002"), "found");
-	PtFound =  "Pt was found " + PtFound;
+	var found = getRadioVal(document.getElementById("H002"), "found");
+	var ptFound =  "Pt was found" + found;
+	var foundseat = getRadioVal(document.getElementById("H002a"), "foundseat");
+	var foundlying = getRadioVal(document.getElementById("H002b"), "foundlying");
+	var foundlyingon = getRadioVal(document.getElementById("H002c"), "foundlyingon");
+	if (found == " seated")
+		ptFound += foundseat;
+	if (found == " lying")
+		ptFound = ptFound + foundlying + foundlyingon;
+	var location = getRadioVal(document.getElementById("H003"), "location");
+	ptFound = ptFound + " in the " + location + ".";
 	
-	History = hist1 + UOA + metonscene + sp2 + PtFound + "<br></br><br></br>";
+	
+	// PTA
+	var PTA = getRadioVal(document.getElementById("H100"), "PTA");
+	if (PTA == "Yes") {
+		var PTOA = newP + "Prior to our arrival XXX."
+	} else {
+		var PTOA = "";
+	}
+	
+	History = hist1 + UOA + metonscene + sp2 + ptFound + PTOA + newP3;
 
 	// ************************************************************************
 	// ASSESSMENT
-	var asse1 = "A:  ";
+	var asse1 = "A:" + sp2;
 
 
 	
-	Assessment = asse1 + "<br></br><br></br>";
+	Assessment = asse1 + newP3;
 
 	// ************************************************************************
 	// TREATMENT
-	var trea1 = "R:  ";
+	var trea1 = "R:" + sp2;
 	
 	
-	Treatment = trea1 + "<br></br><br></br>";
+	Treatment = trea1 + newP3;
 
 	// ************************************************************************
 	// TRANSPORT
-	var tran1 = "T:  ";
-	var tran2t = document.getElementById("myT001");	// pt state during transport
+	var tran1 = "T:" + sp2;
+	var tran2t = document.getElementById("T001");	// pt state during transport
 	var tran2 = tran2t.options[tran2t.selectedIndex].text;
-	var tran3 = " to ";
-	var hospital = getRadioVal(document.getElementById("myT002"), "hospital");
-	//var tran4t = document.getElementById("myT002"); // hospital
-	//var tran4 = tran4t.options[tran4t.selectedIndex].text;
-	var tran5 = ". ";
+	var hospital = getRadioVal(document.getElementById("T002"), "hospital");
+	hospital += sp2;
 
-	Transport = tran1 + tran2 + tran3 + hospital + tran5 + "<br></br><br></br>";
+	var toRoom = "Pt was unloaded from the ambulance and wheeled into the ER to room XXX." + sp2;
+	var unbuckle = "All belts were unbuckled and rail was lowered, ";
+	
+	var ptToBed = unbuckle + sp2;
+	var toNurse = "Full report and transition of pt care given to Nurse XXX.";
+	
+	Transport = tran1 + tran2 + hospital + toRoom + ptToBed + toNurse + newP3;
 
 	// ************************************************************************
 	// OTHER
-	var othe1 = "O:  ";
-	var othe2 = "Pt's PCP:  XXX; ";
-	var othe3 = "ER Doctor:  XXX";
+	var othe1 = "O:" + sp2;
+	var PtPCP = "Pt's PCP:  XXX;";
+	var ERDoc = sp2 + "ER Doctor:  XXX";
 	
-	Other = othe1 + othe2 + othe3 + "<br></br><br></br>";
+	Other = othe1 + PtPCP + ERDoc + newP3;
 
 	
 	// EOR
