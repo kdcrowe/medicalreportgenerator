@@ -17,12 +17,47 @@ label {
 
 
 <!--
+************
+*** TODO ***
+************
+
+HTML
+====
+* might need some fieldset forms for things like S/Sx, Events leading up to, etc
+<form>
+ <fieldset>
+  <legend>Personalia:</legend>
+  Name: <input type="text"><br>
+  Email: <input type="text"><br>
+  Date of birth: <input type="text">
+ </fieldset>
+</form>
+
+
+Javascript
+==========
+
+* Get a random string
+var textArray = [
+    'song1.ogg',
+    'song2.ogg'
+];
+var randomNumber = Math.floor(Math.random()*textArray.length);
+
+audioElement.setAttribute('src', textArray[randomNumber]);
+
+
+-->
+
+
+
+<!--
  ==============================================================================
  DISPATCHED section
  ==============================================================================
  -->
 <a id="dispatchedsection"></a>
-<p1>DISPATCHED</p1>
+<p1><b>DISPATCHED</b></p1>
 <fieldset>
 
 <form>
@@ -63,7 +98,7 @@ Were there additional dispatch details?<br></br>
 <br></br>
 </form>
 
-<a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
+<br><a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
 </fieldset>
 
 
@@ -75,7 +110,7 @@ Were there additional dispatch details?<br></br>
  ==============================================================================
  -->
 <a id="chiefcomplaintsection"></a>
-<p1>CHIEF COMPLAINT</p1>
+<p1><b>CHIEF COMPLAINT</b></p1>
 <fieldset>
 
 <form>
@@ -87,7 +122,8 @@ How did you get the chief complaint?
 </select>
 <br></br>
 </form>
-<a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
+
+<br><a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
 </fieldset>
 
 
@@ -98,7 +134,7 @@ How did you get the chief complaint?
  ==============================================================================
  -->
 <a id="historysection"></a>
-<p1>HISTORY</p1>
+<p1><b>HISTORY</b></p1>
 <fieldset>
 
 <form action="#" method="post" class="H001" id="H001">
@@ -123,7 +159,7 @@ Patient was found...<br></br>
 </form>
 
 <form action="#" method="post" class="H002a" id="H002a">
-If seated, on what...<br></br>
+If <u>seated</u>, on what...<br></br>
 <label><input type="radio" name="foundseat" value="" checked />&lt;blank&gt</label>
 <label><input type="radio" name="foundseat" value=" on couch" />couch</label>
 <label><input type="radio" name="foundseat" value=" on a chair" />chair</label>
@@ -134,7 +170,7 @@ If seated, on what...<br></br>
 </form>
 
 <form action="#" method="post" class="H002b" id="H002b">
-If lying, how...<br></br>
+If <u>lying</u>, how...<br></br>
 <label><input type="radio" name="foundlying" value="" checked />&lt;blank&gt</label>
 <label><input type="radio" name="foundlying" value=", fowlers" />fowlers</label>
 <label><input type="radio" name="foundlying" value=", semi-fowlers" />semi-fowlers</label>
@@ -146,7 +182,7 @@ If lying, how...<br></br>
 </form>
 
 <form action="#" method="post" class="H002c" id="H002c">
-If lying, on what...<br></br>
+If <u>lying</u>, on what...<br></br>
 <label><input type="radio" name="foundlyingon" value="" checked />&lt;blank&gt</label>
 <label><input type="radio" name="foundlyingon" value=", on a bed" />bed</label>
 <label><input type="radio" name="foundlyingon" value=", on the couch" />couch</label>
@@ -177,7 +213,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 </form>
 
 
-<a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
+<br><a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
 </fieldset>
 
 
@@ -189,7 +225,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
  ==============================================================================
  -->
 <a id="assessmentsection"></a>
-<p1>ASSESSMENT</p1>
+<p1><b>ASSESSMENT</b></p1>
 <fieldset>
 
 <form action="#" method="post" class="A001" id="A001">
@@ -205,7 +241,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
     </div>
 
 
-<a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
+<br><a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
 </fieldset>
 
 
@@ -217,11 +253,11 @@ Did anything happen prior to your arrival that should be noted?<br></br>
  ==============================================================================
  -->
 <a id="treatmentsection"></a>
-<p1>TREATMENT</p1>
+<p1><b>TREATMENT</b></p1>
 <fieldset>
 
 
-<a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
+<br><a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
 </fieldset>
 
 
@@ -233,7 +269,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
  ==============================================================================
  -->
 <a id="transportsection"></a>
-<p1>TRANSPORT</p1>
+<p1><b>TRANSPORT</b></p1>
 <fieldset>
 
 <form>
@@ -261,7 +297,27 @@ Which hospital did you transport to?<br></br>
 </form>
 
 
-<a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
+<form action="#" method="post" class="T003" id="T003">
+How was patient moved to hospital bed?<br></br>
+<label><input type="radio" name="movedToBed" value=" stretcher moved adjacent to hospital bed and pt slid over under their own power." checked />patient slid themselves over</label><br>
+<label><input type="radio" name="movedToBed" value=" stretcher moved adjacent to hospital bed and pt moved over with XXX person sheet drag." />patient moved with sheet drag</label><br>
+<label><input type="radio" name="movedToBed" value=" stretcher lowered so that pt stood and walked a couple feet to the hospital bed." />patient stood and walked to hospital bed</label><br>
+<label><input type="radio" name="movedToBed" value=" stretcher lowered so that pt stood and was assisted walking a couple feet to the hospital bed." />patient stood and was assisted to hospital bed</label><br>
+<label><input type="radio" name="movedToBed" value=" pt was moved to the hospital bed by XXX." />other</label><br>
+<br></br>
+</form>
+
+<form action="#" method="post" class="T004" id="T004">
+Was oxygen transferred over, patient connected to NIBP, pulse ox, etc?<br></br>
+<label><input type="radio" name="hospEquip" value=" and " checked />No.</label>
+<label><input type="radio" name="hospEquip" value=", oxygen transferred over to hospital supply, and " />Oxygen</label>
+<label><input type="radio" name="hospEquip" value=", oxygen transferred over, NIBP cuff attached to pt's XXX arm, and " />Oxygen, NIBP</label>
+<label><input type="radio" name="hospEquip" value=", oxygen transferred over, NIBP cuff attached to pt's XXX arm, pulse ox connected to pt's XXX hand, and " />oxygen, NIBP & pulse ox</label>
+<label><input type="radio" name="hospEquip" value=", XXX was transferred over to hospital equipment, and " />Other</label>
+<br></br>
+</form>
+
+<br><a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
 </fieldset>
 
 
@@ -273,12 +329,12 @@ Which hospital did you transport to?<br></br>
  ==============================================================================
  -->
 <a id="othersection"></a>
-<p1>OTHER</p1>
+<p1><b>OTHER</b></p1>
 <fieldset>
 
 Other field automatically filled in with primary care physician & ER Doctor XXX fields.<br></br>
 
-<a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
+<br><a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
 </fieldset>
 
 
@@ -472,7 +528,7 @@ function getOption() {
 	// PTA
 	var PTA = getRadioVal(document.getElementById("H100"), "PTA");
 	if (PTA == "Yes") {
-		var PTOA = newP + "Prior to our arrival XXX."
+		var PTOA = newP + "PTOA XXX."
 	} else {
 		var PTOA = "";
 	}
@@ -504,9 +560,12 @@ function getOption() {
 
 	var toRoom = "Pt was unloaded from the ambulance and wheeled into the ER to room XXX." + sp2;
 	var unbuckle = "All belts were unbuckled and rail was lowered, ";
+	var movedToBed = getRadioVal(document.getElementById("T003"), "movedToBed");
+	var railsRaised = sp2 + "Rails were raised";
+	var hospEquip = getRadioVal(document.getElementById("T004"), "hospEquip");
+	var ptToBed = unbuckle + movedToBed + railsRaised + hospEquip;
 	
-	var ptToBed = unbuckle + sp2;
-	var toNurse = "Full report and transition of pt care given to Nurse XXX.";
+	var toNurse = "full report and transition of pt care given to Nurse XXX.";
 	
 	Transport = tran1 + tran2 + hospital + toRoom + ptToBed + toNurse + newP3;
 
