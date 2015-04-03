@@ -204,6 +204,83 @@ What location...<br></br>
 </form>
 
 
+<form action="#" method="post" class="H004" id="H004">
+<p><input type="checkbox" onclick="toggleSub(this, 'traumacall_sub')" name="traumacall" id="traumacall" value="1" />Click if this was a trauma call</p>
+<fieldset>
+
+    <div id="traumacall_sub">
+
+		<!-- Scene Size Up - MVA (airbags, fluids), Fall (height, how fall was
+			broken), Assault, etc -->
+
+		<!-- AVPU - Alert, Verbal, Painful, Unconscious -->
+
+		<!-- Airway - visually patent, interventions:  OPA, NPA, suction -->
+		
+		<!-- Breathing - feel chest rise, hear breath sounds, expose chest to look
+						for life threatening injuries, interventions:  supplemental
+						O2, BVM, occlusive dressing, padded flail chest, etc -->
+		
+		<!-- Circulation - exsanguination, interventions:  pressure, tourniquet,
+						etc -->
+
+		<!-- C-spine precautions -->
+		<form action="#" method="post" class="H004a" id="H004a">C-spine precautions?<br></br>
+			<label><input type="radio" name="cspine" value="ASAN" checked />Advanced Spinal Assessment NEGATIVE FINDINGS</label><br>
+			<label><input type="radio" name="cspine" value="ASAP" />Advanced Spinal Assessment POSITIVE FINDINGS</label><br>
+			<label><input type="radio" name="cspine" value="manual" />Manual c-spine initiated</label><br>
+			<label><input type="radio" name="cspine" value="XXX c-spine precautions taken" />other</label><br>
+		<br><br>
+		</form>
+	
+		<!-- RTE -->
+		<input type="checkbox" onclick="toggleSub(this, 'rte_sub')" name="rte" id="rte" value="1" />Click if an RTE was done</p>		
+		<div id="rte_sub">
+			<form action="#" method="post" class="RTEHEAD" id="RTEHEAD">Select statement about head<br></br>
+				<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
+				<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
+				<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
+				<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
+				<label><input type="radio" name="location" value=" XXX" />other</label><br>
+			<br><br>
+			</form>
+		</div>
+		
+		<!-- Trauma Team Activation, Paramedic intercept, ALS call -->
+
+		<!-- Backboard, collar, splint, scoop or other stretcher to move the
+			pt to the back of the ambulance -->
+
+
+    </div>
+</fieldset>
+<br><br>
+</form>
+
+
+<form action="#" method="post" class="H005" id="H005">
+<p><input type="checkbox" onclick="toggleSub(this, 'medicalcall_sub')" name="medicalcall" id="medicalcall" value="1" />Click if this was a medical call</p>
+<fieldset>
+
+    <div id="medicalcall_sub">
+
+	<!-- Signs & Symptoms -->
+
+	<!-- Allergies -->
+
+	<!-- Medications -->
+
+	<!-- Past Pertinent History -->
+
+	<!-- Last Oral Intake -->
+
+	<!-- Events Leading Up To -->
+
+    </div>
+</fieldset>
+<br><br>
+</form>
+
 <!-- 2nd paragraph -->
 <form action="#" method="post" class="H100" id="H100">
 Did anything happen prior to your arrival that should be noted?<br></br>
@@ -211,6 +288,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 <label><input type="radio" name="PTA" value="No" />No</label>
 <br></br>
 </form>
+
 
 
 <br><a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
@@ -239,6 +317,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
         <label><input type="checkbox" name="bparts[]" value="Legs" />Legs</label>
         <label><input type="checkbox" name="bparts[]" value="Arms" />Arms</label></p>
     </div>
+</form>
 
 
 <br><a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
@@ -370,6 +449,18 @@ Other field automatically filled in with primary care physician & ER Doctor XXX 
 <script>
 
 //
+// This function runs when the page first loads
+//
+function PgLoadFunc() {
+	toggleSub('HtoT', 'HtoT_sub');
+	toggleSub('traumacall', 'traumacall_sub');
+	toggleSub('rte', 'rte_sub');
+	
+	toggleSub('medicalcall', 'medicalcall_sub');
+}
+
+
+//
 // Get Radiobutton data
 //
 function getRadioVal(form, name) {
@@ -425,14 +516,6 @@ function getCheckData(form, name) {
 }
 
 
-
-//
-// This function runs when the page first loads
-//
-function PgLoadFunc() {
-	toggleSub('HtoT', 'HtoT_sub');
-}
-
 //
 // assign function to onclick property of checkbox
 //	
@@ -441,7 +524,6 @@ document.getElementById('HtoT').onclick = function() {
 	// toggleSub args: checkbox clicked on (this), id of element to show/hide
 	toggleSub(this, 'HtoT_sub');
 };
-
 
 //
 // called onclick of checkbox
