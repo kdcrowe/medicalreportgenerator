@@ -36,8 +36,8 @@ HTML
 
 Javascript
 ==========
-
-* Get a random string
+1) Get a random string - might want to work this in with words like:
+   said, stated, indicated, etc to give the report some randomness?
 var textArray = [
     'song1.ogg',
     'song2.ogg'
@@ -46,6 +46,9 @@ var randomNumber = Math.floor(Math.random()*textArray.length);
 
 audioElement.setAttribute('src', textArray[randomNumber]);
 
+
+2) Need another checkbox function like getCheckData() but this one will just return
+   all the checked items concatenated together with double-spaces between them.
 
 -->
 
@@ -264,7 +267,9 @@ What location...<br></br>
 
     <div id="medicalcall_sub">
 
-	<!-- Double-check what the book suggests for a process! -->
+	<!-- Double-check what the book suggests for a process!
+			TODO:  book breaks process down to conscious and unconscious 
+				medical patients -->
 
 	<!-- Appearance, Attitude, Behaviour, Mood & Affect, Speech -->
 
@@ -316,16 +321,107 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 <fieldset>
 
 <form action="#" method="post" class="A001" id="A001">
-<p><input type="checkbox" name="HtoT" id="HtoT" value="1" />Was there a physical exam?</p>
-    <div id="HtoT_sub">
-        <p><span>Check which types</span>
+<p><input type="checkbox" name="HtoT" id="HtoT" value="1" />Click if there was a detailed physical exam</p>
+<fieldset>
+<div id="HtoT_sub">
+
+        <p><span>Check which types (TODO:  this will be removed, just leave it here as an example for now)</span>
         <label><input type="checkbox" name="bparts[]" value="Head" />Head</label>
         <label><input type="checkbox" name="bparts[]" value="Neck" />Neck</label>
         <label><input type="checkbox" name="bparts[]" value="Chest" />Chest</label>
         <label><input type="checkbox" name="bparts[]" value="Abdomen" />Abdomen</label>
         <label><input type="checkbox" name="bparts[]" value="Legs" />Legs</label>
         <label><input type="checkbox" name="bparts[]" value="Arms" />Arms</label></p>
-    </div>
+
+	<!-- RTE -->
+	<input type="checkbox" onclick="toggleSub(this, 'dpehead_sub')" name="dpehead" id="dpehead" value="1" />HEAD, click to expand</p>		
+		<div id="dpehead_sub">
+
+			<form action="#" method="post" class="RTEHEAD" id="RTEHEAD">Select statements about head<br></br>
+				<label><input type="checkbox" name="headst[]" value="Head round, intact, normocephalic and atraumatic." />Head round, intact, normocephalic and atraumatic.</label><br>
+				<label><input type="checkbox" name="headst[]" value="No deformities, contusions or crepitus to the front, top, sides or back of the skull." />No deformities, contusions or crepitus to the front, top, sides or back of the skull.</label><br>
+				<label><input type="checkbox" name="headst[]" value="No facial soft tissue injuries noted." />No facial soft tissue injuries noted.</label><br>
+				<label><input type="checkbox" name="headst[]" value="Face and facial reactions symmetrical." />Face and facial reactions symmetrical.</label><br>
+				<label><input type="checkbox" name="headst[]" value="Patients smile is even with no facial droop on either side." />Patients smile is even with no facial droop on either side.</label><br>
+				<label><input type="checkbox" name="headst[]" value="No maxillary or frontal sinus tenderness." />No maxillary or frontal sinus tenderness.</label><br>
+				<label><input type="checkbox" name="headst[]" value="No pain or sensitivity to palpation around the eyes/eye orbits, sinus areas, jaw, mandible, maxilla and temple." />No pain or sensitivity to palpation around the eyes/eye orbits, sinus areas, jaw, mandible, maxilla and temple.</label><br>
+				<label><input type="checkbox" name="headst[]" value="There is no visible or audible compromise to the oro and nasopharynx airway structures." />There is no visible or audible compromise to the oro and nasopharynx airway structures.</label><br>
+				<label><input type="checkbox" name="headst[]" value="Airway appears clear and patent with no blood, vomit or excessive secretions present." />Airway appears clear and patent with no blood, vomit or excessive secretions present.</label><br>
+				<label><input type="checkbox" name="headst[]" value="The nasopharynx, oropharynx and pharynx are all patent with no stridor sounds." />The nasopharynx, oropharynx and pharynx are all patent with no stridor sounds.</label><br>
+			<label>INJURIES:</label><br>
+				<label><input type="checkbox" name="headst[]" value="Injuries to the posterior/anterior/superior cranium including XXX." />Injuries to the posterior/anterior/superior cranium including XXX.</label><br>
+				<label><input type="checkbox" name="headst[]" value="{Deformities, contusions, crepitus} to the {front, top, sides, back} of the skull." />{Deformities, contusions, crepitus} to the {front, top, sides, back} of the skull.</label><br>
+				<label><input type="checkbox" name="headst[]" value="Facial soft-tissue injuries including XXX." />Facial soft-tissue injuries including XXX.</label><br>
+				<label><input type="checkbox" name="headst[]" value="Face and facial reactions do not appear symmetrical including XXX." />Face and facial reactions do not appear symmetrical including XXX.</label><br>
+				<label><input type="checkbox" name="headst[]" value="Smile uneven with facial droop on XXX side." />Smile uneven with facial droop on XXX side.</label><br>
+				<label><input type="checkbox" name="headst[]" value="Maxillary and frontal sinus tenderness." />Maxillary and frontal sinus tenderness.</label><br>
+				<label><input type="checkbox" name="headst[]" value="{Pain/sensitivity} to palpation around the {eyes/eye orbits, sinus areas, jaw, mandible, maxilla, temple}." />{Pain/sensitivity} to palpation around the {eyes/eye orbits, sinus areas, jaw, mandible, maxilla, temple}.</label><br>
+				<label><input type="checkbox" name="headst[]" value="{Visible, audible} compromise to the oro and nasopharynx airway structures including XXX." />{Visible, audible} compromise to the oro and nasopharynx airway structures including XXX.</label><br>
+				<label><input type="checkbox" name="headst[]" value="Airway does not appear clear and patent due to {blood, vomit, excessive secretions, other XXX} present." />Airway does not appear clear and patent due to {blood, vomit, excessive secretions, other XXX} present.</label><br>
+				<label><input type="checkbox" name="headst[]" value="The {nasopharynx, oropharynx, pharynx} do not appear patent and present stridor sounds." />The {nasopharynx, oropharynx, pharynx} do not appear patent and present stridor sounds.</label><br>
+			<br><br>
+			</form>
+
+			<form action="#" method="post" class="RTEEYES" id="RTEEYES">Select statements about eyes<br></br>
+				<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
+				<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
+				<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
+				<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
+				<label><input type="radio" name="location" value=" XXX" />other</label><br>
+			<br><br>
+			</form>
+
+			<form action="#" method="post" class="RTEEARS" id="RTEEARS">Select statements about ears<br></br>
+				<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
+				<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
+				<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
+				<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
+				<label><input type="radio" name="location" value=" XXX" />other</label><br>
+			<br><br>
+			</form>
+
+			<form action="#" method="post" class="RTENOSE" id="RTENOSE">Select statements about nose<br></br>
+				<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
+				<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
+				<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
+				<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
+				<label><input type="radio" name="location" value=" XXX" />other</label><br>
+			<br><br>
+			</form>
+
+			<form action="#" method="post" class="RTEMOUTH" id="RTEMOUTH">Select statements about mouth<br></br>
+				<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
+				<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
+				<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
+				<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
+				<label><input type="radio" name="location" value=" XXX" />other</label><br>
+			<br><br>
+			</form>
+
+			<form action="#" method="post" class="RTENECK" id="RTENECK">Select statements about neck<br></br>
+				<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
+				<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
+				<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
+				<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
+				<label><input type="radio" name="location" value=" XXX" />other</label><br>
+			<br><br>
+			</form>
+
+			<form action="#" method="post" class="RTEUPAIRWAY" id="RTEUPAIRWAY">Select statements about upper airway<br></br>
+				<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
+				<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
+				<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
+				<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
+				<label><input type="radio" name="location" value=" XXX" />other</label><br>
+			<br><br>
+			</form>
+
+			
+		</div>
+
+</div>
+</fieldset>
+<br><br>	
 </form>
 
 
@@ -466,6 +562,8 @@ function PgLoadFunc() {
 	toggleSub('rte', 'rte_sub');
 	
 	toggleSub('medicalcall', 'medicalcall_sub');
+	
+	toggleSub('dpehead', 'dpehead_sub');
 }
 
 
