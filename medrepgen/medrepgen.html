@@ -321,10 +321,11 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 <fieldset>
 
 <form action="#" method="post" class="A001" id="A001">
-<p><input type="checkbox" name="HtoT" id="HtoT" value="1" />Click if there was a detailed physical exam</p>
+<p><input type="checkbox" onclick="toggleSub(this, 'HtoT_sub')" name="HtoT" id="HtoT" value="1" />Click if there was a detailed physical exam</p>
 <fieldset>
 <div id="HtoT_sub">
 
+<!--
         <p><span>Check which types (TODO:  this will be removed, just leave it here as an example for now)</span>
         <label><input type="checkbox" name="bparts[]" value="Head" />Head</label>
         <label><input type="checkbox" name="bparts[]" value="Neck" />Neck</label>
@@ -332,94 +333,91 @@ Did anything happen prior to your arrival that should be noted?<br></br>
         <label><input type="checkbox" name="bparts[]" value="Abdomen" />Abdomen</label>
         <label><input type="checkbox" name="bparts[]" value="Legs" />Legs</label>
         <label><input type="checkbox" name="bparts[]" value="Arms" />Arms</label></p>
+-->
 
-	<!-- RTE -->
-	<input type="checkbox" onclick="toggleSub(this, 'dpehead_sub')" name="dpehead" id="dpehead" value="1" />HEAD, click to expand</p>		
+	<!-- Head -->
+	<input type="checkbox" onclick="toggleSub(this, 'dpehead_sub')" name="dpehead" id="dpehead" value="1" />HEAD, click to expand</p></input>
 		<div id="dpehead_sub">
 
-			<form action="#" method="post" class="RTEHEAD" id="RTEHEAD">Select statements about head<br></br>
-				<label><input type="checkbox" name="headst[]" value="Head round, intact, normocephalic and atraumatic." />Head round, intact, normocephalic and atraumatic.</label><br>
-				<label><input type="checkbox" name="headst[]" value="No deformities, contusions or crepitus to the front, top, sides or back of the skull." />No deformities, contusions or crepitus to the front, top, sides or back of the skull.</label><br>
-				<label><input type="checkbox" name="headst[]" value="No facial soft tissue injuries noted." />No facial soft tissue injuries noted.</label><br>
-				<label><input type="checkbox" name="headst[]" value="Face and facial reactions symmetrical." />Face and facial reactions symmetrical.</label><br>
-				<label><input type="checkbox" name="headst[]" value="Patients smile is even with no facial droop on either side." />Patients smile is even with no facial droop on either side.</label><br>
-				<label><input type="checkbox" name="headst[]" value="No maxillary or frontal sinus tenderness." />No maxillary or frontal sinus tenderness.</label><br>
-				<label><input type="checkbox" name="headst[]" value="No pain or sensitivity to palpation around the eyes/eye orbits, sinus areas, jaw, mandible, maxilla and temple." />No pain or sensitivity to palpation around the eyes/eye orbits, sinus areas, jaw, mandible, maxilla and temple.</label><br>
-				<label><input type="checkbox" name="headst[]" value="There is no visible or audible compromise to the oro and nasopharynx airway structures." />There is no visible or audible compromise to the oro and nasopharynx airway structures.</label><br>
-				<label><input type="checkbox" name="headst[]" value="Airway appears clear and patent with no blood, vomit or excessive secretions present." />Airway appears clear and patent with no blood, vomit or excessive secretions present.</label><br>
-				<label><input type="checkbox" name="headst[]" value="The nasopharynx, oropharynx and pharynx are all patent with no stridor sounds." />The nasopharynx, oropharynx and pharynx are all patent with no stridor sounds.</label><br>
+			<form action="#" method="post" class="dpeheadSec" id="dpeheadSec">Select statements about head<br></br>
+				<label><input type="checkbox" name="headst" value="Head round, intact, normocephalic and atraumatic." /><span title="Normocephalic: head of normal shape/size; Atraumatic: no trauma.">Head round, intact, normocephalic and atraumatic.</span></label><br>
+				<label><input type="checkbox" name="headst" value="No deformities, contusions or crepitus to the front, top, sides or back of the skull." />No deformities, contusions or crepitus to the front, top, sides or back of the skull.</label><br>
+				<label><input type="checkbox" name="headst" value="No facial soft tissue injuries noted." />No facial soft tissue injuries noted.</label><br>
+				<label><input type="checkbox" name="headst" value="Face and facial reactions symmetrical." />Face and facial reactions symmetrical.</label><br>
+				<label><input type="checkbox" name="headst" value="Patients smile is even with no facial droop on either side." />Patients smile is even with no facial droop on either side.</label><br>
+				<label><input type="checkbox" name="headst" value="No maxillary or frontal sinus tenderness." />No maxillary or frontal sinus tenderness.</label><br>
+				<label><input type="checkbox" name="headst" value="No pain or sensitivity to palpation around the eyes/eye orbits, sinus areas, jaw, mandible, maxilla and temple." />No pain or sensitivity to palpation around the eyes/eye orbits, sinus areas, jaw, mandible, maxilla and temple.</label><br>
+				<label><input type="checkbox" name="headst" value="There is no visible or audible compromise to the oro and nasopharynx airway structures." />There is no visible or audible compromise to the oro and nasopharynx airway structures.</label><br>
+				<label><input type="checkbox" name="headst" value="Airway appears clear and patent with no blood, vomit or excessive secretions present." />Airway appears clear and patent with no blood, vomit or excessive secretions present.</label><br>
+				<label><input type="checkbox" name="headst" value="The nasopharynx, oropharynx and pharynx are all patent with no stridor sounds." />The nasopharynx, oropharynx and pharynx are all patent with no stridor sounds.</label><br>
 			<label>INJURIES:</label><br>
-				<label><input type="checkbox" name="headst[]" value="Injuries to the posterior/anterior/superior cranium including XXX." />Injuries to the posterior/anterior/superior cranium including XXX.</label><br>
-				<label><input type="checkbox" name="headst[]" value="{Deformities, contusions, crepitus} to the {front, top, sides, back} of the skull." />{Deformities, contusions, crepitus} to the {front, top, sides, back} of the skull.</label><br>
-				<label><input type="checkbox" name="headst[]" value="Facial soft-tissue injuries including XXX." />Facial soft-tissue injuries including XXX.</label><br>
-				<label><input type="checkbox" name="headst[]" value="Face and facial reactions do not appear symmetrical including XXX." />Face and facial reactions do not appear symmetrical including XXX.</label><br>
-				<label><input type="checkbox" name="headst[]" value="Smile uneven with facial droop on XXX side." />Smile uneven with facial droop on XXX side.</label><br>
-				<label><input type="checkbox" name="headst[]" value="Maxillary and frontal sinus tenderness." />Maxillary and frontal sinus tenderness.</label><br>
-				<label><input type="checkbox" name="headst[]" value="{Pain/sensitivity} to palpation around the {eyes/eye orbits, sinus areas, jaw, mandible, maxilla, temple}." />{Pain/sensitivity} to palpation around the {eyes/eye orbits, sinus areas, jaw, mandible, maxilla, temple}.</label><br>
-				<label><input type="checkbox" name="headst[]" value="{Visible, audible} compromise to the oro and nasopharynx airway structures including XXX." />{Visible, audible} compromise to the oro and nasopharynx airway structures including XXX.</label><br>
-				<label><input type="checkbox" name="headst[]" value="Airway does not appear clear and patent due to {blood, vomit, excessive secretions, other XXX} present." />Airway does not appear clear and patent due to {blood, vomit, excessive secretions, other XXX} present.</label><br>
-				<label><input type="checkbox" name="headst[]" value="The {nasopharynx, oropharynx, pharynx} do not appear patent and present stridor sounds." />The {nasopharynx, oropharynx, pharynx} do not appear patent and present stridor sounds.</label><br>
+				<label><input type="checkbox" name="headst" value="Injuries to the posterior/anterior/superior cranium including XXX." />Injuries to the posterior/anterior/superior cranium including XXX.</label><br>
+				<label><input type="checkbox" name="headst" value="{Deformities, contusions, crepitus} to the {front, top, sides, back} of the skull." />{Deformities, contusions, crepitus} to the {front, top, sides, back} of the skull.</label><br>
+				<label><input type="checkbox" name="headst" value="Facial soft-tissue injuries including XXX." />Facial soft-tissue injuries including XXX.</label><br>
+				<label><input type="checkbox" name="headst" value="Face and facial reactions do not appear symmetrical including XXX." />Face and facial reactions do not appear symmetrical including XXX.</label><br>
+				<label><input type="checkbox" name="headst" value="Smile uneven with facial droop on XXX side." />Smile uneven with facial droop on XXX side.</label><br>
+				<label><input type="checkbox" name="headst" value="Maxillary and frontal sinus tenderness." />Maxillary and frontal sinus tenderness.</label><br>
+				<label><input type="checkbox" name="headst" value="{Pain/sensitivity} to palpation around the {eyes/eye orbits, sinus areas, jaw, mandible, maxilla, temple}." />{Pain/sensitivity} to palpation around the {eyes/eye orbits, sinus areas, jaw, mandible, maxilla, temple}.</label><br>
+				<label><input type="checkbox" name="headst" value="{Visible, audible} compromise to the oro and nasopharynx airway structures including XXX." />{Visible, audible} compromise to the oro and nasopharynx airway structures including XXX.</label><br>
+				<label><input type="checkbox" name="headst" value="Airway does not appear clear and patent due to {blood, vomit, excessive secretions, other XXX} present." />Airway does not appear clear and patent due to {blood, vomit, excessive secretions, other XXX} present.</label><br>
+				<label><input type="checkbox" name="headst" value="The {nasopharynx, oropharynx, pharynx} do not appear patent and present stridor sounds." />The {nasopharynx, oropharynx, pharynx} do not appear patent and present stridor sounds.</label><br>
 			<br><br>
 			</form>
+		</div> <!-- dpehead_sub -->
 
-			<form action="#" method="post" class="RTEEYES" id="RTEEYES">Select statements about eyes<br></br>
-				<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
-				<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
-				<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
-				<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
-				<label><input type="radio" name="location" value=" XXX" />other</label><br>
+	<!-- Eyes -->
+	<input type="checkbox" onclick="toggleSub(this, 'dpeeyes_sub')" name="dpeeyes" id="dpeeyes" value="1" />EYES, click to expand</p>		
+		<div id="dpeeyes_sub">
+
+			<form action="#" method="post" class="dpeeyesSec" id="dpeeyesSec">Select statements about eyes<br></br>
+				<label><input type="checkbox" name="eyesst" value="Extraocular movement in all directions intact with conjugate movement." /><span title="Extraocular: moving eyes in all directions without moving head;  Conjugate: both eyes fixed on same point.">Extraocular movement in all directions intact with conjugate movement.</span></label><br>
+				<label><input type="checkbox" name="eyesst" value="Pt exhibits smooth pursuit in both horizontal and vertical directions." /><span title="Smooth pursuit: eyes do not jump around but follow moving objects smoothly.">Pt exhibits smooth pursuit in both horizontal and vertical directions.</span></label><br>
+				<label><input type="checkbox" name="eyesst" value="Pt eyes show normal convergence as object is slowly moved towards tip of nose." /><span title="Convergence: eyes begin to 'cross' as object gets close to eyes.">Pt eyes show normal convergence as object is slowly moved towards tip of nose.</label><br>
+				<label><input type="checkbox" name="eyesst" value="Pupils Equal Round and Reactive to Light and Accommodation/focus." />Pupils Equal Round and Reactive to Light and Accommodation/focus.</label><br>
+				<label><input type="checkbox" name="eyesst" value="Conjunctiva clear, not inflamed or blood-shot." />Conjunctiva clear, not inflamed or blood-shot.</label><br>
+				<label><input type="checkbox" name="eyesst" value="Sclera white/anicteric, not yellow/jaundiced and with no recent pigmentation change." /><span title="Anicteric: not jaundiced or yellow.">Sclera white/anicteric, not yellow/jaundiced and with no recent pigmentation change.</span></label><br>
+				<label><input type="checkbox" name="eyesst" value="No pain or sensitivity to palpation around the eyes." />No pain or sensitivity to palpation around the eyes.</label><br>
+				<label><input type="checkbox" name="eyesst" value="No corneal arcus / arcus senilis apparent." /><span title="Corneal arcus / arcus senilis: slight ring near outer portion of iris (colored part of eye) that can, but not necessarily, indicate senility.">No corneal arcus / arcus senilis apparent.</span></label><br>
+				<label><input type="checkbox" name="eyesst" value="No white, grey, or blue opaque ring in the corneal margin (peripheral corneal opacity), or white ring in front of the periphery of the iris." /><span title="Similar to Corneal arcus / arcus senilis.">No white, grey, or blue opaque ring in the corneal margin (peripheral corneal opacity), or white ring in front of the periphery of the iris.</span></label><br>
+				<label><input type="checkbox" name="eyesst" value="Pupils xx mm in size." />Pupils XXX mm in size.</label><br>
+				<label>INJURIES:</label><br>
+				<label><input type="checkbox" name="eyesst" value="Pt does not exhibit extraocular movement {and/or} conjugate movement is not intact." /><span title="Extraocular: moving eyes in all directions without moving head;  Conjugate: both eyes fix on same point.">Pt does not exhibit extraocular movement {and/or} conjugate movement is not intact.</span></label><br>
+				<label><input type="checkbox" name="eyesst" value="Visual pursuit in {horizontal, vertical} direction is not smooth." />Visual pursuit in {horizontal, vertical} direction is not smooth.</label><br>
+				<label><input type="checkbox" name="eyesst" value="PPt eyes do not show convergence as object is slowly moved towards tip of nose." />Pt eyes do not show convergence as object is slowly moved towards tip of nose.</label><br>
+				<label><input type="checkbox" name="eyesst" value="Pupils {unequal, not round, not reactive to light, do not focus}." />Pupils {unequal, not round, not reactive to light, do not focus}.</label><br>
+				<label><input type="checkbox" name="eyesst" value="Conjunctiva {not clear, inflamed, blood-shot}." />Conjunctiva {not clear, inflamed, blood-shot}.</label><br>
+				<label><input type="checkbox" name="eyesst" value="Sclera {not white, icteric, yellow/jaundiced, recent pigmentation change.}" />Sclera {not white, icteric, yellow/jaundiced, recent pigmentation change.}</label><br>
+				<label><input type="checkbox" name="eyesst" value="{Pain, Sensitivity} to palpation around the eyes." />{Pain, Sensitivity} to palpation around the eyes.</label><br>
+				<label><input type="checkbox" name="eyesst" value="{Corneal arcus, Arcus senilis} apparent." />{Corneal arcus, Arcus senilis} apparent.</label><br>
+				<label><input type="checkbox" name="eyesst" value="{White, grey, blue, opaque} ring in the corneal margin (peripheral corneal opacity), or white ring in front of the periphery of the iris." />{White, grey, blue, opaque} ring in the corneal margin (peripheral corneal opacity), or white ring in front of the periphery of the iris.</label><br>
 			<br><br>
 			</form>
+		</div> <!-- dpeeyes_sub -->
+
 
 			<form action="#" method="post" class="RTEEARS" id="RTEEARS">Select statements about ears<br></br>
-				<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
-				<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
-				<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
-				<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
-				<label><input type="radio" name="location" value=" XXX" />other</label><br>
 			<br><br>
 			</form>
 
 			<form action="#" method="post" class="RTENOSE" id="RTENOSE">Select statements about nose<br></br>
-				<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
-				<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
-				<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
-				<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
-				<label><input type="radio" name="location" value=" XXX" />other</label><br>
 			<br><br>
 			</form>
 
 			<form action="#" method="post" class="RTEMOUTH" id="RTEMOUTH">Select statements about mouth<br></br>
-				<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
-				<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
-				<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
-				<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
-				<label><input type="radio" name="location" value=" XXX" />other</label><br>
 			<br><br>
 			</form>
 
 			<form action="#" method="post" class="RTENECK" id="RTENECK">Select statements about neck<br></br>
-				<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
-				<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
-				<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
-				<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
-				<label><input type="radio" name="location" value=" XXX" />other</label><br>
 			<br><br>
 			</form>
 
 			<form action="#" method="post" class="RTEUPAIRWAY" id="RTEUPAIRWAY">Select statements about upper airway<br></br>
-				<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
-				<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
-				<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
-				<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
-				<label><input type="radio" name="location" value=" XXX" />other</label><br>
 			<br><br>
 			</form>
 
 			
-		</div>
 
-</div>
+</div> <!-- HtoT_sub -->
 </fieldset>
 <br><br>	
 </form>
@@ -559,11 +557,13 @@ Other field automatically filled in with primary care physician & ER Doctor XXX 
 function PgLoadFunc() {
 	toggleSub('HtoT', 'HtoT_sub');
 	toggleSub('traumacall', 'traumacall_sub');
-	toggleSub('rte', 'rte_sub');
 	
 	toggleSub('medicalcall', 'medicalcall_sub');
 	
-	toggleSub('dpehead', 'dpehead_sub');
+	// Assessment
+	toggleSub('rte', 'rte_sub');
+		toggleSub('dpehead', 'dpehead_sub');
+		toggleSub('dpeeyes', 'dpeeyes_sub');
 }
 
 
@@ -587,7 +587,7 @@ function getRadioVal(form, name) {
 
 
 //
-// Get Checkbox data
+// Get Checkbox data - comma separate items, put "and" between last 2 items.
 //
 function getCheckData(form, name) {
     var val = "";
@@ -619,7 +619,29 @@ function getCheckData(form, name) {
 			timesthrough++;
         }
     }
-    return val; // return value of checked radio or undefined if none checked
+    return val; // return value of concatenated strings or undefined if none checked
+}
+
+
+//
+// Get Checkbox data - 2 spaces between each item, no "and" before last item.
+//
+function getCheckDataConcat(form, name) {
+	const sp2 = "&nbsp;&nbsp";
+    var val = "";
+    var join = "";
+	var len = 0;
+	// get list of radio buttons with specified name
+    var cboxes = form.elements[name];
+
+
+    // loop through list of check boxes
+    for (var i = 0, len = cboxes.length; i < len; i++) {
+        if ( cboxes[i].checked ) { // check box checked?
+            val = val + sp2 + cboxes[i].value; // if so, add its value in val
+        }
+    }
+    return val; // return value of concatenated strings or undefined if none checked
 }
 
 
@@ -652,6 +674,7 @@ function toggleSub(box, id) {
 //
 function getOption() {
 	const sp2 = "&nbsp;&nbsp";
+	const newL = "<br>";
 	const newP = "<br><br>";
 	const newP3 = "<br><br><br>";
 	
@@ -729,14 +752,22 @@ function getOption() {
 	var asse1 = "A:" + sp2;
 
 
+	// Detailed Physical Exam
+	var DPE = "Detailed Physical Exam:" + newL;
+	var HEAD = "HEAD:" + sp2;
+	HEAD = HEAD + getCheckDataConcat(document.getElementById("A001"), "headst") + newL;
+	var EYES = "EYES:" + sp2;
+	EYES = EYES + getCheckDataConcat(document.getElementById("dpeeyesSec"), "eyesst") + newL;
 	
-	Assessment = asse1 + newP3;
+	var BODY = HEAD + EYES;
+
+	Assessment = asse1 + newP + DPE + BODY + newP3;
 
 	// ************************************************************************
 	// TREATMENT
 	var trea1 = "R:" + sp2;
-	
-	
+
+
 	Treatment = trea1 + newP3;
 
 	// ************************************************************************
