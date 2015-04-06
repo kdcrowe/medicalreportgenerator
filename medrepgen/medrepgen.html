@@ -47,9 +47,6 @@ var randomNumber = Math.floor(Math.random()*textArray.length);
 audioElement.setAttribute('src', textArray[randomNumber]);
 
 
-2) Need another checkbox function like getCheckData() but this one will just return
-   all the checked items concatenated together with double-spaces between them.
-
 -->
 
 
@@ -210,52 +207,79 @@ What location...<br></br>
 <form action="#" method="post" class="H004" id="H004">
 <p><input type="checkbox" onclick="toggleSub(this, 'traumacall_sub')" name="traumacall" id="traumacall" value="1" />Click if this was a trauma call</p>
 <fieldset>
+<div id="traumacall_sub">
 
-    <div id="traumacall_sub">
 
-		<!-- Scene Size Up - MVA (airbags, fluids), Fall (height, how fall was
-			broken), Assault, etc -->
-
-		<!-- AVPU - Alert, Verbal, Painful, Unconscious -->
-
-		<!-- Airway - visually patent, interventions:  OPA, NPA, suction -->
+	<!-- Scene Size Up - MVA (airbags, fluids), Fall (height, how fall was
+		broken), Assault, etc -->
 		
-		<!-- Breathing - feel chest rise, hear breath sounds, expose chest to look
-						for life threatening injuries, interventions:  supplemental
-						O2, BVM, occlusive dressing, padded flail chest, etc -->
-		
-		<!-- Circulation - exsanguination, interventions:  pressure, tourniquet,
-						etc -->
 
-		<!-- C-spine precautions -->
-		<form action="#" method="post" class="H004a" id="H004a">C-spine precautions?<br></br>
-			<label><input type="radio" name="cspine" value="ASAN" checked />Advanced Spinal Assessment NEGATIVE FINDINGS</label><br>
-			<label><input type="radio" name="cspine" value="ASAP" />Advanced Spinal Assessment POSITIVE FINDINGS</label><br>
-			<label><input type="radio" name="cspine" value="manual" />Manual c-spine initiated</label><br>
-			<label><input type="radio" name="cspine" value="XXX c-spine precautions taken" />other</label><br>
+	<!-- AVPU - Alert, Verbal, Painful, Unconscious -->
+	<form action="#" method="post" class="traumaAVPU" id="traumaAVPU">What was patients alertness level?<br></br>
+		<label><input type="radio" name="avpu" value="fully alert and oriented to situation." checked />fully alert and oriented to situation</label>
+		<label><input type="radio" name="avpu" value="alert but disoriented." />alert but disoriented</label>
+		<label><input type="radio" name="avpu" value="verbally responsive." />verbally responsive</label>
+		<label><input type="radio" name="avpu" value="responsive to painful stimuli." />responsive to painful stimuli</label>
+		<label><input type="radio" name="avpu" value="unresponsive." />unresponsive</label>
+		<label><input type="radio" name="avpu" value="{patients AVPU level}." />Other</label>
+		<br><br>
+	</form>
+
+
+	<!-- Airway - visually patent, interventions:  OPA, NPA, suction -->
+	<form action="#" method="post" class="traumaAirway" id="traumaAirway">Airway status and interventions, select all that apply.<br></br>
+		<label><input type="checkbox" name="airway" value="Opened pt's airway with head tilt/chin lift" />Opened airway with head tilt/chin lift</label>
+		<label><input type="checkbox" name="airway" value="Opened airway with modified jaw thrust" />opened airway with modified jaw-thrust</label>
+		<label><input type="checkbox" name="airway" value="airway is patent" checked />airway is patent</label>
+		<label><input type="checkbox" name="airway" value="airway is not patent, suctioned airway to remove {teeth, blood, vomit, other}" />airway is not patent, suctioned airway</label>
+		<label><input type="checkbox" name="airway" value="inserted an opa, pt accepted" />inserted an opa, pt accepted</label>
+		<label><input type="checkbox" name="airway" value="inserted an opa, pt did not accept" />inserted an opa, pt did not accept</label>
+		<label><input type="checkbox" name="airway" value="inserted an npa, pt accepted" />inserted an npa, pt accepted</label>
+		<label><input type="checkbox" name="airway" value="inserted an npa, pt did not accept" />inserted an npa, pt did not accept</label>
+		<label><input type="checkbox" name="airway" value="Did the following XXX procedures to clear and keep the pt's airway open." />Other</label>
+		<br><br>
+	</form>
+
+
+	<!-- Breathing - feel chest rise, hear breath sounds, expose chest to look
+					for life threatening injuries, interventions:  supplemental
+					O2, BVM, occlusive dressing, padded flail chest, etc -->
+
+
+	<!-- Circulation - exsanguination, interventions:  pressure, tourniquet,
+					etc -->
+
+	<!-- C-spine precautions -->
+	<form action="#" method="post" class="H004a" id="H004a">C-spine precautions?<br></br>
+		<label><input type="radio" name="cspine" value="ASAN" checked />Advanced Spinal Assessment NEGATIVE FINDINGS</label><br>
+		<label><input type="radio" name="cspine" value="ASAP" />Advanced Spinal Assessment POSITIVE FINDINGS</label><br>
+		<label><input type="radio" name="cspine" value="manual" />Manual c-spine initiated</label><br>
+		<label><input type="radio" name="cspine" value="XXX c-spine precautions taken" />other</label><br>
+	<br><br>
+	</form>
+	
+	<!-- RTE -->
+	<input type="checkbox" onclick="toggleSub(this, 'rte_sub')" name="rte" id="rte" value="1" />Click if an RTE was done</p>		
+	<div id="rte_sub">
+		<form action="#" method="post" class="RTEHEAD" id="RTEHEAD">Select statement about head<br></br>
+			<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
+			<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
+			<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
+			<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
+			<label><input type="radio" name="location" value=" XXX" />other</label><br>
 		<br><br>
 		</form>
-	
-		<!-- RTE -->
-		<input type="checkbox" onclick="toggleSub(this, 'rte_sub')" name="rte" id="rte" value="1" />Click if an RTE was done</p>		
-		<div id="rte_sub">
-			<form action="#" method="post" class="RTEHEAD" id="RTEHEAD">Select statement about head<br></br>
-				<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
-				<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
-				<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
-				<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
-				<label><input type="radio" name="location" value=" XXX" />other</label><br>
-			<br><br>
-			</form>
-		</div>
+	</div> <!-- rte_sub -->
+
 		
-		<!-- Trauma Team Activation, Paramedic intercept, ALS call -->
-
-		<!-- Backboard, collar, splint, scoop or other stretcher to move the
-			pt to the back of the ambulance -->
+	<!-- Trauma Team Activation, Paramedic intercept, ALS call -->
 
 
-    </div>
+	<!-- Backboard, collar, splint, scoop or other stretcher to move the
+		pt to the back of the ambulance -->
+
+
+</div> <!-- traumasub_call -->
 </fieldset>
 <br><br>
 </form>
@@ -266,6 +290,13 @@ What location...<br></br>
 <fieldset>
 
     <div id="medicalcall_sub">
+
+	<!-- UNCONSCIOUS -->
+	
+	
+	<!-- CONSCIOUS -->
+	
+
 
 	<!-- Double-check what the book suggests for a process!
 			TODO:  book breaks process down to conscious and unconscious 
