@@ -216,11 +216,11 @@ What location...<br></br>
 
 	<!-- AVPU - Alert, Verbal, Painful, Unconscious -->
 	<form action="#" method="post" class="traumaAVPU" id="traumaAVPU">What was patients alertness level?<br></br>
-		<label><input type="radio" name="avpu" value="fully alert and oriented to situation." checked />fully alert and oriented to situation</label>
-		<label><input type="radio" name="avpu" value="alert but disoriented." />alert but disoriented</label>
-		<label><input type="radio" name="avpu" value="verbally responsive." />verbally responsive</label>
-		<label><input type="radio" name="avpu" value="responsive to painful stimuli." />responsive to painful stimuli</label>
-		<label><input type="radio" name="avpu" value="unresponsive." />unresponsive</label>
+		<label><input type="radio" name="avpu" value="fully alert and oriented to situation." checked />fully alert and oriented to situation</label><br>
+		<label><input type="radio" name="avpu" value="alert but disoriented." />alert but disoriented</label><br>
+		<label><input type="radio" name="avpu" value="verbally responsive." />verbally responsive</label><br>
+		<label><input type="radio" name="avpu" value="responsive to painful stimuli." />responsive to painful stimuli</label><br>
+		<label><input type="radio" name="avpu" value="unresponsive." />unresponsive</label><br>
 		<label><input type="radio" name="avpu" value="{patients AVPU level}." />Other</label>
 		<br><br>
 	</form>
@@ -228,14 +228,14 @@ What location...<br></br>
 
 	<!-- Airway - visually patent, interventions:  OPA, NPA, suction -->
 	<form action="#" method="post" class="traumaAirway" id="traumaAirway">Airway status and interventions, select all that apply.<br></br>
-		<label><input type="checkbox" name="airway" value="Opened pt's airway with head tilt/chin lift" />Opened airway with head tilt/chin lift</label>
-		<label><input type="checkbox" name="airway" value="Opened airway with modified jaw thrust" />opened airway with modified jaw-thrust</label>
-		<label><input type="checkbox" name="airway" value="airway is patent" checked />airway is patent</label>
-		<label><input type="checkbox" name="airway" value="airway is not patent, suctioned airway to remove {teeth, blood, vomit, other}" />airway is not patent, suctioned airway</label>
-		<label><input type="checkbox" name="airway" value="inserted an opa, pt accepted" />inserted an opa, pt accepted</label>
-		<label><input type="checkbox" name="airway" value="inserted an opa, pt did not accept" />inserted an opa, pt did not accept</label>
-		<label><input type="checkbox" name="airway" value="inserted an npa, pt accepted" />inserted an npa, pt accepted</label>
-		<label><input type="checkbox" name="airway" value="inserted an npa, pt did not accept" />inserted an npa, pt did not accept</label>
+		<label><input type="checkbox" name="airway" value="Opened pt's airway with head tilt/chin lift" />Opened airway with head tilt/chin lift</label><br>
+		<label><input type="checkbox" name="airway" value="Opened airway with modified jaw thrust" />opened airway with modified jaw-thrust</label><br>
+		<label><input type="checkbox" name="airway" value="airway is patent" checked />airway is patent</label><br>
+		<label><input type="checkbox" name="airway" value="airway is not patent, suctioned airway to remove {teeth, blood, vomit, other}" />airway is not patent, suctioned airway</label><br>
+		<label><input type="checkbox" name="airway" value="inserted an opa, pt accepted" />inserted an opa, pt accepted</label><br>
+		<label><input type="checkbox" name="airway" value="inserted an opa, pt did not accept" />inserted an opa, pt did not accept</label><br>
+		<label><input type="checkbox" name="airway" value="inserted an npa, pt accepted" />inserted an npa, pt accepted</label><br>
+		<label><input type="checkbox" name="airway" value="inserted an npa, pt did not accept" />inserted an npa, pt did not accept</label><br>
 		<label><input type="checkbox" name="airway" value="Did the following XXX procedures to clear and keep the pt's airway open." />Other</label>
 		<br><br>
 	</form>
@@ -414,7 +414,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 				<label>INJURIES:</label><br>
 				<label><input type="checkbox" name="eyesst" value="Pt does not exhibit extraocular movement {and/or} conjugate movement is not intact." /><span title="Extraocular: moving eyes in all directions without moving head;  Conjugate: both eyes fix on same point.">Pt does not exhibit extraocular movement {and/or} conjugate movement is not intact.</span></label><br>
 				<label><input type="checkbox" name="eyesst" value="Visual pursuit in {horizontal, vertical} direction is not smooth." />Visual pursuit in {horizontal, vertical} direction is not smooth.</label><br>
-				<label><input type="checkbox" name="eyesst" value="PPt eyes do not show convergence as object is slowly moved towards tip of nose." />Pt eyes do not show convergence as object is slowly moved towards tip of nose.</label><br>
+				<label><input type="checkbox" name="eyesst" value="Pt eyes do not show convergence as object is slowly moved towards tip of nose." />Pt eyes do not show convergence as object is slowly moved towards tip of nose.</label><br>
 				<label><input type="checkbox" name="eyesst" value="Pupils {unequal, not round, not reactive to light, do not focus}." />Pupils {unequal, not round, not reactive to light, do not focus}.</label><br>
 				<label><input type="checkbox" name="eyesst" value="Conjunctiva {not clear, inflamed, blood-shot}." />Conjunctiva {not clear, inflamed, blood-shot}.</label><br>
 				<label><input type="checkbox" name="eyesst" value="Sclera {not white, icteric, yellow/jaundiced, recent pigmentation change.}" />Sclera {not white, icteric, yellow/jaundiced, recent pigmentation change.}</label><br>
@@ -425,10 +425,26 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 			</form>
 		</div> <!-- dpeeyes_sub -->
 
+	<!-- Ears -->
+	<input type="checkbox" onclick="toggleSub(this, 'dpeears_sub')" name="dpeears" id="dpeears" value="1" />EARS, click to expand</p></input>
+		<div id="dpeears_sub">
 
-			<form action="#" method="post" class="RTEEARS" id="RTEEARS">Select statements about ears<br></br>
+			<form action="#" method="post" class="dpeearsSec" id="dpeearsSec">Select statements about ears<br></br>
+				<label><input type="checkbox" name="earsst" value="" checked /><span title="">N.A.</span></label><br>
+				<label><input type="checkbox" name="earsst" value="Ears intact with no cartilage damage." /><span title="">Ears intact with no cartilage damage.</span></label><br>
+				<label><input type="checkbox" name="earsst" value="Patient able to hear sounds bilaterally." /><span title="">Patient able to hear sounds bilaterally.</span></label><br>
+				<label><input type="checkbox" name="earsst" value="No otorrhea including blood or CSF." /><span title="Otorrhea:  a discharge from the external ear.">No otorrhea including blood or CSF.</span></label><br>
+				<label><input type="checkbox" name="earsst" value="Patient admits to no tinnitus, vertigo or disequilibrium." /><span title="Tinnitus:  ringing/roaring sound in the ears;  Vertigo:  a whirring or spinning feeling;  Disequilibrium:  loss of balance.">Patient admits to no tinnitus, vertigo or disequilibrium.</span></label><br>
+			<label>INJURIES:</label><br>
+				<label><input type="checkbox" name="earsst" value="Outer ear damage to the cartilage." /><span title="">Outer ear damage to the cartilage.</span></label><br>
+				<label><input type="checkbox" name="earsst" value="Pt seems to have difficulty hearing in the {left, right} ear." /><span title="">Pt seems to have difficulty hearing in the {left, right} ear.</span></label><br>
+				<label><input type="checkbox" name="earsst" value="Otorrhea including {blood, CSF} from the {left, right} ear." /><span title="Otorrhea:  a discharge from the external ear.">Otorrhea including {blood, CSF} from the {left, right} ear.</span></label><br>
+				<label><input type="checkbox" name="earsst" value="Pt admits to {tinnitus, vertigo, disequilibrium} in the {left, right} ear." /><span title="Tinnitus:  ringing/roaring sound in the ears;  Vertigo:  a whirring or spinning feeling;  Disequilibrium:  loss of balance.">Patient admits to {tinnitus, vertigo, disequilibrium} in the {left, right} ear.</span></label><br>
 			<br><br>
 			</form>
+		</div> <!-- dpeears_sub -->
+
+
 
 			<form action="#" method="post" class="RTENOSE" id="RTENOSE">Select statements about nose<br></br>
 			<br><br>
@@ -595,6 +611,7 @@ function PgLoadFunc() {
 	toggleSub('rte', 'rte_sub');
 		toggleSub('dpehead', 'dpehead_sub');
 		toggleSub('dpeeyes', 'dpeeyes_sub');
+		toggleSub('dpeears', 'dpeears_sub');
 }
 
 
@@ -784,13 +801,21 @@ function getOption() {
 
 
 	// Detailed Physical Exam
+
 	var DPE = "Detailed Physical Exam:" + newL;
-	var HEAD = "HEAD:" + sp2;
+	var HEAD = "HEAD:";
 	HEAD = HEAD + getCheckDataConcat(document.getElementById("A001"), "headst") + newL;
-	var EYES = "EYES:" + sp2;
+	var EYES = "EYES:";
 	EYES = EYES + getCheckDataConcat(document.getElementById("dpeeyesSec"), "eyesst") + newL;
+	var EARS = "EARS:";
+	var EARstrings = getCheckDataConcat(document.getElementById("dpeearsSec"), "earsst");
+	if (EARstrings != "") {
+		EARS = EARS + EARstrings + newL;
+	} else {
+		EARS = "";
+	}
 	
-	var BODY = HEAD + EYES;
+	var BODY = HEAD + EYES + EARS + DPEtrue;
 
 	Assessment = asse1 + newP + DPE + BODY + newP3;
 
