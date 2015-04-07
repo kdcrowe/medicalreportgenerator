@@ -209,10 +209,20 @@ What location...<br></br>
 <fieldset>
 <div id="traumacall_sub">
 
+	<!-- Might ditch the "Click if this was a trauma call" above -->
 
 	<!-- Scene Size Up - MVA (airbags, fluids), Fall (height, how fall was
 		broken), Assault, etc -->
-		
+	
+	<!-- Manual C-spine or not necessary?  If not, why? -->
+	
+	<!-- Maybe an AVPU pre-section?  "Approaching the pt I asked their name (or how they were doing) and the pt responded appropriately with their name (or complaint.)  This would allow a nice flow into the actual AVPU - this pre-section might include:  (select all that apply)
+		Asked pt their name & complaint and pt responded with their name and the chief complaint.
+		Asked pt their name & complaint and pt (opened eyes, spoke but did not answer question appropriately, mumbled incoherently}.
+		Asked pt their name & complaint and pt responded appropriately and pt did not respond.
+		{Sternum rub, Shoulder Pinch, Triceps monkey-grab} elicited a slight response.
+		{Sternum rub, Shoulder Pinch, Triceps monkey-grab} did not elicit a response.
+
 
 	<!-- AVPU - Alert, Verbal, Painful, Unconscious -->
 	<form action="#" method="post" class="traumaAVPU" id="traumaAVPU">What was patients alertness level?<br></br>
@@ -228,9 +238,10 @@ What location...<br></br>
 
 	<!-- Airway - visually patent, interventions:  OPA, NPA, suction -->
 	<form action="#" method="post" class="traumaAirway" id="traumaAirway">Airway status and interventions, select all that apply.<br></br>
+		<label><input type="checkbox" name="airway" value="airway is patent" checked />airway is patent</label><br>
+		<label><input type="checkbox" name="airway" value="airway is obviously patent due to pt {talking, mumbling, crying}" />airway is obviously patent due to pt {talking, mumbling, crying}</label><br>
 		<label><input type="checkbox" name="airway" value="Opened pt's airway with head tilt/chin lift" />Opened airway with head tilt/chin lift</label><br>
 		<label><input type="checkbox" name="airway" value="Opened airway with modified jaw thrust" />opened airway with modified jaw-thrust</label><br>
-		<label><input type="checkbox" name="airway" value="airway is patent" checked />airway is patent</label><br>
 		<label><input type="checkbox" name="airway" value="airway is not patent, suctioned airway to remove {teeth, blood, vomit, other}" />airway is not patent, suctioned airway</label><br>
 		<label><input type="checkbox" name="airway" value="inserted an opa, pt accepted" />inserted an opa, pt accepted</label><br>
 		<label><input type="checkbox" name="airway" value="inserted an opa, pt did not accept" />inserted an opa, pt did not accept</label><br>
@@ -243,13 +254,20 @@ What location...<br></br>
 
 	<!-- Breathing - feel chest rise, hear breath sounds, expose chest to look
 					for life threatening injuries, interventions:  supplemental
-					O2, BVM, occlusive dressing, padded flail chest, etc -->
+					O2, BVM, occlusive dressing, padded flail chest, etc 
+					Need to note:  rate, rhythm & quality! -->
 
 
 	<!-- Circulation - exsanguination, interventions:  pressure, tourniquet,
-					etc -->
+					etc
+					Need to note:  rate, rhythm & quality!
+					Also:  skin color, temp & condition! -->
 
 	<!-- C-spine precautions -->
+	<!-- This section needs to go away:
+		-make putting a collar on in RTE
+		-make Advanced Spinal Assessment it's own section as it's nto done for unconscious pt's
+		-->
 	<form action="#" method="post" class="H004a" id="H004a">C-spine precautions?<br></br>
 		<label><input type="radio" name="cspine" value="ASAN" checked />Advanced Spinal Assessment NEGATIVE FINDINGS</label><br>
 		<label><input type="radio" name="cspine" value="ASAP" />Advanced Spinal Assessment POSITIVE FINDINGS</label><br>
@@ -257,16 +275,14 @@ What location...<br></br>
 		<label><input type="radio" name="cspine" value="XXX c-spine precautions taken" />other</label><br>
 	<br><br>
 	</form>
-	
+
 	<!-- RTE -->
 	<input type="checkbox" onclick="toggleSub(this, 'rte_sub')" name="rte" id="rte" value="1" />Click if an RTE was done</p>		
 	<div id="rte_sub">
-		<form action="#" method="post" class="RTEHEAD" id="RTEHEAD">Select statement about head<br></br>
-			<label><input type="radio" name="location" value=" living room" checked />living room</label><br>
-			<label><input type="radio" name="location" value=" bedroom" />bedroom</label><br>
-			<label><input type="radio" name="location" value=" kitchen" />kitchen</label><br>
-			<label><input type="radio" name="location" value=" bathroom" />bathroom</label><br>
-			<label><input type="radio" name="location" value=" XXX" />other</label><br>
+		<form action="#" method="post" class="RTEHEAD" id="RTEHEAD">HEAD:<br></br>
+			<label><input type="checkbox" name="rteheadst" value="Head NC/AT." checked />Head NC/AT.</label><br>
+			<label><input type="checkbox" name="rteheadst" value="Life threatening injuries to the head including XXX." />Life threatening injuries to the head including XXX.</label><br>
+			<label><input type="checkbox" name="rteheadst" value="Secondary injuries to the head noted including XXX." />Secondary injuries to the head noted including XXX.</label><br>
 		<br><br>
 		</form>
 	</div> <!-- rte_sub -->
@@ -352,24 +368,16 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 <fieldset>
 
 <form action="#" method="post" class="A001" id="A001">
-<p><input type="checkbox" onclick="toggleSub(this, 'HtoT_sub')" name="HtoT" id="HtoT" value="1" />Click if there was a detailed physical exam</p>
+<p><input type="checkbox" onclick="toggleSub(this, 'HtoT_sub')" name="HtoT" id="HtoT" value="abc1" />Click if there was a detailed physical exam</p>
+</form>
 <fieldset>
 <div id="HtoT_sub">
 
-<!--
-        <p><span>Check which types (TODO:  this will be removed, just leave it here as an example for now)</span>
-        <label><input type="checkbox" name="bparts[]" value="Head" />Head</label>
-        <label><input type="checkbox" name="bparts[]" value="Neck" />Neck</label>
-        <label><input type="checkbox" name="bparts[]" value="Chest" />Chest</label>
-        <label><input type="checkbox" name="bparts[]" value="Abdomen" />Abdomen</label>
-        <label><input type="checkbox" name="bparts[]" value="Legs" />Legs</label>
-        <label><input type="checkbox" name="bparts[]" value="Arms" />Arms</label></p>
--->
-
 	<!-- Head -->
-	<input type="checkbox" onclick="toggleSub(this, 'dpehead_sub')" name="dpehead" id="dpehead" value="1" />HEAD, click to expand</p></input>
+	<form action="#" method="post" class="dpeheadForm" id="dpeheadForm">
+	<input type="checkbox" onclick="toggleSub(this, 'dpehead_sub')" name="dpehead" id="dpehead" value="1" />HEAD, click to expand</p>
 		<div id="dpehead_sub">
-
+	</form>
 			<form action="#" method="post" class="dpeheadSec" id="dpeheadSec">Select statements about head<br></br>
 				<label><input type="checkbox" name="headst" value="Head round, intact, normocephalic and atraumatic." /><span title="Normocephalic: head of normal shape/size; Atraumatic: no trauma.">Head round, intact, normocephalic and atraumatic.</span></label><br>
 				<label><input type="checkbox" name="headst" value="No deformities, contusions or crepitus to the front, top, sides or back of the skull." />No deformities, contusions or crepitus to the front, top, sides or back of the skull.</label><br>
@@ -395,11 +403,13 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 			<br><br>
 			</form>
 		</div> <!-- dpehead_sub -->
+	<!-- </form>  probably not needed -->
 
 	<!-- Eyes -->
+	<form action="#" method="post" class="dpeeyesForm" id="dpeeyesForm">
 	<input type="checkbox" onclick="toggleSub(this, 'dpeeyes_sub')" name="dpeeyes" id="dpeeyes" value="1" />EYES, click to expand</p>		
 		<div id="dpeeyes_sub">
-
+	</form>
 			<form action="#" method="post" class="dpeeyesSec" id="dpeeyesSec">Select statements about eyes<br></br>
 				<label><input type="checkbox" name="eyesst" value="Extraocular movement in all directions intact with conjugate movement." /><span title="Extraocular: moving eyes in all directions without moving head;  Conjugate: both eyes fixed on same point.">Extraocular movement in all directions intact with conjugate movement.</span></label><br>
 				<label><input type="checkbox" name="eyesst" value="Pt exhibits smooth pursuit in both horizontal and vertical directions." /><span title="Smooth pursuit: eyes do not jump around but follow moving objects smoothly.">Pt exhibits smooth pursuit in both horizontal and vertical directions.</span></label><br>
@@ -426,9 +436,10 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 		</div> <!-- dpeeyes_sub -->
 
 	<!-- Ears -->
-	<input type="checkbox" onclick="toggleSub(this, 'dpeears_sub')" name="dpeears" id="dpeears" value="1" />EARS, click to expand</p></input>
+	<form action="#" method="post" class="dpeearsForm" id="dpeearsForm">
+	<input type="checkbox" onclick="toggleSub(this, 'dpeears_sub')" name="dpeears" id="dpeears" value="1" />EARS, click to expand</p>
 		<div id="dpeears_sub">
-
+	</form>
 			<form action="#" method="post" class="dpeearsSec" id="dpeearsSec">Select statements about ears<br></br>
 				<label><input type="checkbox" name="earsst" value="" checked /><span title="">N.A.</span></label><br>
 				<label><input type="checkbox" name="earsst" value="Ears intact with no cartilage damage." /><span title="">Ears intact with no cartilage damage.</span></label><br>
@@ -467,7 +478,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 </div> <!-- HtoT_sub -->
 </fieldset>
 <br><br>	
-</form>
+<!-- </form> probably not needed --> 
 
 
 <br><a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
@@ -801,10 +812,9 @@ function getOption() {
 
 
 	// Detailed Physical Exam
-
 	var DPE = "Detailed Physical Exam:" + newL;
 	var HEAD = "HEAD:";
-	HEAD = HEAD + getCheckDataConcat(document.getElementById("A001"), "headst") + newL;
+	HEAD = HEAD + getCheckDataConcat(document.getElementById("dpeheadSec"), "headst") + newL;
 	var EYES = "EYES:";
 	EYES = EYES + getCheckDataConcat(document.getElementById("dpeeyesSec"), "eyesst") + newL;
 	var EARS = "EARS:";
@@ -815,7 +825,7 @@ function getOption() {
 		EARS = "";
 	}
 	
-	var BODY = HEAD + EYES + EARS + DPEtrue;
+	var BODY = HEAD + EYES + EARS;
 
 	Assessment = asse1 + newP + DPE + BODY + newP3;
 
