@@ -9,6 +9,12 @@ p1 {
 label {
 	margin-left: 40px;
 }
+gr {
+	color: green;
+}
+rd {
+	color: red;
+}
 </style>
 </head>
 
@@ -206,16 +212,35 @@ What location...<br></br>
 
 <form action="#" method="post" class="H004" id="H004">
 <p><input type="checkbox" onclick="toggleSub(this, 'traumacall_sub')" name="traumacall" id="traumacall" value="1" />Click if this was a trauma call</p>
+</form>
 <fieldset>
 <div id="traumacall_sub">
 
-	<!-- Might ditch the "Click if this was a trauma call" above -->
+	<!-- Might ditch the "Click if this was a trauma call" above 
+			OR, make it so clicking trauma gives options for trauma style calls
+			while clicking medical gives medical style call options?  
+			i.e. roll the "scene size-up (next section) into the "is this trauma"
+			or "is this medical" call flow? -->
+
 
 	<!-- Scene Size Up - MVA (airbags, fluids), Fall (height, how fall was
 		broken), Assault, etc -->
-	
+
+
 	<!-- Manual C-spine or not necessary?  If not, why? -->
-	
+	<!-- C-spine precautions -->
+	<!-- TODO:
+		-add option for putting a collar on in RTE
+		-->
+	<form action="#" method="post" class="H004a" id="H004a">C-spine precautions?<br></br>
+		<label><input type="radio" name="cspine" value="ASAN" checked />Advanced Spinal Assessment <gr>NEGATIVE</gr> FINDINGS</label><br>
+		<label><input type="radio" name="cspine" value="ASAP" />Advanced Spinal Assessment <rd>POSITIVE FINDINGS</rd></label><br>
+		<label><input type="radio" name="cspine" value="manual" />Manual c-spine stabilization initiated</label><br>
+		<label><input type="radio" name="cspine" value="XXX c-spine precautions taken" />other</label><br>
+	<br><br>
+	</form>
+
+
 	<!-- Maybe an AVPU pre-section?  "Approaching the pt I asked their name (or how they were doing) and the pt responded appropriately with their name (or complaint.)  This would allow a nice flow into the actual AVPU - this pre-section might include:  (select all that apply)
 		Asked pt their name & complaint and pt responded with their name and the chief complaint.
 		Asked pt their name & complaint and pt (opened eyes, spoke but did not answer question appropriately, mumbled incoherently}.
@@ -263,18 +288,6 @@ What location...<br></br>
 					Need to note:  rate, rhythm & quality!
 					Also:  skin color, temp & condition! -->
 
-	<!-- C-spine precautions -->
-	<!-- This section needs to go away:
-		-make putting a collar on in RTE
-		-make Advanced Spinal Assessment it's own section as it's nto done for unconscious pt's
-		-->
-	<form action="#" method="post" class="H004a" id="H004a">C-spine precautions?<br></br>
-		<label><input type="radio" name="cspine" value="ASAN" checked />Advanced Spinal Assessment NEGATIVE FINDINGS</label><br>
-		<label><input type="radio" name="cspine" value="ASAP" />Advanced Spinal Assessment POSITIVE FINDINGS</label><br>
-		<label><input type="radio" name="cspine" value="manual" />Manual c-spine initiated</label><br>
-		<label><input type="radio" name="cspine" value="XXX c-spine precautions taken" />other</label><br>
-	<br><br>
-	</form>
 
 	<!-- RTE -->
 	<input type="checkbox" onclick="toggleSub(this, 'rte_sub')" name="rte" id="rte" value="1" />Click if an RTE was done</p>		
@@ -796,7 +809,7 @@ function getOption() {
 	ptFound = ptFound + " in the " + location + ".";
 	
 	
-	// PTA
+	// PTOA
 	var PTA = getRadioVal(document.getElementById("H100"), "PTA");
 	if (PTA == "Yes") {
 		var PTOA = newP + "PTOA XXX."
