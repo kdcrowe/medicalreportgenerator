@@ -9,6 +9,9 @@ p1 {
 label {
 	margin-left: 40px;
 }
+label2 {
+	margin-left: 80px;
+}
 gr {
 	color: green;
 }
@@ -216,6 +219,12 @@ What location...<br></br>
 <fieldset>
 <div id="traumacall_sub">
 
+</div> <!-- traumasub_call -->
+</fieldset>
+<br><br>
+</form>
+
+
 	<!-- Might ditch the "Click if this was a trauma call" above 
 			OR, make it so clicking trauma gives options for trauma style calls
 			while clicking medical gives medical style call options?  
@@ -223,22 +232,26 @@ What location...<br></br>
 			or "is this medical" call flow? -->
 
 
-	<!-- Scene Size Up - MVA (airbags, fluids), Fall (height, how fall was
-		broken), Assault, etc -->
+<!-- Scene Size Up - MVA (airbags, fluids), Fall (height, how fall was
+	broken), Assault, etc 
+		Look up CDC trauma guidelines.
+		-High Speed MVC
+		-Falls Greater than 3x pt.’s body height
+		-Axial Loading
+		-Violent situations near the spine including: Stabbing, Gun shots, etc.
+		-Sports Injuries
+		-Other High Impact Situations
+		-Consideration to special pt. Population:  pediatrics, geriatrics, history of Down’s, spino bifoda-->
 
 
-	<!-- Manual C-spine or not necessary?  If not, why? -->
-	<!-- C-spine precautions -->
-	<!-- TODO:
-		-add option for putting a collar on in RTE
-		-->
-	<form action="#" method="post" class="H004a" id="H004a">C-spine precautions?<br></br>
-		<label><input type="radio" name="cspine" value="ASAN" checked />Advanced Spinal Assessment <gr>NEGATIVE</gr> FINDINGS</label><br>
-		<label><input type="radio" name="cspine" value="ASAP" />Advanced Spinal Assessment <rd>POSITIVE FINDINGS</rd></label><br>
-		<label><input type="radio" name="cspine" value="manual" />Manual c-spine stabilization initiated</label><br>
-		<label><input type="radio" name="cspine" value="XXX c-spine precautions taken" />other</label><br>
-	<br><br>
-	</form>
+<!-- Manual C-spine or not necessary?  If not, why? -->
+<form action="#" method="post" class="cspineManual" id="cspineManual">C-spine manually stabilized?<br></br>
+	<label><input type="radio"name="cspineInit" value="Manual c-spine stabilization of the pt initiated by XXX." />Yes</label><br>
+	<label><input type="radio" name="cspineInit" value="" checked />No</label><br>
+<br><br>
+</form>
+
+
 
 
 	<!-- Maybe an AVPU pre-section?  "Approaching the pt I asked their name (or how they were doing) and the pt responded appropriately with their name (or complaint.)  This would allow a nice flow into the actual AVPU - this pre-section might include:  (select all that apply)
@@ -289,16 +302,76 @@ What location...<br></br>
 					Also:  skin color, temp & condition! -->
 
 
-	<!-- RTE -->
-	<input type="checkbox" onclick="toggleSub(this, 'rte_sub')" name="rte" id="rte" value="1" />Click if an RTE was done</p>		
-	<div id="rte_sub">
-		<form action="#" method="post" class="RTEHEAD" id="RTEHEAD">HEAD:<br></br>
-			<label><input type="checkbox" name="rteheadst" value="Head NC/AT." checked />Head NC/AT.</label><br>
-			<label><input type="checkbox" name="rteheadst" value="Life threatening injuries to the head including XXX." />Life threatening injuries to the head including XXX.</label><br>
-			<label><input type="checkbox" name="rteheadst" value="Secondary injuries to the head noted including XXX." />Secondary injuries to the head noted including XXX.</label><br>
-		<br><br>
-		</form>
-	</div> <!-- rte_sub -->
+<!-- RTE -->
+<form action="#" method="post" class="RTE" id="RTE">
+<p><input type="checkbox" onclick="toggleSub(this, 'rte_sub')" name="rteExam" id="rteExam" value="1" />Click if a Rapid Trauma Exam was done</p>		
+</form>
+<fieldset>
+<div id="rte_sub">
+
+	<!-- RTE HEAD -->
+	<form action="#" method="post" class="RTEHEAD" id="RTEHEAD"><label>HEAD:</label><br>
+		<label2><input type="checkbox" name="rteheadst" value="Head NC/AT." checked />Head NC/AT.</label2><br>
+		<label2><input type="checkbox" name="rteheadst" value="Life threatening injuries to the head including XXX." />Life threatening injuries to the head including XXX.</label2><br>
+		<label2><input type="checkbox" name="rteheadst" value="Secondary injuries to the head noted including XXX." />Secondary injuries to the head noted including XXX.</label2><br>
+	<br><br>
+	</form>
+
+	<!-- RTE NECK -->
+	<form action="#" method="post" class="RTENECK" id="RTENECK"><label>NECK:</label><br>
+		<label2><input type="checkbox" name="rteneckst" value="No tracheal deviation, excessive JVD or step-offs present." checked />No tracheal deviation, excessive JVD or step-offs present.</label2><br>
+		<label2><input type="checkbox" name="rteneckst" value="Tracheal deviation to the XXX side." />Tracheal deviation to the XXX side.</label2><br>
+		<label2><input type="checkbox" name="rteneckst" value="Excessive JVD." />Excessive JVD.</label2><br>
+		<label2><input type="checkbox" name="rteneckst" value="Step-offs present." />Step-offs present.</label2><br>
+		<label2><input type="checkbox" name="rteneckst" value="Cervical collar applied." checked />Cervical collar applied.</label2><br>
+	<br><br>
+	</form>
+
+	<!-- RTE CHEST -->
+	<form action="#" method="post" class="RTECHEST" id="RTECHEST"><label>CHEST:</label><br>
+		<label2><input type="checkbox" name="rtechestst" value="No punctures, flail chest or crepitice present." checked />No punctures, flail chest or crepitice present.</label2><br>
+		<label2><input type="checkbox" name="rtechestst" value="Flail chest to the XXX side including XXX ribs." />Flail chest to the XXX side including XXX ribs.</label2><br>
+		<label2><input type="checkbox" name="rtechestst" value="Crepitice to the XXX area." />Crepitice to the XXX area.</label2><br>
+	<br><br>
+	</form>
+
+	<!-- RTE Abdomen -->
+	<form action="#" method="post" class="RTEABS" id="RTEABS"><label>ABDOMEN:</label><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="No guarding, sensitivity, pulsating masses or rigidity." checked />No guarding, sensitivity, pulsating masses or rigidity.</label2><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="{Guarding, Sensitivity} to the XXX quadrant." />{Guarding, Sensitivity} to the XXX quadrant.</label2><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="Pulsating mass in the XXX quadrant." />Pulsating mass in the XXX quadrant.</label2><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="Rigidity in the XXX quadrant." />Rigidity in the XXX quadrant.</label2><br>
+	<br><br>
+	</form>
+
+	<!-- RTE Hips -->
+	<form action="#" method="post" class="RTEHIPS" id="RTEHIPS"><label>HIPS:</label><br>
+		<label2><input type="checkbox" name="rteHipsSt" value="Hips pressed in adn down reveal no splaying or evidence of pain." checked />Hips pressed in and down reveal no splaying or evidence of pain.</label2><br>
+		<label2><input type="checkbox" name="rteHipsSt" value="Hips pressed in and down reveal excessive movement." />Hips pressed in and down reveal excessive movement.</label2><br>
+		<label2><input type="checkbox" name="rteHipsSt" value="Hips pressed in adn down show evidence of pain." />Hips pressed in and down show evidence of pain.</label2><br>
+	<br><br>
+	</form>
+
+	<!-- RTE Legs -->
+	<form action="#" method="post" class="RTELEGS" id="RTELEGS"><label>LEGS:</label><br>
+		<label2><input type="checkbox" name="rteLegsSt" value="no remarkable DCAP-BTLS" checked />no remarkable DCAP-BTLS</label2><br>
+		<label2><input type="checkbox" name="rteLegsSt" value="CSM's present and equal bilaterally" checked />CSM's present and equal bilaterally</label2><br>
+		<label2><input type="checkbox" name="rteLegsSt" value="DCAP-BTLS of note including XXX" />DCAP-BTLS of note including XXX</label2><br>
+		<label2><input type="checkbox" name="rteLegsSt" value="CSM's not {present, adequate} in XXX leg" />CSM's not {present, adequate} in XXX leg</label2><br>
+	<br><br>
+	</form>
+
+	<!-- RTE Arms -->
+	<form action="#" method="post" class="RTEARMS" id="RTEARMS"><label>ARMS:</label><br>
+		<label2><input type="checkbox" name="rteArmssSt" value="no remarkable DCAP-BTLS" checked />no remarkable DCAP-BTLS</label2><br>
+		<label2><input type="checkbox" name="rteArmsSt" value="CSM's present and equal bilaterally" checked />CSM's present and equal bilaterally</label2><br>
+		<label2><input type="checkbox" name="rteArmsSt" value="DCAP-BTLS of note including XXX" />DCAP-BTLS of note including XXX</label2><br>
+		<label2><input type="checkbox" name="rteArmsSt" value="CSM's not {present, adequate} in XXX arm" />CSM's not {present, adequate} in XXX arm</label2><br>
+	<br><br>
+	</form>
+
+</div> <!-- rte_sub -->
+</fieldset>
 
 		
 	<!-- Trauma Team Activation, Paramedic intercept, ALS call -->
@@ -308,8 +381,11 @@ What location...<br></br>
 		pt to the back of the ambulance -->
 
 
-</div> <!-- traumasub_call -->
-</fieldset>
+<!-- C-spine precautions -->
+<p><form action="#" method="post" class="cspineAssess" id="cspineAssess">Advanced Spinal Assessment<br></br>
+	<label><input type="radio" name="cspineSt" value="" checked />N.A.</label><br>
+	<label><input type="radio" name="cspineSt" value="ASAN" />Advanced Spinal Assessment <gr>NEGATIVE</gr> FINDINGS</label><br>
+	<label><input type="radio" name="cspineSt" value="ASAP" />Advanced Spinal Assessment <rd>POSITIVE</rd> FINDINGS</label><br>
 <br><br>
 </form>
 
@@ -454,7 +530,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 		<div id="dpeears_sub">
 	</form>
 			<form action="#" method="post" class="dpeearsSec" id="dpeearsSec">Select statements about ears<br></br>
-				<label><input type="checkbox" name="earsst" value="" checked /><span title="">N.A.</span></label><br>
+				<label><input type="checkbox" name="earsst" value="" checked/><span title="">N.A.</span></label><br>
 				<label><input type="checkbox" name="earsst" value="Ears intact with no cartilage damage." /><span title="">Ears intact with no cartilage damage.</span></label><br>
 				<label><input type="checkbox" name="earsst" value="Patient able to hear sounds bilaterally." /><span title="">Patient able to hear sounds bilaterally.</span></label><br>
 				<label><input type="checkbox" name="earsst" value="No otorrhea including blood or CSF." /><span title="Otorrhea:  a discharge from the external ear.">No otorrhea including blood or CSF.</span></label><br>
@@ -626,13 +702,15 @@ Other field automatically filled in with primary care physician & ER Doctor XXX 
 // This function runs when the page first loads
 //
 function PgLoadFunc() {
-	toggleSub('HtoT', 'HtoT_sub');
+	// History
 	toggleSub('traumacall', 'traumacall_sub');
 	
 	toggleSub('medicalcall', 'medicalcall_sub');
-	
-	// Assessment
+
 	toggleSub('rte', 'rte_sub');
+
+	// Assessment
+	toggleSub('HtoT', 'HtoT_sub');
 		toggleSub('dpehead', 'dpehead_sub');
 		toggleSub('dpeeyes', 'dpeeyes_sub');
 		toggleSub('dpeears', 'dpeears_sub');
@@ -740,6 +818,19 @@ function toggleSub(box, id) {
     }
 }
 
+//
+// called onclick of checkbox
+//
+function toggleSubOff(box, id) {
+    // get reference to related content to display/hide
+    var el = document.getElementById(id);
+    
+    if ( box.checked ) {
+        el.style.display = 'none';
+    } else {
+        el.style.display = 'block';
+    }
+}
 
 //
 // GetOptions
@@ -807,7 +898,22 @@ function getOption() {
 		ptFound = ptFound + foundlying + foundlyingon;
 	var location = getRadioVal(document.getElementById("H003"), "location");
 	ptFound = ptFound + " in the " + location + ".";
-	
+
+	// cspine
+	var cspineManual = getRadioVal(document.getElementById("cspineManual"), "cspineInit");
+	var cspine = sp2 + cspineManual;
+
+
+	// Advanced Spinal Assessment
+	var cspineAssess = getRadioVal(document.getElementById("cspineAssess"), "cspineSt");
+	switch (cspineAssess) {
+		case "ASAN":
+			cspineAssess = sp2 + "Pt was negative on Advanced Spinal Assessment as they were older than 9, calm and cooperative and did not have AMS.  Pt was not under the influence of drugs or alcohol, suffering from an accute stress reaction or otherwise distracted by injuries to themselves or others, and had no barriers to communication.  Pt did not exhibit spinal pain or tenderness upon palpation and had no step-offs or deformaties the length of the palpable spine.  Pt had no paresthesia in extremities and had full and symmetrical motor strength and sensation in all extremities.  Pt had full cervical flexion, extension and rotation without pain and did not require any physical assistence.";
+			break;
+		case "ASAP":
+			cspineAssess = sp2 + "Pt was positive on Advanced Spinal Assessment as they were {under 10 YO, excited and uncooperative, exhibiting AMS, under the influence of drugs or alcohol, suffering from an accute stress reaction, distracted by injuries to themselves or others, had barriers to communication.}  Pt exhibited {spinal pain or tenderness upon palpation, palpable step-offs or deformaties, paresthesia in XXX extremities, only partial and/or asymmetrical motor strength and sensation in XXX extremities, only partial cervical flexion, extension and rotation with pain, required physical assistence including XXX.}";
+	}
+
 	
 	// PTOA
 	var PTA = getRadioVal(document.getElementById("H100"), "PTA");
@@ -817,7 +923,7 @@ function getOption() {
 		var PTOA = "";
 	}
 	
-	History = hist1 + UOA + metonscene + sp2 + ptFound + PTOA + newP3;
+	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + cspineAssess + PTOA + newP3;
 
 	// ************************************************************************
 	// ASSESSMENT
@@ -832,10 +938,10 @@ function getOption() {
 	EYES = EYES + getCheckDataConcat(document.getElementById("dpeeyesSec"), "eyesst") + newL;
 	var EARS = "EARS:";
 	var EARstrings = getCheckDataConcat(document.getElementById("dpeearsSec"), "earsst");
-	if (EARstrings != "") {
+	if (EARstrings.length != 11) { // Not sure why but value="" is strlen == 11
 		EARS = EARS + EARstrings + newL;
 	} else {
-		EARS = "";
+		EARS = "";	// if there were no ear strings selected then null out EARS
 	}
 	
 	var BODY = HEAD + EYES + EARS;
