@@ -222,7 +222,7 @@ What location...<br></br>
 </div> <!-- traumasub_call -->
 </fieldset>
 <br><br>
-</form>
+
 
 
 	<!-- Might ditch the "Click if this was a trauma call" above 
@@ -304,58 +304,66 @@ What location...<br></br>
 
 <!-- RTE -->
 <form action="#" method="post" class="RTE" id="RTE">
-<p><input type="checkbox" onclick="toggleSub(this, 'rte_sub')" name="rteExam" id="rteExam" value="1" />Click if a Rapid Trauma Exam was done</p>		
+<p><input type="checkbox" onclick="toggleSub(this, 'rte_sub')" name="rteExam" id="rteExam" value="1" />Click if a Rapid Trauma Exam was done</p>
+<p><input type="checkbox" onclick="toggleSub(this, 'rte_sub')" name="rteExam" id="rteExam" value="abc" />Click if a Rapid Trauma Exam was done</p>		
 </form>
 <fieldset>
 <div id="rte_sub">
 
 	<!-- RTE HEAD -->
 	<form action="#" method="post" class="RTEHEAD" id="RTEHEAD"><label>HEAD:</label><br>
-		<label2><input type="checkbox" name="rteheadst" value="Head NC/AT." checked />Head NC/AT.</label2><br>
-		<label2><input type="checkbox" name="rteheadst" value="Life threatening injuries to the head including XXX." />Life threatening injuries to the head including XXX.</label2><br>
-		<label2><input type="checkbox" name="rteheadst" value="Secondary injuries to the head noted including XXX." />Secondary injuries to the head noted including XXX.</label2><br>
+		<label2><input type="checkbox" name="rteheadst" value="NC/AT" />NC/AT</label2><br>
+		<label2><input type="checkbox" name="rteheadst" value="life threatening injuries to the head including XXX" />life threatening injuries to the head including XXX</label2><br>
+		<label2><input type="checkbox" name="rteheadst" value="secondary injuries to the head noted including XXX" />secondary injuries to the head noted including XXX</label2><br>
 	<br><br>
 	</form>
 
 	<!-- RTE NECK -->
 	<form action="#" method="post" class="RTENECK" id="RTENECK"><label>NECK:</label><br>
-		<label2><input type="checkbox" name="rteneckst" value="No tracheal deviation, excessive JVD or step-offs present." checked />No tracheal deviation, excessive JVD or step-offs present.</label2><br>
-		<label2><input type="checkbox" name="rteneckst" value="Tracheal deviation to the XXX side." />Tracheal deviation to the XXX side.</label2><br>
-		<label2><input type="checkbox" name="rteneckst" value="Excessive JVD." />Excessive JVD.</label2><br>
-		<label2><input type="checkbox" name="rteneckst" value="Step-offs present." />Step-offs present.</label2><br>
-		<label2><input type="checkbox" name="rteneckst" value="Cervical collar applied." checked />Cervical collar applied.</label2><br>
+		<label2><input type="checkbox" name="rteneckst" value="no tracheal deviation" />no tracheal deviation</label2><br>
+		<label2><input type="checkbox" name="rteneckst" value="no excessive JVD" />no excessive JVD</label2><br>
+		<label2><input type="checkbox" name="rteneckst" value="no step-offs" />no step-offs</label2><br>
+		<label2><input type="checkbox" name="rteneckst" value="tracheal deviation to the XXX side" />tracheal deviation to the XXX side</label2><br>
+		<label2><input type="checkbox" name="rteneckst" value="excessive JVD" />excessive JVD</label2><br>
+		<label2><input type="checkbox" name="rteneckst" value="step-offs present" />step-offs present</label2><br>
+		<label2><input type="checkbox" name="rteneckst" value="cervical collar applied" />cervical collar applied</label2><br>
 	<br><br>
 	</form>
 
 	<!-- RTE CHEST -->
 	<form action="#" method="post" class="RTECHEST" id="RTECHEST"><label>CHEST:</label><br>
-		<label2><input type="checkbox" name="rtechestst" value="No punctures, flail chest or crepitice present." checked />No punctures, flail chest or crepitice present.</label2><br>
-		<label2><input type="checkbox" name="rtechestst" value="Flail chest to the XXX side including XXX ribs." />Flail chest to the XXX side including XXX ribs.</label2><br>
-		<label2><input type="checkbox" name="rtechestst" value="Crepitice to the XXX area." />Crepitice to the XXX area.</label2><br>
+		<label2><input type="checkbox" name="rtechestst" value="no punctures" />no punctures</label2><br>
+		<label2><input type="checkbox" name="rtechestst" value="no flail chest" />no flail chest</label2><br>
+		<label2><input type="checkbox" name="rtechestst" value="no crepitice" />no crepitice</label2><br>
+		<label2><input type="checkbox" name="rtechestst" value="puncture to the XXX side" />puncture to the XXX side</label2><br>
+		<label2><input type="checkbox" name="rtechestst" value="flail chest to the XXX side including XXX ribs" />flail chest to the XXX side including XXX ribs</label2><br>
+		<label2><input type="checkbox" name="rtechestst" value="crepitice to the XXX area" />crepitice to the XXX area</label2><br>
 	<br><br>
 	</form>
 
 	<!-- RTE Abdomen -->
 	<form action="#" method="post" class="RTEABS" id="RTEABS"><label>ABDOMEN:</label><br>
-		<label2><input type="checkbox" name="rteAbsSt" value="No guarding, sensitivity, pulsating masses or rigidity." checked />No guarding, sensitivity, pulsating masses or rigidity.</label2><br>
-		<label2><input type="checkbox" name="rteAbsSt" value="{Guarding, Sensitivity} to the XXX quadrant." />{Guarding, Sensitivity} to the XXX quadrant.</label2><br>
-		<label2><input type="checkbox" name="rteAbsSt" value="Pulsating mass in the XXX quadrant." />Pulsating mass in the XXX quadrant.</label2><br>
-		<label2><input type="checkbox" name="rteAbsSt" value="Rigidity in the XXX quadrant." />Rigidity in the XXX quadrant.</label2><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="no guarding or sensitivity" />no guarding or sensitivity</label2><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="no pulsating masses" />no pulsating masses</label2><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="no rigidity" />no rigidity</label2><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="{guarding, sensitivity} to the XXX quadrant." />{guarding, sensitivity} to the XXX quadrant</label2><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="pulsating mass in the XXX quadrant" />pulsating mass in the XXX quadrant</label2><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="rigidity in the XXX quadrant" />rigidity in the XXX quadrant</label2><br>
 	<br><br>
 	</form>
 
 	<!-- RTE Hips -->
 	<form action="#" method="post" class="RTEHIPS" id="RTEHIPS"><label>HIPS:</label><br>
-		<label2><input type="checkbox" name="rteHipsSt" value="Hips pressed in adn down reveal no splaying or evidence of pain." checked />Hips pressed in and down reveal no splaying or evidence of pain.</label2><br>
-		<label2><input type="checkbox" name="rteHipsSt" value="Hips pressed in and down reveal excessive movement." />Hips pressed in and down reveal excessive movement.</label2><br>
-		<label2><input type="checkbox" name="rteHipsSt" value="Hips pressed in adn down show evidence of pain." />Hips pressed in and down show evidence of pain.</label2><br>
+		<label2><input type="checkbox" name="rteHipsSt" value="hips pressed in and down reveal no splaying or evidence of pain" />hips pressed in and down reveal no splaying or evidence of pain</label2><br>
+		<label2><input type="checkbox" name="rteHipsSt" value="hips pressed in and down reveal excessive movement" />hips pressed in and down reveal excessive movement</label2><br>
+		<label2><input type="checkbox" name="rteHipsSt" value="hips pressed in adn down show evidence of pain" />hips pressed in and down show evidence of pain</label2><br>
 	<br><br>
 	</form>
 
 	<!-- RTE Legs -->
 	<form action="#" method="post" class="RTELEGS" id="RTELEGS"><label>LEGS:</label><br>
-		<label2><input type="checkbox" name="rteLegsSt" value="no remarkable DCAP-BTLS" checked />no remarkable DCAP-BTLS</label2><br>
-		<label2><input type="checkbox" name="rteLegsSt" value="CSM's present and equal bilaterally" checked />CSM's present and equal bilaterally</label2><br>
+		<label2><input type="checkbox" name="rteLegsSt" value="no remarkable DCAP-BTLS" />no remarkable DCAP-BTLS</label2><br>
+		<label2><input type="checkbox" name="rteLegsSt" value="CSM's present and equal bilaterally" />CSM's present and equal bilaterally</label2><br>
 		<label2><input type="checkbox" name="rteLegsSt" value="DCAP-BTLS of note including XXX" />DCAP-BTLS of note including XXX</label2><br>
 		<label2><input type="checkbox" name="rteLegsSt" value="CSM's not {present, adequate} in XXX leg" />CSM's not {present, adequate} in XXX leg</label2><br>
 	<br><br>
@@ -363,10 +371,21 @@ What location...<br></br>
 
 	<!-- RTE Arms -->
 	<form action="#" method="post" class="RTEARMS" id="RTEARMS"><label>ARMS:</label><br>
-		<label2><input type="checkbox" name="rteArmssSt" value="no remarkable DCAP-BTLS" checked />no remarkable DCAP-BTLS</label2><br>
-		<label2><input type="checkbox" name="rteArmsSt" value="CSM's present and equal bilaterally" checked />CSM's present and equal bilaterally</label2><br>
+		<label2><input type="checkbox" name="rteArmssSt" value="no remarkable DCAP-BTLS" />no remarkable DCAP-BTLS</label2><br>
+		<label2><input type="checkbox" name="rteArmsSt" value="CSM's present and equal bilaterally" />CSM's present and equal bilaterally</label2><br>
 		<label2><input type="checkbox" name="rteArmsSt" value="DCAP-BTLS of note including XXX" />DCAP-BTLS of note including XXX</label2><br>
 		<label2><input type="checkbox" name="rteArmsSt" value="CSM's not {present, adequate} in XXX arm" />CSM's not {present, adequate} in XXX arm</label2><br>
+	<br><br>
+	</form>
+
+	<!-- RTE Back -->
+	<form action="#" method="post" class="RTEBACK" id="RTEBACK"><label>BACK:</label><br>
+		<label2><input type="checkbox" name="rteBackSt" value="no remarkable DCAP-BTLS" />no remarkable DCAP-BTLS</label2><br>
+		<label2><input type="checkbox" name="rteBackSt" value="no punctures" />no punctures</label2><br>
+		<label2><input type="checkbox" name="rteBackSt" value="no step-offs" />no step-offs</label2><br>
+		<label2><input type="checkbox" name="rteBackSt" value="DCAP-BTLS of note including XXX" />DCAP-BTLS of note including XXX</label2><br>
+		<label2><input type="checkbox" name="rteBackSt" value="punctures to the XXX side" />punctures to the XXX side</label2><br>
+		<label2><input type="checkbox" name="rteBackSt" value="step-offs in the area of XXX" />step-offs in the area of XXX</label2><br>
 	<br><br>
 	</form>
 
@@ -748,9 +767,10 @@ function getCheckData(form, name) {
 	// get list of radio buttons with specified name
     var cboxes = form.elements[name];
 
+	console.log("getCheckData: form = %s, name = %s, cboxes.length = %s", form, name, cboxes.length);
 	// Find out how many checkboxes are checked:
 	for (var j = 0, len = cboxes.length; j < len; j++) {
-		// console.log("j = ", j);
+		console.log("j = ", j);
         if ( cboxes[j].checked ) { // check box checked?
 			totalchecked++;
 		}
@@ -758,6 +778,7 @@ function getCheckData(form, name) {
 
     // loop through list of check boxes
     for (var i = 0, len = cboxes.length; i < len; i++) {
+		console.log("i = ", i);
         if ( cboxes[i].checked ) { // check box checked?
 			if (timesthrough > 0) {
 				join = ", ";
@@ -766,6 +787,8 @@ function getCheckData(form, name) {
 				join = " and ";
 			}
             val = val + join + cboxes[i].value; // if so, add its value in val
+			console.log("val = ", val);
+			console.log("val length = ", val.length);
 			timesthrough++;
         }
     }
@@ -899,10 +922,23 @@ function getOption() {
 	var location = getRadioVal(document.getElementById("H003"), "location");
 	ptFound = ptFound + " in the " + location + ".";
 
-	// cspine
+	// Scene size-up
+	
+	// cspine manual stabilization
 	var cspineManual = getRadioVal(document.getElementById("cspineManual"), "cspineInit");
 	var cspine = sp2 + cspineManual;
 
+	// AVPU
+
+	// Airway
+	
+	// Breathing
+	
+	// Circulation
+
+	// RTE
+	var RTEstr = getCheckData(document.getElementById("RTE"), "rteExam");
+	var RTELen = RTEstr.length;
 
 	// Advanced Spinal Assessment
 	var cspineAssess = getRadioVal(document.getElementById("cspineAssess"), "cspineSt");
@@ -923,7 +959,7 @@ function getOption() {
 		var PTOA = "";
 	}
 	
-	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + cspineAssess + PTOA + newP3;
+	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + cspineAssess + PTOA + newP3 + RTEstr + sp2 + RTELen;
 
 	// ************************************************************************
 	// ASSESSMENT
