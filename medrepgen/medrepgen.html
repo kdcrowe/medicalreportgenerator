@@ -264,28 +264,28 @@ What location...<br></br>
 
 	<!-- AVPU - Alert, Verbal, Painful, Unconscious -->
 	<form action="#" method="post" class="traumaAVPU" id="traumaAVPU">What was patients alertness level?<br></br>
-		<label><input type="radio" name="avpu" value="fully alert and oriented to situation." checked />fully alert and oriented to situation</label><br>
-		<label><input type="radio" name="avpu" value="alert but disoriented." />alert but disoriented</label><br>
-		<label><input type="radio" name="avpu" value="verbally responsive." />verbally responsive</label><br>
-		<label><input type="radio" name="avpu" value="responsive to painful stimuli." />responsive to painful stimuli</label><br>
-		<label><input type="radio" name="avpu" value="unresponsive." />unresponsive</label><br>
-		<label><input type="radio" name="avpu" value="{patients AVPU level}." />Other</label>
+		<label><input type="radio" name="avpust" value="fully alert and oriented to situation." />fully alert and oriented to situation</label><br>
+		<label><input type="radio" name="avpust" value="alert but disoriented." />alert but disoriented</label><br>
+		<label><input type="radio" name="avpust" value="verbally responsive." />verbally responsive</label><br>
+		<label><input type="radio" name="avpust" value="responsive to painful stimuli." />responsive to painful stimuli</label><br>
+		<label><input type="radio" name="avpust" value="unresponsive to painful stimuli." />unresponsive to painful stimuli</label><br>
+		<label><input type="radio" name="avpust" value="{patients AVPU level}." />Other</label>
 		<br><br>
 	</form>
 
 
 	<!-- Airway - visually patent, interventions:  OPA, NPA, suction -->
 	<form action="#" method="post" class="traumaAirway" id="traumaAirway">Airway status and interventions, select all that apply.<br></br>
-		<label><input type="checkbox" name="airway" value="airway is patent" checked />airway is patent</label><br>
-		<label><input type="checkbox" name="airway" value="airway is obviously patent due to pt {talking, mumbling, crying}" />airway is obviously patent due to pt {talking, mumbling, crying}</label><br>
-		<label><input type="checkbox" name="airway" value="Opened pt's airway with head tilt/chin lift" />Opened airway with head tilt/chin lift</label><br>
-		<label><input type="checkbox" name="airway" value="Opened airway with modified jaw thrust" />opened airway with modified jaw-thrust</label><br>
-		<label><input type="checkbox" name="airway" value="airway is not patent, suctioned airway to remove {teeth, blood, vomit, other}" />airway is not patent, suctioned airway</label><br>
-		<label><input type="checkbox" name="airway" value="inserted an opa, pt accepted" />inserted an opa, pt accepted</label><br>
-		<label><input type="checkbox" name="airway" value="inserted an opa, pt did not accept" />inserted an opa, pt did not accept</label><br>
-		<label><input type="checkbox" name="airway" value="inserted an npa, pt accepted" />inserted an npa, pt accepted</label><br>
-		<label><input type="checkbox" name="airway" value="inserted an npa, pt did not accept" />inserted an npa, pt did not accept</label><br>
-		<label><input type="checkbox" name="airway" value="Did the following XXX procedures to clear and keep the pt's airway open." />Other</label>
+		<label><input type="checkbox" name="airwayst" value="airway is patent" />airway is patent</label><br>
+		<label><input type="checkbox" name="airwayst" value="airway is obviously patent due to pt {talking, mumbling, crying}" />airway is obviously patent due to pt {talking, mumbling, crying}</label><br>
+		<label><input type="checkbox" name="airwayst" value="opened pt's airway with head tilt/chin lift" />opened airway with head tilt/chin lift</label><br>
+		<label><input type="checkbox" name="airwayst" value="opened airway with modified jaw thrust" />opened airway with modified jaw-thrust</label><br>
+		<label><input type="checkbox" name="airwayst" value="airway is not patent, suctioned airway to remove {teeth, blood, vomit, other}" />airway is not patent, suctioned airway</label><br>
+		<label><input type="checkbox" name="airwayst" value="inserted an opa, pt accepted" />inserted an opa, pt accepted</label><br>
+		<label><input type="checkbox" name="airwayst" value="inserted an opa, pt did not accept" />inserted an opa, pt did not accept</label><br>
+		<label><input type="checkbox" name="airwayst" value="inserted an npa, pt accepted" />inserted an npa, pt accepted</label><br>
+		<label><input type="checkbox" name="airwayst" value="inserted an npa, pt did not accept" />inserted an npa, pt did not accept</label><br>
+		<label><input type="checkbox" name="airwayst" value="Did the following XXX procedures to clear and keep the pt's airway open." />Other</label>
 		<br><br>
 	</form>
 
@@ -294,6 +294,20 @@ What location...<br></br>
 					for life threatening injuries, interventions:  supplemental
 					O2, BVM, occlusive dressing, padded flail chest, etc 
 					Need to note:  rate, rhythm & quality! -->
+	<form action="#" method="post" class="Breathing" id="Breathing">Breathing status and interventions, select all that apply.<br></br>
+		<label><input type="checkbox" name="breathSt" value="breathing is of acceptable rate (XXX BPM), rhythm, quality and is equal bilaterally" />breathing is of acceptable rate (XXX BPM), rhythm, quality and is equal bilaterally</label><br>
+		<label><input type="checkbox" name="breathSt" value="rate is acceptable at XXX BPM" />rate is acceptable at XXX BPM</label><br>
+		<label><input type="checkbox" name="breathSt" value="rate is unacceptable at XXX BPM" />rate is unacceptable at XXX BPM</label><br>
+		<label><input type="checkbox" name="breathSt" value="rhythm is regular" />rhythm is regular</label><br>
+		<label><input type="checkbox" name="breathSt" value="rhythm is irregular" />rhythm is irregular</label><br>
+		<label><input type="checkbox" name="breathSt" value="quality of breathing is of acceptable depth and equal bilaterally" />quality of breathing is of acceptable depth and equal bilaterally</label><br>
+		<label><input type="checkbox" name="breathSt" value="quality of breathing is {of unacceptable depth, unequal bilaterally}" />quality of breathing is {of unacceptable depth, unequal bilaterally}</label><br>
+		<label><input type="checkbox" name="breathSt" value="pt given supplemental O2 at a rate of XXX LPM" />pt given supplemental O2 at a rate of XXX LPM</label><br>
+		<label><input type="checkbox" name="breathSt" value="O2 administration via {nasal cannula, non-rebreather}" />O2 administration via {nasal cannula, non-rebreather}</label><br>
+		<label><input type="checkbox" name="breathSt" value="O2 administration and artificial respirations for pt via BVM" />O2 administration and artificial respirations for pt via BVM</label><br>
+		<label><input type="checkbox" name="breathSt" value="Did the following XXX procedures to assess and fix pt's breathing" />Other</label>
+		<br><br>
+	</form>
 
 
 	<!-- Circulation - exsanguination, interventions:  pressure, tourniquet,
@@ -303,9 +317,9 @@ What location...<br></br>
 
 
 <!-- RTE -->
-<form action="#" method="post" class="RTE" id="RTE">
-<p><input type="checkbox" onclick="toggleSub(this, 'rte_sub')" name="rteExam" id="rteExam" value="1" />Click if a Rapid Trauma Exam was done</p>
-<p><input type="checkbox" onclick="toggleSub(this, 'rte_sub')" name="rteExam" id="rteExam" value="abc" />Click if a Rapid Trauma Exam was done</p>		
+<form action="#" method="post" class="RTE" id="RTE">Rapid Trauma Exam done?<br>
+<input type="radio" onclick="toggleSub(this, 'rte_sub')" name="rteExam" id="rteExam" value="Yes" />Yes<br>
+<input type="radio" onclick="toggleSubOff(this, 'rte_sub')" name="rteExam" id="rteExam" value="No" checked />No<br>
 </form>
 <fieldset>
 <div id="rte_sub">
@@ -346,7 +360,7 @@ What location...<br></br>
 		<label2><input type="checkbox" name="rteAbsSt" value="no guarding or sensitivity" />no guarding or sensitivity</label2><br>
 		<label2><input type="checkbox" name="rteAbsSt" value="no pulsating masses" />no pulsating masses</label2><br>
 		<label2><input type="checkbox" name="rteAbsSt" value="no rigidity" />no rigidity</label2><br>
-		<label2><input type="checkbox" name="rteAbsSt" value="{guarding, sensitivity} to the XXX quadrant." />{guarding, sensitivity} to the XXX quadrant</label2><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="{guarding, sensitivity} to the XXX quadrant" />{guarding, sensitivity} to the XXX quadrant</label2><br>
 		<label2><input type="checkbox" name="rteAbsSt" value="pulsating mass in the XXX quadrant" />pulsating mass in the XXX quadrant</label2><br>
 		<label2><input type="checkbox" name="rteAbsSt" value="rigidity in the XXX quadrant" />rigidity in the XXX quadrant</label2><br>
 	<br><br>
@@ -797,6 +811,45 @@ function getCheckData(form, name) {
 
 
 //
+// Get Checkbox data - comma separate items only, period at end.
+//
+function getCheckDataConcatCO(form, name) {
+    var val = "";
+    var join = "";
+	var len = 0;
+	var totalchecked = 0;
+	var timesthrough = 0;
+	// get list of radio buttons with specified name
+    var cboxes = form.elements[name];
+
+	console.log("getCheckData: form = %s, name = %s, cboxes.length = %s", form, name, cboxes.length);
+	// Find out how many checkboxes are checked:
+	for (var j = 0, len = cboxes.length; j < len; j++) {
+		console.log("j = ", j);
+        if ( cboxes[j].checked ) { // check box checked?
+			totalchecked++;
+		}
+	}
+
+    // loop through list of check boxes
+    for (var i = 0, len = cboxes.length; i < len; i++) {
+		console.log("i = ", i);
+        if ( cboxes[i].checked ) { // check box checked?
+			if (timesthrough > 0) {
+				join = ", ";
+			}
+            val = val + join + cboxes[i].value; // if so, add its value in val
+			console.log("val = ", val);
+			console.log("val length = ", val.length);
+			timesthrough++;
+        }
+    }
+	val += ".";
+    return val; // return value of concatenated strings or undefined if none checked
+}
+
+
+//
 // Get Checkbox data - 2 spaces between each item, no "and" before last item.
 //
 function getCheckDataConcat(form, name) {
@@ -929,17 +982,39 @@ function getOption() {
 	var cspine = sp2 + cspineManual;
 
 	// AVPU
+	var AVPU = getRadioVal(document.getElementById("traumaAVPU"), "avpust");
+	AVPU = sp2 + "Pt was " + AVPU;
+
 
 	// Airway
+	var AIRWAY = getCheckDataConcatCO(document.getElementById("traumaAirway"), "airwayst");
+	AIRWAY = sp2 + "Airway: " + AIRWAY;
 	
+
 	// Breathing
-	
+	var BREATHING = getCheckDataConcatCO(document.getElementById("Breathing"), "breathSt");
+	BREATHING = sp2 + "Breathing: " + BREATHING;
+
+
 	// Circulation
 
-	// RTE
-	var RTEstr = getCheckData(document.getElementById("RTE"), "rteExam");
-	var RTELen = RTEstr.length;
 
+	// RTE
+	var RTEPerformed = getRadioVal(document.getElementById("RTE"), "rteExam");
+	if (RTEPerformed == "Yes") {
+		var RTEstr = newP + "Rapid Trauma Exam:" + newL;
+		RTEstr += "HEAD:" + sp2 + getCheckDataConcatCO(document.getElementById("RTEHEAD"), "rteheadst") + newL;
+		RTEstr += "NECK:" + sp2 + getCheckDataConcatCO(document.getElementById("RTENECK"), "rteneckst") + newL;
+		RTEstr += "CHEST:" + sp2 + getCheckDataConcatCO(document.getElementById("RTECHEST"), "rtechestst") + newL;
+		RTEstr += "ABDOMEN:" + sp2 + getCheckDataConcatCO(document.getElementById("RTEABS"), "rteAbsSt") + newL;
+		RTEstr += "HIPS:" + sp2 + getCheckDataConcatCO(document.getElementById("RTEHIPS"), "rteHipsSt") + newL;
+		RTEstr += "LEGS:" + sp2 + getCheckDataConcatCO(document.getElementById("RTELEGS"), "rteLegsSt") + newL;
+		RTEstr += "ARMS:" + sp2 + getCheckDataConcatCO(document.getElementById("RTEARMS"), "rteArmsSt") + newL;
+		RTEstr += "BACK:" + sp2 + getCheckDataConcatCO(document.getElementById("RTEBACK"), "rteBackSt") + newL;
+	} else {
+		var RTEstr = "";
+	}
+	
 	// Advanced Spinal Assessment
 	var cspineAssess = getRadioVal(document.getElementById("cspineAssess"), "cspineSt");
 	switch (cspineAssess) {
@@ -959,7 +1034,7 @@ function getOption() {
 		var PTOA = "";
 	}
 	
-	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + cspineAssess + PTOA + newP3 + RTEstr + sp2 + RTELen;
+	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + AVPU + AIRWAY + BREATHING + RTEstr + cspineAssess + PTOA + newP3;
 
 	// ************************************************************************
 	// ASSESSMENT
