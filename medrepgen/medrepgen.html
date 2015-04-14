@@ -150,6 +150,7 @@ How did you get the chief complaint?
 Who did you meet on scene?<br></br>
 <label><input type="checkbox" name="meet" value="pt" checked />the patient</label>
 <label><input type="checkbox" name="meet" value="pt's family" />patients family</label>
+<label><input type="checkbox" name="meet" value="Doctor XXX" />Doctor</label>
 <label><input type="checkbox" name="meet" value="MPD" />Milford Police</label>
 <label><input type="checkbox" name="meet" value="MFD" />Milford Fire</label>
 <label><input type="checkbox" name="meet" value="bystanders" />bystanders</label>
@@ -174,6 +175,7 @@ If <u>seated</u>, on what...<br></br>
 <label><input type="radio" name="foundseat" value=" on a chair" />chair</label>
 <label><input type="radio" name="foundseat" value=" on the floor" />floor</label>
 <label><input type="radio" name="foundseat" value=" on the ground" />ground</label>
+<label><input type="radio" name="foundseat" value=" on the hospital bed" />hospital bed</label>
 <label><input type="radio" name="foundseat" value=" on XXX" />other</label>
 <br><br>
 </form>
@@ -198,7 +200,8 @@ If <u>lying</u>, on what...<br></br>
 <label><input type="radio" name="foundlyingon" value=", on the floor" />floor</label>
 <label><input type="radio" name="foundlyingon" value=", on the ground" />ground</label>
 <label><input type="radio" name="foundlyingon" value=", on the stairs" />stairs</label>
-<label><input type="radio" name="foundlying" value=" on the XXX" />other</label>
+<label><input type="radio" name="foundlyingon" value=" on hospital bed" />hospital bed</label>
+<label><input type="radio" name="foundlyingon" value=" on the XXX" />other</label>
 <br><br>
 </form>
 
@@ -208,6 +211,7 @@ What location...<br></br>
 <label><input type="radio" name="location" value=" bedroom" />bedroom</label>
 <label><input type="radio" name="location" value=" kitchen" />kitchen</label>
 <label><input type="radio" name="location" value=" bathroom" />bathroom</label>
+<label><input type="radio" name="location" value=" ER, in room XXX" />in hospital room</label>
 <label><input type="radio" name="location" value=" XXX" />other</label>
 <br><br>
 </form>
@@ -219,17 +223,16 @@ What location...<br></br>
 <fieldset>
 <div id="traumacall_sub">
 
-</div> <!-- traumasub_call -->
-</fieldset>
-<br><br>
-
-
-
-	<!-- Might ditch the "Click if this was a trauma call" above 
+	<!-- Might ditch this "Click if this was a trauma call"
 			OR, make it so clicking trauma gives options for trauma style calls
 			while clicking medical gives medical style call options?  
 			i.e. roll the "scene size-up (next section) into the "is this trauma"
 			or "is this medical" call flow? -->
+
+</div> <!-- traumasub_call -->
+</fieldset>
+<br><br>
+
 
 
 <!-- Scene Size Up - MVA (airbags, fluids), Fall (height, how fall was
@@ -578,10 +581,26 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 		</div> <!-- dpeears_sub -->
 
 
-
-			<form action="#" method="post" class="RTENOSE" id="RTENOSE">Select statements about nose<br></br>
+	<!-- NOSE -->
+	<form action="#" method="post" class="dpeNoseForm" id="dpeNoseForm">
+	<input type="checkbox" onclick="toggleSub(this, 'dpeNose_sub')" name="dpeNose" id="dpeNose" value="1" />NOSE, click to expand</p>
+		<div id="dpeNose_sub">
+	</form>
+			<form action="#" method="post" class="dpeNoseSec" id="dpeNoseSec">Select statements about nose<br></br>
+				<label><input type="checkbox" name="noseSt" value="" checked/><span title="">N.A.</span></label><br>
+				<label><input type="checkbox" name="noseSt" value="Nose intact with no deformities or soft tissue damage." /><span title="">Nose intact with no deformities or soft tissue damage.</span></label><br>
+				<label><input type="checkbox" name="noseSt" value="No pain or sensitivity to palpation around the sinus areas." /><span title="">No pain or sensitivity to palpation around the sinus areas.</span></label><br>
+				<label><input type="checkbox" name="noseSt" value="No crepitus or deviated septum." /><span title="Deviated septum:  sideways displacement of the wall between the nostrils">No crepitus or deviated septum.</span></label><br>
+				<label><input type="checkbox" name="noseSt" value="Mucus membranes are moist with no congestion, rhinorrhea or blockage to nares." /><span title="Rhinorrhea:  significant mucus fluid in nasal cavaity (runny nose);  Nares:  nostrils">Mucus membranes are moist with no congestion, rhinorrhea or blockage to nares.</span></label><br>
+			<label>INJURIES:</label><br>
+				<label><input type="checkbox" name="noseSt" value="Soft tissue damage to nose {and, or} deformaties including XXX." /><span title="">Soft tissue damage to nose {and, or} deformaties including XXX.</span></label><br>
+				<label><input type="checkbox" name="noseSt" value="{Pain, Sensitivity} to palpation around the sinus areas." /><span title="">{Pain, Sensitivity} to palpation around the sinus areas.</span></label><br>
+				<label><input type="checkbox" name="noseSt" value="{Crepitus, Deviated septum} apparent." /><span title="Deviated septum:  sideways displacement of the wall between the nostrils">{Crepitus, Deviated septum} apparent.</span></label><br>
+				<label><input type="checkbox" name="noseSt" value="{Congestion, Rhinorrhea, Blockage} to {nares, XXX nostril}." /><span title="Rhinorrhea:  significant mucus fluid in nasal cavity (runny nose);  Nares:  nostrils">{Congestion, Rhinorrhea, Blockage} to {nares, XXX nostril}.</span></label><br>
 			<br><br>
 			</form>
+		</div> <!-- dpeNose_sub -->
+		
 
 			<form action="#" method="post" class="RTEMOUTH" id="RTEMOUTH">Select statements about mouth<br></br>
 			<br><br>
@@ -747,6 +766,7 @@ function PgLoadFunc() {
 		toggleSub('dpehead', 'dpehead_sub');
 		toggleSub('dpeeyes', 'dpeeyes_sub');
 		toggleSub('dpeears', 'dpeears_sub');
+		toggleSub('dpeNose', 'dpeNose_sub');
 }
 
 
@@ -1054,8 +1074,14 @@ function getOption() {
 	} else {
 		EARS = "";	// if there were no ear strings selected then null out EARS
 	}
-	
-	var BODY = HEAD + EYES + EARS;
+	var NOSE = "NOSE:";
+	var NOSEstrings = getCheckDataConcat(document.getElementById("dpeNoseSec"), "noseSt");
+	if (NOSEstrings.length != 11) { // Not sure why but value="" is strlen == 11
+		NOSE = NOSE + NOSEstrings + newL;
+	} else {
+		NOSE = "";	// if there were no nose strings selected then null out NOSE
+	}
+	var BODY = HEAD + EYES + EARS + NOSE;
 
 	Assessment = asse1 + newP + DPE + BODY + newP3;
 
