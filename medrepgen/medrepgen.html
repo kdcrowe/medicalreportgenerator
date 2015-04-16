@@ -55,7 +55,6 @@ var randomNumber = Math.floor(Math.random()*textArray.length);
 
 audioElement.setAttribute('src', textArray[randomNumber]);
 
-
 -->
 
 
@@ -170,38 +169,38 @@ Patient was found...<br></br>
 
 <form action="#" method="post" class="H002a" id="H002a">
 If <u>seated</u>, on what...<br></br>
-<label><input type="radio" name="foundseat" value="" checked />&lt;blank&gt</label>
-<label><input type="radio" name="foundseat" value=" on couch" />couch</label>
-<label><input type="radio" name="foundseat" value=" on a chair" />chair</label>
-<label><input type="radio" name="foundseat" value=" on the floor" />floor</label>
-<label><input type="radio" name="foundseat" value=" on the ground" />ground</label>
-<label><input type="radio" name="foundseat" value=" on the hospital bed" />hospital bed</label>
-<label><input type="radio" name="foundseat" value=" on XXX" />other</label>
+<label><input type="radio" name="foundSeat" value="" checked />&lt;blank&gt</label>
+<label><input type="radio" name="foundSeat" value=" on couch" />couch</label>
+<label><input type="radio" name="foundSeat" value=" on a chair" />chair</label>
+<label><input type="radio" name="foundSeat" value=" on the floor" />floor</label>
+<label><input type="radio" name="foundSeat" value=" on the ground" />ground</label>
+<label><input type="radio" name="foundSeat" value=" on the hospital bed" />hospital bed</label>
+<label><input type="radio" name="foundSeat" value=" on XXX" />other</label>
 <br><br>
 </form>
 
 <form action="#" method="post" class="H002b" id="H002b">
 If <u>lying</u>, how...<br></br>
-<label><input type="radio" name="foundlying" value="" checked />&lt;blank&gt</label>
-<label><input type="radio" name="foundlying" value=", fowlers" />fowlers</label>
-<label><input type="radio" name="foundlying" value=", semi-fowlers" />semi-fowlers</label>
-<label><input type="radio" name="foundlying" value=", prone" />prone</label>
-<label><input type="radio" name="foundlying" value=", supine" />supine</label>
-<label><input type="radio" name="foundlying" value=", XXX lateral recumbent" />XXX lateral recumbent</label>
-<label><input type="radio" name="foundlying" value=" XXX" />other</label>
+<label><input type="radio" name="foundLying" value="" checked />&lt;blank&gt</label>
+<label><input type="radio" name="foundLying" value=", fowlers" />fowlers</label>
+<label><input type="radio" name="foundLying" value=", semi-fowlers" />semi-fowlers</label>
+<label><input type="radio" name="foundLying" value=", prone" />prone</label>
+<label><input type="radio" name="foundLying" value=", supine" />supine</label>
+<label><input type="radio" name="foundLying" value=", XXX lateral recumbent" />XXX lateral recumbent</label>
+<label><input type="radio" name="foundLying" value=" XXX" />other</label>
 <br><br>
 </form>
 
 <form action="#" method="post" class="H002c" id="H002c">
 If <u>lying</u>, on what...<br></br>
-<label><input type="radio" name="foundlyingon" value="" checked />&lt;blank&gt</label>
-<label><input type="radio" name="foundlyingon" value=", on a bed" />bed</label>
-<label><input type="radio" name="foundlyingon" value=", on the couch" />couch</label>
-<label><input type="radio" name="foundlyingon" value=", on the floor" />floor</label>
-<label><input type="radio" name="foundlyingon" value=", on the ground" />ground</label>
-<label><input type="radio" name="foundlyingon" value=", on the stairs" />stairs</label>
-<label><input type="radio" name="foundlyingon" value=" on hospital bed" />hospital bed</label>
-<label><input type="radio" name="foundlyingon" value=" on the XXX" />other</label>
+<label><input type="radio" name="foundLyingOn" value="" checked />&lt;blank&gt</label>
+<label><input type="radio" name="foundLyingOn" value=", on a bed" />bed</label>
+<label><input type="radio" name="foundLyingOn" value=", on the couch" />couch</label>
+<label><input type="radio" name="foundLyingOn" value=", on the floor" />floor</label>
+<label><input type="radio" name="foundLyingOn" value=", on the ground" />ground</label>
+<label><input type="radio" name="foundLyingOn" value=", on the stairs" />stairs</label>
+<label><input type="radio" name="foundLyingOn" value=" on hospital bed" />hospital bed</label>
+<label><input type="radio" name="foundLyingOn" value=" on the XXX" />other</label>
 <br><br>
 </form>
 
@@ -218,10 +217,10 @@ What location...<br></br>
 
 
 <form action="#" method="post" class="H004" id="H004">
-<p><input type="checkbox" onclick="toggleSub(this, 'traumacall_sub')" name="traumacall" id="traumacall" value="1" />Click if this was a trauma call</p>
+<p><input type="checkbox" onclick="toggleSub(this, 'traumaCall_sub')" name="traumaCall" id="traumaCall" value="1" />Click if this was a trauma call</p>
 </form>
 <fieldset>
-<div id="traumacall_sub">
+<div id="traumaCall_sub">
 
 	<!-- Might ditch this "Click if this was a trauma call"
 			OR, make it so clicking trauma gives options for trauma style calls
@@ -249,15 +248,14 @@ What location...<br></br>
 
 <!-- Manual C-spine or not necessary?  If not, why? -->
 <form action="#" method="post" class="cspineManual" id="cspineManual">C-spine manually stabilized?<br></br>
-	<label><input type="radio"name="cspineInit" value="Manual c-spine stabilization of the pt initiated by XXX." />Yes</label><br>
-	<label><input type="radio" name="cspineInit" value="" checked />No</label><br>
+	<label><input type="radio"name="cspineInitSt" value="Manual c-spine stabilization of the pt initiated by XXX." />Yes</label><br>
+	<label><input type="radio" name="cspineInitSt" value="" checked />No</label><br>
 <br><br>
 </form>
 
 
 
-
-	<!-- Maybe an AVPU pre-section?  "Approaching the pt I asked their name (or how they were doing) and the pt responded appropriately with their name (or complaint.)  This would allow a nice flow into the actual AVPU - this pre-section might include:  (select all that apply)
+	<!-- Maybe a pre-AVPU section?  "Approaching the pt I asked their name (or how they were doing) and the pt responded appropriately with their name (or complaint.)  This would allow a nice flow into the actual AVPU - this pre-section might include:  (select all that apply)
 		Asked pt their name & complaint and pt responded with their name and the chief complaint.
 		Asked pt their name & complaint and pt (opened eyes, spoke but did not answer question appropriately, mumbled incoherently}.
 		Asked pt their name & complaint and pt responded appropriately and pt did not respond.
@@ -267,28 +265,28 @@ What location...<br></br>
 
 	<!-- AVPU - Alert, Verbal, Painful, Unconscious -->
 	<form action="#" method="post" class="traumaAVPU" id="traumaAVPU">What was patients alertness level?<br></br>
-		<label><input type="radio" name="avpust" value="fully alert and oriented to situation." />fully alert and oriented to situation</label><br>
-		<label><input type="radio" name="avpust" value="alert but disoriented." />alert but disoriented</label><br>
-		<label><input type="radio" name="avpust" value="verbally responsive." />verbally responsive</label><br>
-		<label><input type="radio" name="avpust" value="responsive to painful stimuli." />responsive to painful stimuli</label><br>
-		<label><input type="radio" name="avpust" value="unresponsive to painful stimuli." />unresponsive to painful stimuli</label><br>
-		<label><input type="radio" name="avpust" value="{patients AVPU level}." />Other</label>
+		<label><input type="radio" name="avpuSt" value="fully alert and oriented to situation." />fully alert and oriented to situation</label><br>
+		<label><input type="radio" name="avpuSt" value="alert but disoriented." />alert but disoriented</label><br>
+		<label><input type="radio" name="avpuSt" value="verbally responsive." />verbally responsive</label><br>
+		<label><input type="radio" name="avpuSt" value="responsive to painful stimuli." />responsive to painful stimuli</label><br>
+		<label><input type="radio" name="avpuSt" value="unresponsive to painful stimuli." />unresponsive to painful stimuli</label><br>
+		<label><input type="radio" name="avpuSt" value="{patients AVPU level}." />Other</label>
 		<br><br>
 	</form>
 
 
 	<!-- Airway - visually patent, interventions:  OPA, NPA, suction -->
 	<form action="#" method="post" class="traumaAirway" id="traumaAirway">Airway status and interventions, select all that apply.<br></br>
-		<label><input type="checkbox" name="airwayst" value="airway is patent" />airway is patent</label><br>
-		<label><input type="checkbox" name="airwayst" value="airway is obviously patent due to pt {talking, mumbling, crying}" />airway is obviously patent due to pt {talking, mumbling, crying}</label><br>
-		<label><input type="checkbox" name="airwayst" value="opened pt's airway with head tilt/chin lift" />opened airway with head tilt/chin lift</label><br>
-		<label><input type="checkbox" name="airwayst" value="opened airway with modified jaw thrust" />opened airway with modified jaw-thrust</label><br>
-		<label><input type="checkbox" name="airwayst" value="airway is not patent, suctioned airway to remove {teeth, blood, vomit, other}" />airway is not patent, suctioned airway</label><br>
-		<label><input type="checkbox" name="airwayst" value="inserted an opa, pt accepted" />inserted an opa, pt accepted</label><br>
-		<label><input type="checkbox" name="airwayst" value="inserted an opa, pt did not accept" />inserted an opa, pt did not accept</label><br>
-		<label><input type="checkbox" name="airwayst" value="inserted an npa, pt accepted" />inserted an npa, pt accepted</label><br>
-		<label><input type="checkbox" name="airwayst" value="inserted an npa, pt did not accept" />inserted an npa, pt did not accept</label><br>
-		<label><input type="checkbox" name="airwayst" value="Did the following XXX procedures to clear and keep the pt's airway open." />Other</label>
+		<label><input type="checkbox" name="airwaySt" value="airway is patent" />airway is patent</label><br>
+		<label><input type="checkbox" name="airwaySt" value="airway is obviously patent due to pt {talking, mumbling, crying}" />airway is obviously patent due to pt {talking, mumbling, crying}</label><br>
+		<label><input type="checkbox" name="airwaySt" value="opened pt's airway with head tilt/chin lift" />opened airway with head tilt/chin lift</label><br>
+		<label><input type="checkbox" name="airwaySt" value="opened airway with modified jaw thrust" />opened airway with modified jaw-thrust</label><br>
+		<label><input type="checkbox" name="airwaySt" value="airway is not patent, suctioned airway to remove {teeth, blood, vomit, other}" />airway is not patent, suctioned airway</label><br>
+		<label><input type="checkbox" name="airwaySt" value="inserted an opa, pt accepted" />inserted an opa, pt accepted</label><br>
+		<label><input type="checkbox" name="airwaySt" value="inserted an opa, pt did not accept" />inserted an opa, pt did not accept</label><br>
+		<label><input type="checkbox" name="airwaySt" value="inserted an npa, pt accepted" />inserted an npa, pt accepted</label><br>
+		<label><input type="checkbox" name="airwaySt" value="inserted an npa, pt did not accept" />inserted an npa, pt did not accept</label><br>
+		<label><input type="checkbox" name="airwaySt" value="Did the following XXX procedures to clear and keep the pt's airway open." />Other</label>
 		<br><br>
 	</form>
 
@@ -307,7 +305,7 @@ What location...<br></br>
 		<label><input type="checkbox" name="breathSt" value="quality of breathing is {of unacceptable depth, unequal bilaterally}" />quality of breathing is {of unacceptable depth, unequal bilaterally}</label><br>
 		<label><input type="checkbox" name="breathSt" value="pt given supplemental O2 at a rate of XXX LPM" />pt given supplemental O2 at a rate of XXX LPM</label><br>
 		<label><input type="checkbox" name="breathSt" value="O2 administration via {nasal cannula, non-rebreather}" />O2 administration via {nasal cannula, non-rebreather}</label><br>
-		<label><input type="checkbox" name="breathSt" value="O2 administration and artificial respirations for pt via BVM" />O2 administration and artificial respirations for pt via BVM</label><br>
+		<label><input type="checkbox" name="breathSt" value="O2 administration and artificial respirations for pt via BVM at a rate of XXX" />O2 administration and artificial respirations for pt via BVM at a rate of XXX</label><br>
 		<label><input type="checkbox" name="breathSt" value="Did the following XXX procedures to assess and fix pt's breathing" />Other</label>
 		<br><br>
 	</form>
@@ -316,7 +314,28 @@ What location...<br></br>
 	<!-- Circulation - exsanguination, interventions:  pressure, tourniquet,
 					etc
 					Need to note:  rate, rhythm & quality!
-					Also:  skin color, temp & condition! -->
+					Also:  skin color, temp & condition!
+					TODO - really need to break this out into multiple questions to	
+						better cover things like skin color, temp, condition, etc. -->
+	<form action="#" method="post" class="Circulation" id="Circulation">Circulation status and interventions, select all that apply.<br></br>
+		<label><input type="checkbox" name="circulationSt" value="measured at the {radial, carotid, femoral} artery" />measured at the {radial, carotid, femoral} artery</label><br>
+		<label><input type="checkbox" name="circulationSt" value="rate is XXX" />rate is XXX</label><br>
+		<label><input type="checkbox" name="circulationSt" value="rate is XXX" /><span title="Bradycardic: < 60;  Tachycardic: > 100;  Bounding: fast and (generally) strong or abrupt">{tachycardic, bradycardic, bounding}</span></label><br>
+		<label><input type="checkbox" name="circulationSt" value="rhythm is regular" />rhythm is regular</label><br>
+		<label><input type="checkbox" name="circulationSt" value="rhythm is irregular" />rhythm is irregular</label><br>
+		<label><input type="checkbox" name="circulationSt" value="pulse is {weak, normal, strong}" />pulse is {weak, normal, strong}</label><br>
+		<label><input type="checkbox" name="circulationSt" value="pulse is undetectable" /><span title="undetectable:  @carotid < 60 systolic, @femoral < 70 systolic, @radial < 80 systolic">pulse is undetectable</span></label><br>
+		<label><input type="checkbox" name="circulationSt" value="skin is {red, pink, pale, grey, flushed, cyanotic}" />skin is {red, pink, pale, grey, flushed, cyanotic}</label><br>
+		<label><input type="checkbox" name="circulationSt" value="{hot, warm, of normal temp, cool, cold}" />{hot, warm, of normal temp, cool, cold}</label><br>
+		<label><input type="checkbox" name="circulationSt" value="{dry, of normal moisture content, moist, clammy, damp, wet, diaphoretic}" />{dry, of normal moisture content, moist, clammy, damp, wet, diaphoretic}</label><br>
+		<label><input type="checkbox" name="circulationSt" value="capillary refill of the nailbed in XXX seconds" />capillary refill of the nailbed in XXX seconds</label><br>
+		<label><input type="checkbox" name="circulationSt" value="no exsanguination, gross bleeds or hemhorrage" />no exsanguination, gross bleeds or hemhorrage</label><br>
+		<label><input type="checkbox" name="circulationSt" value="gross bleed to the XXX area" />gross bleed to the XXX area</label><br>
+		<label><input type="checkbox" name="circulationSt" value="tourniquet applied to XXX {arm, leg}" />tourniquet applied to XXX {arm, leg}</label><br>
+		<label><input type="checkbox" name="circulationSt" value="direct pressure applied to control the bleeding" />direct pressure applied to control the bleeding</label><br>
+		<label><input type="checkbox" name="circulationSt" value="other bleeding noted & cared for via XXX" />other bleeding noted & cared for via XXX</label><br>
+		<br><br>
+	</form>
 
 
 <!-- RTE -->
@@ -329,32 +348,32 @@ What location...<br></br>
 
 	<!-- RTE HEAD -->
 	<form action="#" method="post" class="RTEHEAD" id="RTEHEAD"><label>HEAD:</label><br>
-		<label2><input type="checkbox" name="rteheadst" value="NC/AT" />NC/AT</label2><br>
-		<label2><input type="checkbox" name="rteheadst" value="life threatening injuries to the head including XXX" />life threatening injuries to the head including XXX</label2><br>
-		<label2><input type="checkbox" name="rteheadst" value="secondary injuries to the head noted including XXX" />secondary injuries to the head noted including XXX</label2><br>
+		<label2><input type="checkbox" name="rteHeadSt" value="NC/AT" />NC/AT</label2><br>
+		<label2><input type="checkbox" name="rteHeadSt" value="life threatening injuries to the head including XXX" />life threatening injuries to the head including XXX</label2><br>
+		<label2><input type="checkbox" name="rteHeadSt" value="secondary injuries to the head noted including XXX" />secondary injuries to the head noted including XXX</label2><br>
 	<br><br>
 	</form>
 
 	<!-- RTE NECK -->
 	<form action="#" method="post" class="RTENECK" id="RTENECK"><label>NECK:</label><br>
-		<label2><input type="checkbox" name="rteneckst" value="no tracheal deviation" />no tracheal deviation</label2><br>
-		<label2><input type="checkbox" name="rteneckst" value="no excessive JVD" />no excessive JVD</label2><br>
-		<label2><input type="checkbox" name="rteneckst" value="no step-offs" />no step-offs</label2><br>
-		<label2><input type="checkbox" name="rteneckst" value="tracheal deviation to the XXX side" />tracheal deviation to the XXX side</label2><br>
-		<label2><input type="checkbox" name="rteneckst" value="excessive JVD" />excessive JVD</label2><br>
-		<label2><input type="checkbox" name="rteneckst" value="step-offs present" />step-offs present</label2><br>
-		<label2><input type="checkbox" name="rteneckst" value="cervical collar applied" />cervical collar applied</label2><br>
+		<label2><input type="checkbox" name="rteNeckSt" value="no tracheal deviation" />no tracheal deviation</label2><br>
+		<label2><input type="checkbox" name="rteNeckSt" value="no excessive JVD" />no excessive JVD</label2><br>
+		<label2><input type="checkbox" name="rteNeckSt" value="no step-offs" />no step-offs</label2><br>
+		<label2><input type="checkbox" name="rteNeckSt" value="tracheal deviation to the XXX side" />tracheal deviation to the XXX side</label2><br>
+		<label2><input type="checkbox" name="rteNeckSt" value="excessive JVD" />excessive JVD</label2><br>
+		<label2><input type="checkbox" name="rteNeckSt" value="step-offs present" />step-offs present</label2><br>
+		<label2><input type="checkbox" name="rteNeckSt" value="cervical collar applied" />cervical collar applied</label2><br>
 	<br><br>
 	</form>
 
 	<!-- RTE CHEST -->
 	<form action="#" method="post" class="RTECHEST" id="RTECHEST"><label>CHEST:</label><br>
-		<label2><input type="checkbox" name="rtechestst" value="no punctures" />no punctures</label2><br>
-		<label2><input type="checkbox" name="rtechestst" value="no flail chest" />no flail chest</label2><br>
-		<label2><input type="checkbox" name="rtechestst" value="no crepitice" />no crepitice</label2><br>
-		<label2><input type="checkbox" name="rtechestst" value="puncture to the XXX side" />puncture to the XXX side</label2><br>
-		<label2><input type="checkbox" name="rtechestst" value="flail chest to the XXX side including XXX ribs" />flail chest to the XXX side including XXX ribs</label2><br>
-		<label2><input type="checkbox" name="rtechestst" value="crepitice to the XXX area" />crepitice to the XXX area</label2><br>
+		<label2><input type="checkbox" name="rteChestSt" value="no punctures" />no punctures</label2><br>
+		<label2><input type="checkbox" name="rteChestSt" value="no flail chest" />no flail chest</label2><br>
+		<label2><input type="checkbox" name="rteChestSt" value="no crepitice" />no crepitice</label2><br>
+		<label2><input type="checkbox" name="rteChestSt" value="puncture to the XXX side" />puncture to the XXX side</label2><br>
+		<label2><input type="checkbox" name="rteChestSt" value="flail chest to the XXX side including XXX ribs" />flail chest to the XXX side including XXX ribs</label2><br>
+		<label2><input type="checkbox" name="rteChestSt" value="crepitice to the XXX area" />crepitice to the XXX area</label2><br>
 	<br><br>
 	</form>
 
@@ -755,7 +774,7 @@ Other field automatically filled in with primary care physician & ER Doctor XXX 
 //
 function PgLoadFunc() {
 	// History
-	toggleSub('traumacall', 'traumacall_sub');
+	toggleSub('traumaCall', 'traumaCall_sub');
 	
 	toggleSub('medicalcall', 'medicalcall_sub');
 
@@ -985,9 +1004,9 @@ function getOption() {
 	}
 	var found = getRadioVal(document.getElementById("H002"), "found");
 	var ptFound =  "Pt was found" + found;
-	var foundseat = getRadioVal(document.getElementById("H002a"), "foundseat");
-	var foundlying = getRadioVal(document.getElementById("H002b"), "foundlying");
-	var foundlyingon = getRadioVal(document.getElementById("H002c"), "foundlyingon");
+	var foundseat = getRadioVal(document.getElementById("H002a"), "foundSeat");
+	var foundlying = getRadioVal(document.getElementById("H002b"), "foundLying");
+	var foundlyingon = getRadioVal(document.getElementById("H002c"), "foundLyingOn");
 	if (found == " seated")
 		ptFound += foundseat;
 	if (found == " lying")
@@ -998,16 +1017,16 @@ function getOption() {
 	// Scene size-up
 	
 	// cspine manual stabilization
-	var cspineManual = getRadioVal(document.getElementById("cspineManual"), "cspineInit");
+	var cspineManual = getRadioVal(document.getElementById("cspineManual"), "cspineInitSt");
 	var cspine = sp2 + cspineManual;
 
 	// AVPU
-	var AVPU = getRadioVal(document.getElementById("traumaAVPU"), "avpust");
+	var AVPU = getRadioVal(document.getElementById("traumaAVPU"), "avpuSt");
 	AVPU = sp2 + "Pt was " + AVPU;
 
 
 	// Airway
-	var AIRWAY = getCheckDataConcatCO(document.getElementById("traumaAirway"), "airwayst");
+	var AIRWAY = getCheckDataConcatCO(document.getElementById("traumaAirway"), "airwaySt");
 	AIRWAY = sp2 + "Airway: " + AIRWAY;
 	
 
@@ -1017,15 +1036,16 @@ function getOption() {
 
 
 	// Circulation
-
+	var CIRCULATION = getCheckDataConcatCO(document.getElementById("Circulation"), "circulationSt");
+	CIRCULATION = sp2 + "Circulation: " + CIRCULATION;
 
 	// RTE
 	var RTEPerformed = getRadioVal(document.getElementById("RTE"), "rteExam");
 	if (RTEPerformed == "Yes") {
 		var RTEstr = newP + "Rapid Trauma Exam:" + newL;
-		RTEstr += "HEAD:" + sp2 + getCheckDataConcatCO(document.getElementById("RTEHEAD"), "rteheadst") + newL;
-		RTEstr += "NECK:" + sp2 + getCheckDataConcatCO(document.getElementById("RTENECK"), "rteneckst") + newL;
-		RTEstr += "CHEST:" + sp2 + getCheckDataConcatCO(document.getElementById("RTECHEST"), "rtechestst") + newL;
+		RTEstr += "HEAD:" + sp2 + getCheckDataConcatCO(document.getElementById("RTEHEAD"), "rteHeadSt") + newL;
+		RTEstr += "NECK:" + sp2 + getCheckDataConcatCO(document.getElementById("RTENECK"), "rteNeckSt") + newL;
+		RTEstr += "CHEST:" + sp2 + getCheckDataConcatCO(document.getElementById("RTECHEST"), "rteChestSt") + newL;
 		RTEstr += "ABDOMEN:" + sp2 + getCheckDataConcatCO(document.getElementById("RTEABS"), "rteAbsSt") + newL;
 		RTEstr += "HIPS:" + sp2 + getCheckDataConcatCO(document.getElementById("RTEHIPS"), "rteHipsSt") + newL;
 		RTEstr += "LEGS:" + sp2 + getCheckDataConcatCO(document.getElementById("RTELEGS"), "rteLegsSt") + newL;
@@ -1054,7 +1074,7 @@ function getOption() {
 		var PTOA = "";
 	}
 	
-	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + AVPU + AIRWAY + BREATHING + RTEstr + cspineAssess + PTOA + newP3;
+	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + AVPU + AIRWAY + BREATHING + CIRCULATION + RTEstr + cspineAssess + PTOA + newP3;
 
 	// ************************************************************************
 	// ASSESSMENT
