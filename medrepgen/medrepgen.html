@@ -258,7 +258,7 @@ What location...<br></br>
 	<!-- Maybe a pre-AVPU section?  "Approaching the pt I asked their name (or how they were doing) and the pt responded appropriately with their name (or complaint.)  This would allow a nice flow into the actual AVPU - this pre-section might include:  (select all that apply)
 		Asked pt their name & complaint and pt responded with their name and the chief complaint.
 		Asked pt their name & complaint and pt (opened eyes, spoke but did not answer question appropriately, mumbled incoherently}.
-		Asked pt their name & complaint and pt responded appropriately and pt did not respond.
+		Asked pt their name & complaint and pt did not respond.
 		{Sternum rub, Shoulder Pinch, Triceps monkey-grab} elicited a slight response.
 		{Sternum rub, Shoulder Pinch, Triceps monkey-grab} did not elicit a response.
 
@@ -429,11 +429,8 @@ What location...<br></br>
 </fieldset>
 
 		
-	<!-- Trauma Team Activation, Paramedic intercept, ALS call -->
-
-
-	<!-- Backboard, collar, splint, scoop or other stretcher to move the
-		pt to the back of the ambulance -->
+	<!-- Trauma Team Activation, Paramedic intercept, call for ALS or
+		fire department -->
 
 
 <!-- C-spine precautions -->
@@ -445,31 +442,22 @@ What location...<br></br>
 </form>
 
 
-<form action="#" method="post" class="H005" id="H005">
-<p><input type="checkbox" onclick="toggleSub(this, 'medicalcall_sub')" name="medicalcall" id="medicalcall" value="1" />Click if this was a medical call</p>
-<fieldset>
 
-    <div id="medicalcall_sub">
+	<!-- Re-assessed mental status including:
+		Appearance, Attitude, Behaviour, Mood & Affect, Speech.
+		Not so detailed as in ambulance but rather a follow-up from
+		the initial on-scene appearance.
+		Even better!  Make an Initial GCS section here so as to start
+		working GCS into pt assessment!  Eye 1-4, Verbal 1-5, Motor 1-6
+			AND add the Title label for explanations! -->
 
-	<!-- UNCONSCIOUS -->
-	
-	
-	<!-- CONSCIOUS -->
-	
-
-
-	<!-- Double-check what the book suggests for a process!
-			TODO:  book breaks process down to conscious and unconscious 
-				medical patients -->
-
-	<!-- Appearance, Attitude, Behaviour, Mood & Affect, Speech -->
-
-	<!-- ABC's -->
-	
-	<!-- Signs & Symptoms -->
 
 	<!-- On-site Vitals - especially including 12-lead, SpO2, BP, HR, skin
-		color/temp/condition, BG -->
+		color/temp/condition, BG, Lung sounds -->
+
+		
+	<!-- on-site SAMPLE -->
+	<!-- Signs & Symptoms -->
 	
 	<!-- Allergies -->
 
@@ -481,10 +469,9 @@ What location...<br></br>
 
 	<!-- Events Leading Up To -->
 
-    </div>
-</fieldset>
+
 <br><br>
-</form>
+
 
 <!-- 2nd paragraph -->
 <form action="#" method="post" class="H100" id="H100">
@@ -494,6 +481,24 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 <br></br>
 </form>
 
+
+
+	<!-- How was pt moved to the ambulance?
+		Scoop, backboard, stair chair or the (fabric style) carry device
+			used to move the pt?  OR Pt walked to ambulance, stepped up in
+			and sat on stretcher/bench seat/tech seat?  This might nullify
+			the other options if selected.
+		How did you get pt to the carry device?  Pt moved on own: assisted
+			pt to stand, walk, turn, sit; pt slid themselves onto it (scoop
+			or backboard on ground for example); pt was carried/lifted by XXX
+			people to device.
+		How was pt secured to device?  Straps; buckles; sheet wrap; other means?
+		How was carrying device moved to ambulance?  Carried, wheeled?
+		Was pt moved from the carry device to the stretcher prior to loading
+			in the ambulance?
+		How was stretcher loaded into ambulance?  OR just state fact:  Stretcher
+			was loaded into ambulance and secured, doors closed.
+		Collar already applied in neck section of RTE above. -->
 
 
 <br><a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
@@ -510,6 +515,100 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 <a id="assessmentsection"></a>
 <p1><b>ASSESSMENT</b></p1>
 <fieldset>
+
+<!-- Transport monitoring:
+	Was pt connected to cardiac monitor?  Or just on PulseOx?  Or neither,
+	and why if that's the case? i.e.
+		Pt connected to LP12, 4-lead for cardiac monitoring.
+		Pt connected to LP12, 12-lead performed by { crew member }.
+		LP12 pulse ox applied to left/right hand, XXX finger.
+		NIBP attached to pt left/right arm.
+		Portable pulse ox attached to left/right hand, XXX finger.
+		Rad 5 (what's the real name for this device? connected to pt's
+			left/right hand, XXX finger.
+		Pt not connected to LP12 in lieu of manual vital monitoring during
+			transport { and why? }
+-->
+
+<!-- Was 12-lead performed - determine from above checkbox?
+	{ crew member } analysis of 12-lead indicates:
+	12-lead faxed to { hospital }, call to hospital to alert to incoming 12-lead
+		and 12-lead results interpreted by Dr { doctor name }.
+	LP12 rhythm strip analysis (see newsletter for how to indicate that the
+		only rhythm analysis was done by the LP12.)
+-->
+
+<!-- Rhythm analysis shows:  (again, determine from the checkbox selected above
+	indicating that a 12-lead was performed)
+		What are the various indicators for rhythms or problems indicated
+			from a 12-lead?
+		For starters, look at the mini-spiral bound medical books.
+		Then, will need to talk to Andrew about this.
+-->
+
+<!-- Initial transport vitals:
+	HR XXX
+	BP XXX/XXX
+	Skin { color/temp/condition }
+	SpO2 XXX
+	BG XXX
+	Lung sounds { XXX } <- actually this should be it's own category with
+		choices for the lung sounds
+-->
+
+<!-- Detailed/follow-up SAMPLE history
+		Probably each one of these is it's own form of answers.
+	Signs/Symptoms
+	Allergies
+	Medications
+	Past Pertinent History
+	Last Oral Intake
+	Events Leading Up To
+-->
+
+<!-- OPQRST
+		Each of these is likely it's own form of answers as well.
+	Onset
+	Provokes/Palliates
+	Quality
+	Region/Radiation
+	Severity
+	Time (history)
+-->
+
+<!-- Glasgow-Coma Scale follow-up
+	Might just duplicate the GCS from the History - onscene section here.
+		Maybe give an option "GCS of:  "   Or "GCS { unchanged, improved,
+			worsening } of:  "
+-->
+
+<!-- Cincinatti Pre-Hospital Stroke scale
+
+-->
+
+<!-- What other scales & assessments do I need here?
+	Burn scale/measurements?
+	CNS/Neuro assessment?
+	Focused medical exam - how to do this for so many areas of body/organs
+		that could have problems?  Does SAMPLE/OPQRST cover this?  Will
+		need to think this one out a bit more?
+	Body Systems Evaluation?  Circulatory, Integumentary, Skeletal, Reproductive,
+		Digestive, Urinary, Respiratory, Endocrine, Lymphatic, Muscular, Nervous.
+		If not some specific stuff for each one, how to summarize them?  Or maybe
+		just leave them blank if unchecked but leave checks for "was it checked?"
+		or "problems found with?" each system?  This will require some thought.
+-->
+
+<!-- Past Medical History
+	Do I want a section for general "past medical history"?
+	And if so, how to do it so it's not just a big mish-mash?
+		Any other complaints?  Hurts, soreness, tightness, strains, etc.
+		Any recent injuries, falls, DCAP-BTLS?
+		Surgeries?
+		ER Visits?
+		Recent Dr visits?
+		Upcoming DR visits?
+-->
 
 <form action="#" method="post" class="A001" id="A001">
 <p><input type="checkbox" onclick="toggleSub(this, 'HtoT_sub')" name="HtoT" id="HtoT" value="abc1" />Click if there was a detailed physical exam</p>
@@ -609,17 +708,17 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 				<label><input type="checkbox" name="noseSt" value="" checked/><span title="">N.A.</span></label><br>
 				<label><input type="checkbox" name="noseSt" value="Nose intact with no deformities or soft tissue damage." /><span title="">Nose intact with no deformities or soft tissue damage.</span></label><br>
 				<label><input type="checkbox" name="noseSt" value="No pain or sensitivity to palpation around the sinus areas." /><span title="">No pain or sensitivity to palpation around the sinus areas.</span></label><br>
-				<label><input type="checkbox" name="noseSt" value="No crepitus or deviated septum." /><span title="Deviated septum:  sideways displacement of the wall between the nostrils">No crepitus or deviated septum.</span></label><br>
-				<label><input type="checkbox" name="noseSt" value="Mucus membranes are moist with no congestion, rhinorrhea or blockage to nares." /><span title="Rhinorrhea:  significant mucus fluid in nasal cavaity (runny nose);  Nares:  nostrils">Mucus membranes are moist with no congestion, rhinorrhea or blockage to nares.</span></label><br>
+				<label><input type="checkbox" name="noseSt" value="No crepitice or deviated septum." /><span title="Deviated septum:  sideways displacement of the wall between the nostrils">No crepitice or deviated septum.</span></label><br>
+				<label><input type="checkbox" name="noseSt" value="Mucus membranes are moist with no congestion, rhinorrhea or blockage to nares." /><span title="Rhinorrhea:  significant mucus fluid in nasal cavity (runny nose);  Nares:  nostrils">Mucus membranes are moist with no congestion, rhinorrhea or blockage to nares.</span></label><br>
 			<label>INJURIES:</label><br>
-				<label><input type="checkbox" name="noseSt" value="Soft tissue damage to nose {and, or} deformaties including XXX." /><span title="">Soft tissue damage to nose {and, or} deformaties including XXX.</span></label><br>
+				<label><input type="checkbox" name="noseSt" value="Soft tissue damage to nose {and, or} deformities including XXX." /><span title="">Soft tissue damage to nose {and, or} deformities including XXX.</span></label><br>
 				<label><input type="checkbox" name="noseSt" value="{Pain, Sensitivity} to palpation around the sinus areas." /><span title="">{Pain, Sensitivity} to palpation around the sinus areas.</span></label><br>
-				<label><input type="checkbox" name="noseSt" value="{Crepitus, Deviated septum} apparent." /><span title="Deviated septum:  sideways displacement of the wall between the nostrils">{Crepitus, Deviated septum} apparent.</span></label><br>
+				<label><input type="checkbox" name="noseSt" value="{Crepitice, Deviated septum} apparent." /><span title="Deviated septum:  sideways displacement of the wall between the nostrils">{Crepitice, Deviated septum} apparent.</span></label><br>
 				<label><input type="checkbox" name="noseSt" value="{Congestion, Rhinorrhea, Blockage} to {nares, XXX nostril}." /><span title="Rhinorrhea:  significant mucus fluid in nasal cavity (runny nose);  Nares:  nostrils">{Congestion, Rhinorrhea, Blockage} to {nares, XXX nostril}.</span></label><br>
 			<br><br>
 			</form>
 		</div> <!-- dpeNose_sub -->
-		
+
 
 			<form action="#" method="post" class="RTEMOUTH" id="RTEMOUTH">Select statements about mouth<br></br>
 			<br><br>
@@ -773,11 +872,7 @@ Other field automatically filled in with primary care physician & ER Doctor XXX 
 // This function runs when the page first loads
 //
 function PgLoadFunc() {
-	// History
-	toggleSub('traumaCall', 'traumaCall_sub');
 	
-	toggleSub('medicalcall', 'medicalcall_sub');
-
 	toggleSub('rte', 'rte_sub');
 
 	// Assessment
