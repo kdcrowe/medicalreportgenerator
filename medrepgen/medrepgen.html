@@ -646,7 +646,6 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 			<br><br>
 			</form>
 		</div> <!-- dpehead_sub -->
-	<!-- </form>  probably not needed -->
 
 	<!-- Eyes -->
 	<form action="#" method="post" class="dpeeyesForm" id="dpeeyesForm">
@@ -684,7 +683,6 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 		<div id="dpeears_sub">
 	</form>
 			<form action="#" method="post" class="dpeearsSec" id="dpeearsSec">Select statements about ears<br></br>
-				<label><input type="checkbox" name="earsst" value="" checked/><span title="">N.A.</span></label><br>
 				<label><input type="checkbox" name="earsst" value="Ears intact with no cartilage damage." /><span title="">Ears intact with no cartilage damage.</span></label><br>
 				<label><input type="checkbox" name="earsst" value="Patient able to hear sounds bilaterally." /><span title="">Patient able to hear sounds bilaterally.</span></label><br>
 				<label><input type="checkbox" name="earsst" value="No otorrhea including blood or CSF." /><span title="Otorrhea:  a discharge from the external ear.">No otorrhea including blood or CSF.</span></label><br>
@@ -705,7 +703,6 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 		<div id="dpeNose_sub">
 	</form>
 			<form action="#" method="post" class="dpeNoseSec" id="dpeNoseSec">Select statements about nose<br></br>
-				<label><input type="checkbox" name="noseSt" value="" checked/><span title="">N.A.</span></label><br>
 				<label><input type="checkbox" name="noseSt" value="Nose intact with no deformities or soft tissue damage." /><span title="">Nose intact with no deformities or soft tissue damage.</span></label><br>
 				<label><input type="checkbox" name="noseSt" value="No pain or sensitivity to palpation around the sinus areas." /><span title="">No pain or sensitivity to palpation around the sinus areas.</span></label><br>
 				<label><input type="checkbox" name="noseSt" value="No crepitice or deviated septum." /><span title="Deviated septum:  sideways displacement of the wall between the nostrils">No crepitice or deviated septum.</span></label><br>
@@ -720,9 +717,32 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 		</div> <!-- dpeNose_sub -->
 
 
-			<form action="#" method="post" class="RTEMOUTH" id="RTEMOUTH">Select statements about mouth<br></br>
+	<!-- MOUTH -->
+	<form action="#" method="post" class="dpeMouthForm" id="dpeMouthForm">
+	<input type="checkbox" onclick="toggleSub(this, 'dpeMouth_sub')" name="dpeMouth" id="dpeMouth" value="1" />MOUTH, click to expand</p>
+		<div id="dpeMouth_sub">
+	</form>
+			<form action="#" method="post" class="dpeMouthSec" id="dpeMouthSec">Select statements about mouth<br></br>
+				<label><input type="checkbox" name="mouthSt" value="Lips pink and moist with no lesions or swelling." /><span title="">Lips pink and moist with no lesions or swelling.</span></label><br>
+				<label><input type="checkbox" name="mouthSt" value="Oral mucosa appears pink and moist." /><span title="Oral Mucosa: the mucous membrane lining the inside of the mouth.">Oral mucosa appears pink and moist.</span></label><br>
+				<label><input type="checkbox" name="mouthSt" value="No visible surface lesions or soft tissue enlargements in the mouth." /><span title="">No visible surface lesions or soft tissue enlargements in the mouth.</span></label><br>
+				<label><input type="checkbox" name="mouthSt" value="No apparent chipped or avulsed teeth." /><span title="Avulsed: a forcibly removed body part.">No apparent chipped or avulsed teeth.</span></label><br>
+				<label><input type="checkbox" name="mouthSt" value="Tongue is not swollen, there are no lesions and it is of a normal shape and size." /><span title="">Tongue is not swollen, there are no lesions and it is of a normal shape and size.</span></label><br>
+				<label><input type="checkbox" name="mouthSt" value="There is no airway compromise from the tongue and the patient denies any difficulty in swallowing." /><span title="">There is no airway compromise from the tongue and the patient denies any difficulty in swallowing.</span></label><br>
+				<label><input type="checkbox" name="mouthSt" value="No obvious, identifiable breath odors including fruity, fecal, sweet, or urine/ammonia-like." /><span title="Breath Odors might indicate:  fruity - diabetic ketoacidosis;  fecal - GI bleeding/blockage;  sweet - liver failure;  urine/ammonia-like - kidney failure.">No obvious, identifiable breath odors including fruity, fecal, sweet or urine/ammonia-like.</span></label><br>
+				<label><input type="checkbox" name="mouthSt" value="Patient admits to no problems with mastication and has full range of motion of mandible with no pain or paresthesia." /><span title="Jaw movement:  aka chewing or mastication.  Paresthesia:  an abnormal sensation such as burning, tingling, prickling or formication (feeling of insects crawling on you - skin crawling.)">Patient admits to no problems with jaw movement and has full range of motion of mandible with no pain or paresthesia.</span></label><br>
+			<label>INJURIES:</label><br>
+				<label><input type="checkbox" name="mouthSt" value="Lips { pale, grey, cyanotic, dry, cracked } with { lesions, swelling }." /><span title="">Lips { pale, grey, cyanotic, dry, cracked } with { lesions, swelling }.</span></label><br>
+				<label><input type="checkbox" name="mouthSt" value="Oral mucosa is { pale, grey, cyanotic }." /><span title="Oral Mucosa: the mucous membrane lining the inside of the mouth.">Oral mucosa is { pale, grey, cyanotic }.</span></label><br>
+				<label><input type="checkbox" name="mouthSt" value="Visible { surface lesions, soft tissue enlargements } in the mouth." /><span title="">Visible { surface lesions, soft tissue enlargements } in the mouth.</span></label><br>
+				<label><input type="checkbox" name="mouthSt" value="Apparent { chipped, avulsed } teeth." /><span title="Avulsed: a forcibly removed body part.">Apparent { chipped, avulsed } teeth.</span></label><br>
+				<label><input type="checkbox" name="mouthSt" value="Tongue { is swollen, contains lesions } and it is of an abnormal shape and size." /><span title="">Tongue { is swollen, contains lesions } and it is of an abnormal shape and size.</span></label><br>
+				<label><input type="checkbox" name="mouthSt" value="There is airway compromise from the tongue and the patient has difficulty swallowing." /><span title="">There is airway compromise from the tongue and the patient has difficulty swallowing.</span></label><br>
+				<label><input type="checkbox" name="mouthSt" value="Obvious, identifiable breath odors including { fruity, fecal, sweet or urine/ammonia-like }." /><span title="Breath Odors might indicate:  fruity - diabetic ketoacidosis;  fecal - GI bleeding/blockage;  sweet - liver failure;  urine/ammonia-like - kidney failure.">Obvious, identifiable breath odors including { fruity, fecal, sweet or urine/ammonia-like }.</span></label><br>
+				<label><input type="checkbox" name="mouthSt" value="Patient admits to problems with jaw movement and does not have full range of motion of mandible with pain or paresthesia." /><span title="Jaw movement:  aka chewing or mastication.  Paresthesia:  an abnormal sensation such as burning, tingling, prickling or formication (feeling of insects crawling on you - skin crawling.)">Patient admits to problems with jaw movement and does not have full range of motion of mandible with pain or paresthesia.</span></label><br>
 			<br><br>
 			</form>
+		</div> <!-- dpeMouth_sub -->
 
 			<form action="#" method="post" class="RTENECK" id="RTENECK">Select statements about neck<br></br>
 			<br><br>
@@ -754,6 +774,17 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 <a id="treatmentsection"></a>
 <p1><b>TREATMENT</b></p1>
 <fieldset>
+
+<!-- Treatments:
+	Medications:  aspirin, Tylenol, Ibuprofen, Epi-Pen, Epi-Pen Jr, Oxygen, oral glucose, activated
+		charcoal
+	Assisted Pt with their own:  inhaler, nitro
+	Other Interventions:  stretcher in position of comfort; pt in position of comfort on stretcher;
+		covered with blanket for warmth; cabin temperature increased/reduced to keep pt warm/cool - or for pt's comfort; hot/cold pack given to pt for comfort/warmth/cooling/etc; water (only
+		for Tylenol or Ibuprofen)
+	Other Airway:  OPA, NPA, King
+-->
+
 
 
 <br><a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
@@ -881,6 +912,7 @@ function PgLoadFunc() {
 		toggleSub('dpeeyes', 'dpeeyes_sub');
 		toggleSub('dpeears', 'dpeears_sub');
 		toggleSub('dpeNose', 'dpeNose_sub');
+		toggleSub('dpeMouth', 'dpeMouth_sub');
 }
 
 
@@ -1177,28 +1209,57 @@ function getOption() {
 
 
 	// Detailed Physical Exam
-	var DPE = "Detailed Physical Exam:" + newL;
+	var DPE = "Detailed Physical Exam:";
+
 	var HEAD = "HEAD:";
-	HEAD = HEAD + getCheckDataConcat(document.getElementById("dpeheadSec"), "headst") + newL;
+	HEADstrings = getCheckDataConcat(document.getElementById("dpeheadSec"), "headst");
+	if (HEADstrings.length != 0) {
+		HEAD = HEAD + HEADstrings + newL;
+	} else {
+		HEAD = "";
+	}
+	
 	var EYES = "EYES:";
-	EYES = EYES + getCheckDataConcat(document.getElementById("dpeeyesSec"), "eyesst") + newL;
+	EYEstrings = getCheckDataConcat(document.getElementById("dpeeyesSec"), "eyesst");
+	if (EYEstrings.length != 0) {
+		EYES = EYES + EYEstrings + newL;
+	} else {
+		EYES = "";
+	}
+
 	var EARS = "EARS:";
 	var EARstrings = getCheckDataConcat(document.getElementById("dpeearsSec"), "earsst");
-	if (EARstrings.length != 11) { // Not sure why but value="" is strlen == 11
+	if (EARstrings.length != 0) {
 		EARS = EARS + EARstrings + newL;
 	} else {
-		EARS = "";	// if there were no ear strings selected then null out EARS
+		EARS = "";
 	}
+	
 	var NOSE = "NOSE:";
 	var NOSEstrings = getCheckDataConcat(document.getElementById("dpeNoseSec"), "noseSt");
-	if (NOSEstrings.length != 11) { // Not sure why but value="" is strlen == 11
+	if (NOSEstrings.length != 0) {
 		NOSE = NOSE + NOSEstrings + newL;
 	} else {
-		NOSE = "";	// if there were no nose strings selected then null out NOSE
+		NOSE = "";
 	}
-	var BODY = HEAD + EYES + EARS + NOSE;
 
-	Assessment = asse1 + newP + DPE + BODY + newP3;
+	var MOUTH = "MOUTH:";
+	var MOUTHstrings = getCheckDataConcat(document.getElementById("dpeMouthSec"), "mouthSt");
+	if (MOUTHstrings.length != 0) {
+		MOUTH = MOUTH + MOUTHstrings + newL;
+	} else {
+		MOUTH = "";
+	}
+	
+	var BODY = HEAD + EYES + EARS + NOSE + MOUTH;
+	if (BODY.length != 0) {
+		DPE = DPE + newL;
+	} else {
+		DPE = "";
+	}
+	DetailedPhysicalExam = DPE + BODY;
+
+	Assessment = asse1 + newP + DetailedPhysicalExam + newP3;
 
 	// ************************************************************************
 	// TREATMENT
