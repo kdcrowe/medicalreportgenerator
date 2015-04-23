@@ -519,24 +519,32 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 <!-- Transport monitoring:
 	Was pt connected to cardiac monitor?  Or just on PulseOx?  Or neither,
 	and why if that's the case? i.e.
-		Pt connected to LP12, 4-lead for cardiac monitoring.
-		Pt connected to LP12, 12-lead performed by { crew member }.
-		LP12 pulse ox applied to left/right hand, XXX finger.
-		NIBP attached to pt left/right arm.
-		Portable pulse ox attached to left/right hand, XXX finger.
-		Rad 5 (what's the real name for this device? connected to pt's
-			left/right hand, XXX finger.
-		Pt not connected to LP12 in lieu of manual vital monitoring during
-			transport { and why? }
 -->
+<form action="#" method="post" class="monitoringSec" id="monitoringSec"><label>Monitoring during transport and 12-lead, select all that apply:</label><br>
+	<label><input type="checkbox" name="monitoringSt" value="Pt connected to LP12, 4-lead for cardiac monitoring." />Pt connected to LP12, 4-lead for cardiac monitoring.</label><br>
+	<label><input type="checkbox" name="monitoringSt" value="12-lead performed by { crew member }." />12-lead performed by { crew member }.</label><br>
+	<label><input type="checkbox" name="monitoringSt" value="LP12 pulse ox applied to XXX hand, XXX finger." />LP12 pulse ox applied to XXX hand, XXX finger.</label><br>
+	<label><input type="checkbox" name="monitoringSt" value="NIBP attached to pt XXX arm." />NIBP attached to XXX arm.</label><br>
+	<label><input type="checkbox" name="monitoringSt" value="Portable pulse ox attached to left/right hand, XXX finger." />Portable pulse ox attached to XXX hand, XXX finger.</label><br>
+	<label><input type="checkbox" name="monitoringSt" value="Pt not connected to LP12 in lieu of manual vital monitoring during transport { and why? }" />Pt not connected to LP12 in lieu of manual vital monitoring during transport { and why? }</label><br>
+<br><br>
+</form>
+
 
 <!-- Was 12-lead performed - determine from above checkbox?
-	{ crew member } analysis of 12-lead indicates:
+	{ crew member } analysis of 12-lead indicates: 
 	12-lead faxed to { hospital }, call to hospital to alert to incoming 12-lead
 		and 12-lead results interpreted by Dr { doctor name }.
 	LP12 rhythm strip analysis (see newsletter for how to indicate that the
 		only rhythm analysis was done by the LP12.)
 -->
+<form action="#" method="post" class="twelveleadSec" id="twelveLeadSec"><label>Was a 12-lead interpreted by anyone?:</label><br>
+	<label><input type="radio" name="twelveLeadSt" value="{ crew member } analysis of 12-lead indicates:" />{ crew member } analysis of 12-lead indicates:</label><br>
+	<label><input type="radio" name="twelveLeadStSt" value="12-lead faxed to { hospital }, call to hospital to alert to incoming 12-lead and 12-lead results interpreted by Dr { doctor name } indicate:" />12-lead faxed to { hospital }, call to hospital to alert to incoming 12-lead and 12-lead results interpreted by Dr { doctor name } indicate:</label><br>
+	<label><input type="radio" name="twelveLeadSt" value="LP12 rhythm strip analysis by monitor indicate:" />LP12 rhythm strip analysis by monitor indicate:</label><br>
+<br><br>
+</form>
+
 
 <!-- Rhythm analysis shows:  (again, determine from the checkbox selected above
 	indicating that a 12-lead was performed)
@@ -552,6 +560,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 	Skin { color/temp/condition }
 	SpO2 XXX
 	BG XXX
+	Temperature
 	Lung sounds { XXX } <- actually this should be it's own category with
 		choices for the lung sounds
 -->
@@ -1207,6 +1216,13 @@ function getOption() {
 	// ASSESSMENT
 	var asse1 = "A:" + sp2;
 
+	MONITORING = getCheckDataConcat(document.getElementById("monitoringSec"), "monitoringSt");
+	
+	if (MONITORING.indexOf("12-lead") > -1) {
+		TWELVELEAD = sp2 + getRadioVal(document.getElementById("twelveLeadSec"), "twelveLeadSt");
+	} else {
+		TWELVELEAD = "";
+	}
 
 	// Detailed Physical Exam
 	var DPE = "Detailed Physical Exam:";
@@ -1259,7 +1275,7 @@ function getOption() {
 	}
 	DetailedPhysicalExam = DPE + BODY;
 
-	Assessment = asse1 + newP + DetailedPhysicalExam + newP3;
+	Assessment = asse1 + MONITORING + TWELVELEAD + newP + DetailedPhysicalExam + newP3;
 
 	// ************************************************************************
 	// TREATMENT
