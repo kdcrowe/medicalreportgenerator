@@ -698,7 +698,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 	<input type="checkbox" onclick="toggleSub(this, 'dpehead_sub')" name="dpehead" id="dpehead" value="1" />HEAD, click to expand</p>
 		<div id="dpehead_sub">
 	</form>
-			<form action="#" method="post" class="dpeheadSec" id="dpeheadSec">Select statements about head<br></br>
+			<form action="#" method="post" class="dpeheadSec" id="dpeheadSec">Select statements about head:<br></br>
 				<label><input type="checkbox" name="headst" value="Head round, intact, normocephalic and atraumatic." /><span title="Normocephalic: head of normal shape/size; Atraumatic: no trauma.">Head round, intact, normocephalic and atraumatic.</span></label><br>
 				<label><input type="checkbox" name="headst" value="No deformities, contusions or crepitus to the front, top, sides or back of the skull." />No deformities, contusions or crepitus to the front, top, sides or back of the skull.</label><br>
 				<label><input type="checkbox" name="headst" value="No facial soft tissue injuries noted." />No facial soft tissue injuries noted.</label><br>
@@ -726,7 +726,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 
 	<!-- Eyes -->
 	<form action="#" method="post" class="dpeeyesForm" id="dpeeyesForm">
-	<input type="checkbox" onclick="toggleSub(this, 'dpeeyes_sub')" name="dpeeyes" id="dpeeyes" value="1" />EYES, click to expand</p>		
+	<input type="checkbox" onclick="toggleSub(this, 'dpeeyes_sub')" name="dpeeyes" id="dpeeyes" value="1" />EYES, click to expand:</p>		
 		<div id="dpeeyes_sub">
 	</form>
 			<form action="#" method="post" class="dpeeyesSec" id="dpeeyesSec">Select statements about eyes<br></br>
@@ -759,7 +759,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 	<input type="checkbox" onclick="toggleSub(this, 'dpeears_sub')" name="dpeears" id="dpeears" value="1" />EARS, click to expand</p>
 		<div id="dpeears_sub">
 	</form>
-			<form action="#" method="post" class="dpeearsSec" id="dpeearsSec">Select statements about ears<br></br>
+			<form action="#" method="post" class="dpeearsSec" id="dpeearsSec">Select statements about ears:<br></br>
 				<label><input type="checkbox" name="earsst" value="Ears intact with no cartilage damage." /><span title="">Ears intact with no cartilage damage.</span></label><br>
 				<label><input type="checkbox" name="earsst" value="Patient able to hear sounds bilaterally." /><span title="">Patient able to hear sounds bilaterally.</span></label><br>
 				<label><input type="checkbox" name="earsst" value="No otorrhea including blood or CSF." /><span title="Otorrhea:  a discharge from the external ear.">No otorrhea including blood or CSF.</span></label><br>
@@ -779,7 +779,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 	<input type="checkbox" onclick="toggleSub(this, 'dpeNose_sub')" name="dpeNose" id="dpeNose" value="1" />NOSE, click to expand</p>
 		<div id="dpeNose_sub">
 	</form>
-			<form action="#" method="post" class="dpeNoseSec" id="dpeNoseSec">Select statements about nose<br></br>
+			<form action="#" method="post" class="dpeNoseSec" id="dpeNoseSec">Select statements about nose:<br></br>
 				<label><input type="checkbox" name="noseSt" value="Nose intact with no deformities or soft tissue damage." /><span title="">Nose intact with no deformities or soft tissue damage.</span></label><br>
 				<label><input type="checkbox" name="noseSt" value="No pain or sensitivity to palpation around the sinus areas." /><span title="">No pain or sensitivity to palpation around the sinus areas.</span></label><br>
 				<label><input type="checkbox" name="noseSt" value="No crepitice or deviated septum." /><span title="Deviated septum:  sideways displacement of the wall between the nostrils">No crepitice or deviated septum.</span></label><br>
@@ -799,7 +799,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 	<input type="checkbox" onclick="toggleSub(this, 'dpeMouth_sub')" name="dpeMouth" id="dpeMouth" value="1" />MOUTH, click to expand</p>
 		<div id="dpeMouth_sub">
 	</form>
-			<form action="#" method="post" class="dpeMouthSec" id="dpeMouthSec">Select statements about mouth<br></br>
+			<form action="#" method="post" class="dpeMouthSec" id="dpeMouthSec">Select statements about mouth:<br></br>
 				<label><input type="checkbox" name="mouthSt" value="Lips pink and moist with no lesions or swelling." /><span title="">Lips pink and moist with no lesions or swelling.</span></label><br>
 				<label><input type="checkbox" name="mouthSt" value="Oral mucosa appears pink and moist." /><span title="Oral Mucosa: the mucous membrane lining the inside of the mouth.">Oral mucosa appears pink and moist.</span></label><br>
 				<label><input type="checkbox" name="mouthSt" value="No visible surface lesions or soft tissue enlargements in the mouth." /><span title="">No visible surface lesions or soft tissue enlargements in the mouth.</span></label><br>
@@ -821,9 +821,31 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 			</form>
 		</div> <!-- dpeMouth_sub -->
 
-			<form action="#" method="post" class="RTENECK" id="RTENECK">Select statements about neck<br></br>
+
+	<!-- NECK -->
+	<form action="#" method="post" class="dpeNeckForm" id="dpeNeckForm">
+	<input type="checkbox" onclick="toggleSub(this, 'dpeNeck_sub')" name="dpeNeck" id="dpeNeck" value="1" />NECK, click to expand</p>
+		<div id="dpeNeck_sub">
+	</form>
+			<form action="#" method="post" class="dpeNeckSec" id="dpeNeckSec">Select statements about neck:<br></br>
+				<label><input type="checkbox" name="neckSt" value="Neck supple." /><span title="">Neck supple.</span></label><br>
+				<label><input type="checkbox" name="neckSt" value="No crepitation or step-offs." /><span title="Crepitus:  crackling or popping sounds and sensations experienced under the skin and joints or a crackling sensation due to the presence of air in the subcutaneous tissue;  Step-off:  an abrupt change in direction from what should be smooth and linear, as in steps vs a ramp.">No crepitation or step-offs.</span></label><br>
+				<label><input type="checkbox" name="neckSt" value="No lymphadenopathy." /><span title="Lymphadenopathy:  inflammed lymph nodes, lymph nodes larger than normal.">No lymphadenopathy.</span></label><br>
+				<label><input type="checkbox" name="neckSt" value="No tracheal deviation." /><span title="">No tracheal deviation.</span></label><br>
+				<label><input type="checkbox" name="neckSt" value="JVD within normal limits." /><span title="JVD:  Jugular Vein Distention, there will always be some present when a person lies down due to increased BP to the head.">JVD within normal limits.</span></label><br>
+				<label><input type="checkbox" name="neckSt" value="No nuchal rigidity present from muscle tension or spasm." /><span title="Nuchal:  neck, possibly nape of neck.">No nuchal rigidity present from muscle tension or spasm.</span></label><br>
+			<label>INJURIES:</label><br>
+				<label><input type="checkbox" name="neckSt" value="Neck stiff and unyielding." /><span title="">Neck stiff and unyielding.</span></label><br>
+				<label><input type="checkbox" name="neckSt" value="{ Crepitation, Step-offs } present." /><span title="Crepitus:  crackling or popping sounds and sensations experienced under the skin and joints or a crackling sensation due to the presence of air in the subcutaneous tissue.">{ Crepitation, Step-offs } present.</span></label><br>
+				<label><input type="checkbox" name="neckSt" value="Apparent lymphadenopathy." /><span title="Lymphadenopathy:  inflammed lymph nodes, lymph nodes larger than normal.">Apparent lymphadenopathy.</span></label><br>
+				<label><input type="checkbox" name="neckSt" value="Trachea appears deviated to the XXX side by roughly XXX mm." /><span title="">Trachea appears deviated to the XXX side by roughly XXX mm.</span></label><br>
+				<label><input type="checkbox" name="neckSt" value="Excessive JVD." /><span title="JVD:  Jugular Vein Distention, there will always be some present when a person lies down due to increased BP to the head.">Excessive JVD.</span></label><br>
+				<label><input type="checkbox" name="neckSt" value="Nuchal rigidity { resulting from muscle tension or spasm } ." /><span title="Nuchal:  neck, possibly nape of neck.">Nuchal rigidity { resulting from muscle tension or spasm } .</span></label><br>
 			<br><br>
 			</form>
+		</div> <!-- dpeNeck_sub -->
+
+
 
 			<form action="#" method="post" class="RTEUPAIRWAY" id="RTEUPAIRWAY">Select statements about upper airway<br></br>
 			<br><br>
@@ -992,6 +1014,7 @@ function PgLoadFunc() {
 		toggleSub('dpeears', 'dpeears_sub');
 		toggleSub('dpeNose', 'dpeNose_sub');
 		toggleSub('dpeMouth', 'dpeMouth_sub');
+		toggleSub('dpeNeck', 'dpeNeck_sub');
 }
 
 
@@ -1348,7 +1371,7 @@ function getOption() {
 	} else {
 		EARS = "";
 	}
-	
+
 	var NOSE = "NOSE:";
 	var NOSEstrings = getCheckDataConcat(document.getElementById("dpeNoseSec"), "noseSt");
 	if (NOSEstrings.length != 0) {
@@ -1364,8 +1387,16 @@ function getOption() {
 	} else {
 		MOUTH = "";
 	}
-	
-	var BODY = HEAD + EYES + EARS + NOSE + MOUTH;
+
+	var NECK = "NECK:";
+	var NECKstrings = getCheckDataConcat(document.getElementById("dpeNeckSec"), "neckSt");
+	if (NECKstrings.length != 0) {
+		NECK = NECK + NECKstrings + newL;
+	} else {
+		NECK = "";
+	}
+
+	var BODY = HEAD + EYES + EARS + NOSE + MOUTH + NECK;
 	if (BODY.length != 0) {
 		DPE = DPE + newL;
 	} else {
