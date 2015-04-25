@@ -46,11 +46,6 @@ HTML
 </form>
 
 
-* Make the "Look Test" selection of Adult or Pediatric open either the Adult or Pediatric
-  subsection of checkbox forms to select, otherwise it's just too long.
-
-
-
 Javascript
 ==========
 1) Get a random string - might want to work this in with words like:
@@ -277,13 +272,13 @@ What location...<br></br>
 	<label2><input type="checkbox" name="adultImpApp" value="eye opening" />eye opening</label2><br>
 	<label2><input type="checkbox" name="adultImpApp" value="agitated" />agitated</label2><br>
 	<label2><input type="checkbox" name="adultImpApp" value="limp" />limp</label2><br>
-	<label2><input type="checkbox" name="adultImpApp" value="unresponsive" />unresponsive</label2><br>
+	<label2><input type="checkbox" name="adultImpApp" value="unresponsive" />unresponsive</label2><br><br>
 	<label2><gr>Work of Breathing</gr><label2><br>
 	<label2><input type="checkbox" name="adultImpBre" value="labored" />labored</label2><br>
 	<label2><input type="checkbox" name="adultImpBre" value="noisy" />noisy</label2><br>
 	<label2><input type="checkbox" name="adultImpBre" value="fast" />fast</label2><br>
 	<label2><input type="checkbox" name="adultImpBre" value="equal chest rise" />equal chest rise</label2><br>
-	<label2><input type="checkbox" name="adultImpBre" value="unequal chest rise" />unequeal chest rise</label2><br>
+	<label2><input type="checkbox" name="adultImpBre" value="unequal chest rise" />unequeal chest rise</label2><br><br>
 	<label2><rd>Circulation to skin</rd><label2><br>
 	<label2><input type="checkbox" name="adultImpCir" value="pink" />pink</label><br>
 	<label2><input type="checkbox" name="adultImpCir" value="flushed" />flushed</label2><br>
@@ -1126,6 +1121,7 @@ document.getElementById('HtoT').onclick = function() {
 	toggleSub(this, 'HtoT_sub');
 };
 
+
 //
 // called onclick of checkbox
 //
@@ -1140,11 +1136,6 @@ function toggleSub(box, id) {
     }
 }
 
-function toggleSub2(box, id1, id2) {
-	
-	toggleSub(box, id1);
-	toggleSubOff(box, id2);
-}
 
 //
 // called onclick of checkbox
@@ -1159,6 +1150,18 @@ function toggleSubOff(box, id) {
         el.style.display = 'block';
     }
 }
+
+
+//
+// called with 2 id forms to toggle, it toggles the first one on
+// and then the second one off.
+//
+function toggleSub2(box, id1, id2) {
+	
+	toggleSub(box, id1);
+	toggleSubOff(box, id2);
+}
+
 
 //
 // GetOptions
