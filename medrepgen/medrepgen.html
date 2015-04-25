@@ -262,30 +262,31 @@ What location...<br></br>
      see Patient Care Protocols, Patient Approach, General Impression section -->
 <form action="#" method="post" class="generalImpression" id="generalImpression" title="Across the room, or as you enter the room, what is your first, overall, general impression of the patient before you've even laid hands on them?">General Impression (aka the "look test"):<br></br>
 	<!-- First, is it an adult or a child?  Radio button to select one or the other -->
-	<label><input type="radio" onclick="toggleSub2(this, 'adultImp', 'pediImp')" name="adultOrPedi" value="adult" checked />Adult</label>
+	<label><input type="radio" onclick="toggleSub2(this, 'adultImp', 'pediImp')" name="adultOrPedi" value="adult" />Adult</label>
 	<label><input type="radio" onclick="toggleSub2(this, 'pediImp', 'adultImp')" name="adultOrPedi" value="pediatric" title="Pediatric Patient is defined as a child who fits on a length-based resuscitation tape up to 36kg (79 lbs) or 145cm (57 in)."/>Pediatric</label><br><br>
+</form>
 
 	<div id="adultImp">
 	<form action="#" method="post" class="adultImpression" id="adultImpression"><label>If Adult:</label><br>
 	<label2><bl>Appearance</bl><label2><br>
-	<label2><input type="checkbox" name="adultImpApp" value="awake" />awake</label><br>
-	<label2><input type="checkbox" name="adultImpApp" value="speaking" />speaking</label2><br>
-	<label2><input type="checkbox" name="adultImpApp" value="eye opening" />eye opening</label2><br>
-	<label2><input type="checkbox" name="adultImpApp" value="agitated" />agitated</label2><br>
-	<label2><input type="checkbox" name="adultImpApp" value="limp" />limp</label2><br>
-	<label2><input type="checkbox" name="adultImpApp" value="unresponsive" />unresponsive</label2><br><br>
+	<label2><input type="checkbox" name="adultImpAppSt" value="awake" />awake</label><br>
+	<label2><input type="checkbox" name="adultImpAppSt" value="speaking" />speaking</label2><br>
+	<label2><input type="checkbox" name="adultImpAppSt" value="eye opening" />eye opening</label2><br>
+	<label2><input type="checkbox" name="adultImpAppSt" value="agitated" />agitated</label2><br>
+	<label2><input type="checkbox" name="adultImpAppSt" value="limp" />limp</label2><br>
+	<label2><input type="checkbox" name="adultImpAppSt" value="unresponsive" />unresponsive</label2><br><br>
 	<label2><gr>Work of Breathing</gr><label2><br>
-	<label2><input type="checkbox" name="adultImpBre" value="labored" />labored</label2><br>
-	<label2><input type="checkbox" name="adultImpBre" value="noisy" />noisy</label2><br>
-	<label2><input type="checkbox" name="adultImpBre" value="fast" />fast</label2><br>
-	<label2><input type="checkbox" name="adultImpBre" value="equal chest rise" />equal chest rise</label2><br>
+	<label2><input type="checkbox" name="adultImpBreSt" value="labored" />labored</label2><br>
+	<label2><input type="checkbox" name="adultImpBreSt" value="noisy" />noisy</label2><br>
+	<label2><input type="checkbox" name="adultImpBreSt" value="fast" />fast</label2><br>
+	<label2><input type="checkbox" name="adultImpBreSt" value="equal chest rise" />equal chest rise</label2><br>
 	<label2><input type="checkbox" name="adultImpBre" value="unequal chest rise" />unequeal chest rise</label2><br><br>
 	<label2><rd>Circulation to skin</rd><label2><br>
-	<label2><input type="checkbox" name="adultImpCir" value="pink" />pink</label><br>
-	<label2><input type="checkbox" name="adultImpCir" value="flushed" />flushed</label2><br>
-	<label2><input type="checkbox" name="adultImpCir" value="pale" />pale</label2><br>
-	<label2><input type="checkbox" name="adultImpCir" value="ashen" />ashen</label2><br>
-	<label2><input type="checkbox" name="adultImpCir" value="cyanotic" />cyanotic</label2><br>
+	<label2><input type="checkbox" name="adultImpCirSt" value="pink" />pink</label><br>
+	<label2><input type="checkbox" name="adultImpCirSt" value="flushed" />flushed</label2><br>
+	<label2><input type="checkbox" name="adultImpCirSt" value="pale" />pale</label2><br>
+	<label2><input type="checkbox" name="adultImpCirSt" value="ashen" />ashen</label2><br>
+	<label2><input type="checkbox" name="adultImpCirSt" value="cyanotic" />cyanotic</label2><br>
 	<br><br>
 	</form>
 	</div id="adultImp">
@@ -293,26 +294,26 @@ What location...<br></br>
 	<div id="pediImp">
 	<form action="#" method="post" class="pediImpression" id="pediImpression"><label>If Pediatric:</label><br>
 	<label2><bl>Appearance</bl><label2><br>
-	<label2><input type="checkbox" name="pediImpApp" value="{ good, poor } muscle tone" />{ good, poor } muscle tone</label><br>
-	<label2><input type="checkbox" name="pediImpApp" value="{ good, poor } interactivity" />{ good, poor } interactivity</label2><br>
-	<label2><input type="checkbox" name="pediImpApp" value="{ consolable, inconsolable }" />{ consolable, inconsolable }</label2><br>
-	<label2><input type="checkbox" name="pediImpApp" value="gase/look {focused, unfocused }" />gaze/look {focused, unfocused }</label2><br>
-	<label2><input type="checkbox" name="pediImpApp" value="{ speech, crying } { normal, abnormal }" />{ speech, crying } { normal, abnormal }</label2><br>
-	<label2><input type="checkbox" name="pediImpApp" value="unresponsive" />unresponsive</label2>
+	<label2><input type="checkbox" name="pediImpAppSt" value="{ good, poor } muscle tone" />{ good, poor } muscle tone</label><br>
+	<label2><input type="checkbox" name="pediImpAppSt" value="{ good, poor } interactivity" />{ good, poor } interactivity</label2><br>
+	<label2><input type="checkbox" name="pediImpAppSt" value="{ consolable, inconsolable }" />{ consolable, inconsolable }</label2><br>
+	<label2><input type="checkbox" name="pediImpAppSt" value="gase/look {focused, unfocused }" />gaze/look {focused, unfocused }</label2><br>
+	<label2><input type="checkbox" name="pediImpAppSt" value="{ speech, crying } { normal, abnormal }" />{ speech, crying } { normal, abnormal }</label2><br>
+	<label2><input type="checkbox" name="pediImpAppSt" value="unresponsive" />unresponsive</label2>
 	<br><br>
 	<label2><gr>Work of Breathing</gr><label2><br>
-	<label2><input type="checkbox" name="pediImpBre" value="airway sounds XXX" />airway sounds XXX</label2><br>
-	<label2><input type="checkbox" name="pediImpBre" value="body position XXX" />body position XXX</label2><br>
-	<label2><input type="checkbox" name="pediImpBre" value="head bobbing" />head bobbing</label2><br>
-	<label2><input type="checkbox" name="pediImpBre" value="chest wall retractions" />chest wall retractions</label2><br>
-	<label2><input type="checkbox" name="pediImpBre" value="nasal flaring" />nasal flaring</label2>
+	<label2><input type="checkbox" name="pediImpBreSt" value="airway sounds XXX" />airway sounds XXX</label2><br>
+	<label2><input type="checkbox" name="pediImpBreSt" value="body position XXX" />body position XXX</label2><br>
+	<label2><input type="checkbox" name="pediImpBreSt" value="head bobbing" />head bobbing</label2><br>
+	<label2><input type="checkbox" name="pediImpBreSt" value="chest wall retractions" />chest wall retractions</label2><br>
+	<label2><input type="checkbox" name="pediImpBreSt" value="nasal flaring" />nasal flaring</label2>
 	<br><br>
 	<label2><rd>Circulation to skin</rd><label2><br>
-	<label2><input type="checkbox" name="pediImpCir" value="pink" />pink</label><br>
-	<label2><input type="checkbox" name="pediImpCir" value="pale" />pale</label2><br>
-	<label2><input type="checkbox" name="pediImpCir" value="mottled" />mottled</label2><br>
-	<label2><input type="checkbox" name="pediImpCir" value="ashen" />ashen</label2><br>
-	<label2><input type="checkbox" name="pediImpCir" value="cyanotic" />cyanotic</label2><br>
+	<label2><input type="checkbox" name="pediImpCirSt" value="pink" />pink</label><br>
+	<label2><input type="checkbox" name="pediImpCirSt" value="pale" />pale</label2><br>
+	<label2><input type="checkbox" name="pediImpCirSt" value="mottled" />mottled</label2><br>
+	<label2><input type="checkbox" name="pediImpCirSt" value="ashen" />ashen</label2><br>
+	<label2><input type="checkbox" name="pediImpCirSt" value="cyanotic" />cyanotic</label2><br>
 	<br><br>
 	</form>
 	</div id="pediImp">
@@ -1270,16 +1271,68 @@ function getOption() {
 	ptFound = ptFound + " in the " + location + ".";
 
 	// Scene size-up
-	
-	// Look Test - see Patient Care Protocols, Patient Approach, General Impression,
-	// triangle of:  Appearance, Work of Breathing, Circulation to Skin
-	//   might be referred to sometimes as the "look test" or even "across the room
-	//   look test".
 
 
 	// cspine manual stabilization
 	var cspineManual = getRadioVal(document.getElementById("cspineManual"), "cspineInitSt");
 	var cspine = sp2 + cspineManual;
+
+	
+	// Look Test - see Patient Care Protocols, Patient Approach, General Impression,
+	// triangle of:  Appearance, Work of Breathing, Circulation to Skin
+	//   might be referred to sometimes as the "look test" or even "across the room
+	//   look test".
+	var genImp = getRadioVal(document.getElementById("generalImpression"), "adultOrPedi");
+	var LOOKTEST;
+	if ( genImp == "adult" ) {
+		var adultImpApp = getCheckDataConcatCO(document.getElementById("adultImpression"), "adultImpAppSt");
+		if (adultImpApp.length > 1) {
+			adultImpApp = adultImpApp.replace('.','');
+			adultImpApp = "Pt's general appearance:  " + adultImpApp;
+		} else 
+			adultImpApp = "";
+
+		var adultImpBre = getCheckDataConcatCO(document.getElementById("adultImpression"), "adultImpBreSt");
+		if (adultImpBre.length > 1) {
+			adultImpBre = adultImpBre.replace('.','');
+			adultImpBre = ";  work of breathing:  " + adultImpBre;
+		} else
+			adultImpBre = "";
+
+		var adultImpCir = getCheckDataConcatCO(document.getElementById("adultImpression"), "adultImpCirSt");
+		if (adultImpCir.length > 1)
+			adultImpCir = ";  circulation to skin:  " + adultImpCir;
+		else
+			adultImpCir = "";
+		
+		LOOKTEST = adultImpApp + adultImpBre + adultImpCir;
+		
+	} else if ( genImp == "pediatric" ) {
+		var pediImpApp = getCheckDataConcatCO(document.getElementById("pediImpression"), "pediImpAppSt");
+		if (pediImpApp.length > 1) {
+			pediImpApp = pediImpApp.replace('.','');
+			pediImpApp = "Pt's general appearance:  " + pediImpApp;
+		} else 
+			pediImpApp = "";
+
+		var pediImpBre = getCheckDataConcatCO(document.getElementById("pediImpression"), "pediImpBreSt");
+		if (pediImpBre.length > 1) {
+			pediImpBre = pediImpBre.replace('.','');
+			pediImpBre = ";  work of breathing:  " + pediImpBre;
+		} else
+			pediImpBre = "";
+
+		var pediImpCir = getCheckDataConcatCO(document.getElementById("pediImpression"), "pediImpCirSt");
+		if (pediImpCir.length > 1)
+			pediImpCir = ";  circulation to skin:  " + pediImpCir;
+		else
+			pediImpCir = "";
+		
+		LOOKTEST = pediImpApp + pediImpBre + pediImpCir;
+	} else {
+		LOOKTEST = "";
+	}
+	
 
 	// AVPU
 	var AVPU = getRadioVal(document.getElementById("traumaAVPU"), "avpuSt");
@@ -1343,7 +1396,7 @@ function getOption() {
 		var PTOA = "";
 	}
 	
-	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + AVPU + ABCs + RTEstr + cspineAssess + PTOA + newP3;
+	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + LOOKTEST + AVPU + ABCs + RTEstr + cspineAssess + PTOA + newP3;
 
 	// ************************************************************************
 	// ASSESSMENT
