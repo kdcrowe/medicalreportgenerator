@@ -18,6 +18,9 @@ gr {
 rd {
 	color: red;
 }
+bl {
+	color: blue;
+}
 </style>
 </head>
 
@@ -41,6 +44,11 @@ HTML
   Date of birth: <input type="text">
  </fieldset>
 </form>
+
+
+* Make the "Look Test" selection of Adult or Pediatric open either the Adult or Pediatric
+  subsection of checkbox forms to select, otherwise it's just too long.
+
 
 
 Javascript
@@ -254,41 +262,102 @@ What location...<br></br>
 </form>
 
 
+<!-- General Impression
+     see Patient Care Protocols, Patient Approach, General Impression section -->
+<form action="#" method="post" class="generalImpression" id="generalImpression">General Impression (aka the "look test"):<br></br>
+	<!-- First, is it an adult or a child?  Radio button to select one or the other -->
+	<label><input type="radio" onclick="toggleSub2(this, 'adultImp', 'pediImp')" name="adultOrPedi" value="adult" checked />Adult</label>
+	<label><input type="radio" onclick="toggleSub2(this, 'pediImp', 'adultImp')" name="adultOrPedi" value="pediatric" title="Pediatric Patient is defined as a child who fits on a length-based resuscitation tape up to 36kg (79 lbs) or 145cm (57 in)."/>Pediatric</label><br><br>
 
-	<!-- Maybe a pre-AVPU section?  "Approaching the pt I asked their name (or how they were doing) and the pt responded appropriately with their name (or complaint.)  This would allow a nice flow into the actual AVPU - this pre-section might include:  (select all that apply)
-		Asked pt their name & complaint and pt responded with their name and the chief complaint.
-		Asked pt their name & complaint and pt (opened eyes, spoke but did not answer question appropriately, mumbled incoherently}.
-		Asked pt their name & complaint and pt did not respond.
-		{Sternum rub, Shoulder Pinch, Triceps monkey-grab} elicited a slight response.
-		{Sternum rub, Shoulder Pinch, Triceps monkey-grab} did not elicit a response.
-
-
-	<!-- AVPU - Alert, Verbal, Painful, Unconscious -->
-	<form action="#" method="post" class="traumaAVPU" id="traumaAVPU">What was patients alertness level?<br></br>
-		<label><input type="radio" name="avpuSt" value="fully alert and oriented to situation." />fully alert and oriented to situation</label><br>
-		<label><input type="radio" name="avpuSt" value="alert but disoriented." />alert but disoriented</label><br>
-		<label><input type="radio" name="avpuSt" value="verbally responsive." />verbally responsive</label><br>
-		<label><input type="radio" name="avpuSt" value="responsive to painful stimuli." />responsive to painful stimuli</label><br>
-		<label><input type="radio" name="avpuSt" value="unresponsive to painful stimuli." />unresponsive to painful stimuli</label><br>
-		<label><input type="radio" name="avpuSt" value="{patients AVPU level}." />Other</label>
-		<br><br>
+	<div id="adultImp">
+	<form action="#" method="post" class="adultImpression" id="adultImpression"><label>If Adult:</label><br>
+	<label2><bl>Appearance</bl><label2><br>
+	<label2><input type="checkbox" name="adultImpApp" value="awake" />awake</label><br>
+	<label2><input type="checkbox" name="adultImpApp" value="speaking" />speaking</label2><br>
+	<label2><input type="checkbox" name="adultImpApp" value="eye opening" />eye opening</label2><br>
+	<label2><input type="checkbox" name="adultImpApp" value="agitated" />agitated</label2><br>
+	<label2><input type="checkbox" name="adultImpApp" value="limp" />limp</label2><br>
+	<label2><input type="checkbox" name="adultImpApp" value="unresponsive" />unresponsive</label2><br>
+	<label2><gr>Work of Breathing</gr><label2><br>
+	<label2><input type="checkbox" name="adultImpBre" value="labored" />labored</label2><br>
+	<label2><input type="checkbox" name="adultImpBre" value="noisy" />noisy</label2><br>
+	<label2><input type="checkbox" name="adultImpBre" value="fast" />fast</label2><br>
+	<label2><input type="checkbox" name="adultImpBre" value="equal chest rise" />equal chest rise</label2><br>
+	<label2><input type="checkbox" name="adultImpBre" value="unequal chest rise" />unequeal chest rise</label2><br>
+	<label2><rd>Circulation to skin</rd><label2><br>
+	<label2><input type="checkbox" name="adultImpCir" value="pink" />pink</label><br>
+	<label2><input type="checkbox" name="adultImpCir" value="flushed" />flushed</label2><br>
+	<label2><input type="checkbox" name="adultImpCir" value="pale" />pale</label2><br>
+	<label2><input type="checkbox" name="adultImpCir" value="ashen" />ashen</label2><br>
+	<label2><input type="checkbox" name="adultImpCir" value="cyanotic" />cyanotic</label2><br>
+	<br><br>
 	</form>
-
-
-	<!-- Airway - visually patent, interventions:  OPA, NPA, suction -->
-	<form action="#" method="post" class="traumaAirway" id="traumaAirway">Airway status and interventions, select all that apply.<br></br>
-		<label><input type="checkbox" name="airwaySt" value="airway is patent" />airway is patent</label><br>
-		<label><input type="checkbox" name="airwaySt" value="airway is obviously patent due to pt {talking, mumbling, crying}" />airway is obviously patent due to pt {talking, mumbling, crying}</label><br>
-		<label><input type="checkbox" name="airwaySt" value="opened pt's airway with head tilt/chin lift" />opened airway with head tilt/chin lift</label><br>
-		<label><input type="checkbox" name="airwaySt" value="opened airway with modified jaw thrust" />opened airway with modified jaw-thrust</label><br>
-		<label><input type="checkbox" name="airwaySt" value="airway is not patent, suctioned airway to remove {teeth, blood, vomit, other}" />airway is not patent, suctioned airway</label><br>
-		<label><input type="checkbox" name="airwaySt" value="inserted an opa, pt accepted" />inserted an opa, pt accepted</label><br>
-		<label><input type="checkbox" name="airwaySt" value="inserted an opa, pt did not accept" />inserted an opa, pt did not accept</label><br>
-		<label><input type="checkbox" name="airwaySt" value="inserted an npa, pt accepted" />inserted an npa, pt accepted</label><br>
-		<label><input type="checkbox" name="airwaySt" value="inserted an npa, pt did not accept" />inserted an npa, pt did not accept</label><br>
-		<label><input type="checkbox" name="airwaySt" value="Did the following XXX procedures to clear and keep the pt's airway open." />Other</label>
-		<br><br>
+	</div id="adultImp">
+	
+	<div id="pediImp">
+	<form action="#" method="post" class="pediImpression" id="pediImpression"><label>If Pediatric:</label><br>
+	<label2><bl>Appearance</bl><label2><br>
+	<label2><input type="checkbox" name="pediImpApp" value="{ good, poor } muscle tone" />{ good, poor } muscle tone</label><br>
+	<label2><input type="checkbox" name="pediImpApp" value="{ good, poor } interactivity" />{ good, poor } interactivity</label2><br>
+	<label2><input type="checkbox" name="pediImpApp" value="{ consolable, inconsolable }" />{ consolable, inconsolable }</label2><br>
+	<label2><input type="checkbox" name="pediImpApp" value="gase/look {focused, unfocused }" />gaze/look {focused, unfocused }</label2><br>
+	<label2><input type="checkbox" name="pediImpApp" value="{ speech, crying } { normal, abnormal }" />{ speech, crying } { normal, abnormal }</label2><br>
+	<label2><input type="checkbox" name="pediImpApp" value="unresponsive" />unresponsive</label2>
+	<br><br>
+	<label2><gr>Work of Breathing</gr><label2><br>
+	<label2><input type="checkbox" name="pediImpBre" value="airway sounds XXX" />airway sounds XXX</label2><br>
+	<label2><input type="checkbox" name="pediImpBre" value="body position XXX" />body position XXX</label2><br>
+	<label2><input type="checkbox" name="pediImpBre" value="head bobbing" />head bobbing</label2><br>
+	<label2><input type="checkbox" name="pediImpBre" value="chest wall retractions" />chest wall retractions</label2><br>
+	<label2><input type="checkbox" name="pediImpBre" value="nasal flaring" />nasal flaring</label2>
+	<br><br>
+	<label2><rd>Circulation to skin</rd><label2><br>
+	<label2><input type="checkbox" name="pediImpCir" value="pink" />pink</label><br>
+	<label2><input type="checkbox" name="pediImpCir" value="pale" />pale</label2><br>
+	<label2><input type="checkbox" name="pediImpCir" value="mottled" />mottled</label2><br>
+	<label2><input type="checkbox" name="pediImpCir" value="ashen" />ashen</label2><br>
+	<label2><input type="checkbox" name="pediImpCir" value="cyanotic" />cyanotic</label2><br>
+	<br><br>
 	</form>
+	</div id="pediImp">
+</form>
+
+
+<!-- Maybe a pre-AVPU section?  "Approaching the pt I asked their name (or how they were doing) and the pt responded appropriately with their name (or complaint.)  This would allow a nice flow into the actual AVPU - this pre-section might include:  (select all that apply)
+	Asked pt their name & complaint and pt responded with their name and the chief complaint.
+	Asked pt their name & complaint and pt (opened eyes, spoke but did not answer question appropriately, mumbled incoherently}.
+	Asked pt their name & complaint and pt did not respond.
+	{Sternum rub, Shoulder Pinch, Triceps monkey-grab} elicited a slight response.
+	{Sternum rub, Shoulder Pinch, Triceps monkey-grab} did not elicit a response.
+       I wonder if some of these above ^^^  should go into AVPU below vvv ?  At least 'how
+	you elicited a painful reaction? -->
+
+<!-- AVPU:  Alert, Verbal, Painful, Unconscious -->
+<form action="#" method="post" class="traumaAVPU" id="traumaAVPU">AVPU:  What was patients alertness level?<br></br>
+	<label><input type="radio" name="avpuSt" value="fully alert and oriented to situation." />fully alert and oriented to situation</label><br>
+	<label><input type="radio" name="avpuSt" value="alert but disoriented." />alert but disoriented</label><br>
+	<label><input type="radio" name="avpuSt" value="verbally responsive." />verbally responsive</label><br>
+	<label><input type="radio" name="avpuSt" value="responsive to painful stimuli." />responsive to painful stimuli</label><br>
+	<label><input type="radio" name="avpuSt" value="unresponsive to painful stimuli." />unresponsive to painful stimuli</label><br>
+	<label><input type="radio" name="avpuSt" value="{patients AVPU level}." />Other</label>
+	<br><br>
+</form>
+
+
+<!-- Airway - visually patent, interventions:  OPA, NPA, suction -->
+<form action="#" method="post" class="traumaAirway" id="traumaAirway">Airway status and interventions, select all that apply.<br></br>
+	<label><input type="checkbox" name="airwaySt" value="airway is patent" />airway is patent</label><br>
+	<label><input type="checkbox" name="airwaySt" value="airway is obviously patent due to pt {talking, mumbling, crying}" />airway is obviously patent due to pt {talking, mumbling, crying}</label><br>
+	<label><input type="checkbox" name="airwaySt" value="opened pt's airway with head tilt/chin lift" />opened airway with head tilt/chin lift</label><br>
+	<label><input type="checkbox" name="airwaySt" value="opened airway with modified jaw thrust" />opened airway with modified jaw-thrust</label><br>
+	<label><input type="checkbox" name="airwaySt" value="airway is not patent, suctioned airway to remove {teeth, blood, vomit, other}" />airway is not patent, suctioned airway</label><br>
+	<label><input type="checkbox" name="airwaySt" value="inserted an opa, pt accepted" />inserted an opa, pt accepted</label><br>
+	<label><input type="checkbox" name="airwaySt" value="inserted an opa, pt did not accept" />inserted an opa, pt did not accept</label><br>
+	<label><input type="checkbox" name="airwaySt" value="inserted an npa, pt accepted" />inserted an npa, pt accepted</label><br>
+	<label><input type="checkbox" name="airwaySt" value="inserted an npa, pt did not accept" />inserted an npa, pt did not accept</label><br>
+	<label><input type="checkbox" name="airwaySt" value="Did the following XXX procedures to clear and keep the pt's airway open." />Other</label>
+	<br><br>
+</form>
 
 
 	<!-- Breathing - feel chest rise, hear breath sounds, expose chest to look
@@ -913,6 +982,8 @@ Other field automatically filled in with primary care physician & ER Doctor XXX 
 //
 function PgLoadFunc() {
 	
+	toggleSub('generalImpression', 'adultImp');
+	toggleSub('generalImpression', 'pediImp');
 	toggleSub('rte', 'rte_sub');
 
 	// Assessment
@@ -1069,6 +1140,12 @@ function toggleSub(box, id) {
     }
 }
 
+function toggleSub2(box, id1, id2) {
+	
+	toggleSub(box, id1);
+	toggleSubOff(box, id2);
+}
+
 //
 // called onclick of checkbox
 //
@@ -1152,6 +1229,12 @@ function getOption() {
 
 	// Scene size-up
 	
+	// Look Test - see Patient Care Protocols, Patient Approach, General Impression,
+	// triangle of:  Appearance, Work of Breathing, Circulation to Skin
+	//   might be referred to sometimes as the "look test" or even "across the room
+	//   look test".
+
+
 	// cspine manual stabilization
 	var cspineManual = getRadioVal(document.getElementById("cspineManual"), "cspineInitSt");
 	var cspine = sp2 + cspineManual;
@@ -1159,22 +1242,30 @@ function getOption() {
 	// AVPU
 	var AVPU = getRadioVal(document.getElementById("traumaAVPU"), "avpuSt");
 	AVPU = sp2 + "Pt was " + AVPU;
-
-
+	if (AVPU.length <= 27)
+		AVPU = "";
+	
 	// Airway
 	var AIRWAY = getCheckDataConcatCO(document.getElementById("traumaAirway"), "airwaySt");
 	AIRWAY = sp2 + "Airway: " + AIRWAY;
-	
+	if (AIRWAY.length <= 20)
+		AIRWAY = "";
 
 	// Breathing
 	var BREATHING = getCheckDataConcatCO(document.getElementById("Breathing"), "breathSt");
 	BREATHING = sp2 + "Breathing: " + BREATHING;
-
+	if (BREATHING.length <= 23)
+		BREATHING = "";
 
 	// Circulation
 	var CIRCULATION = getCheckDataConcatCO(document.getElementById("Circulation"), "circulationSt");
 	CIRCULATION = sp2 + "Circulation: " + CIRCULATION;
-
+	if (CIRCULATION.length <= 25)
+		CIRCULATION = "";
+	
+	var ABCs = AIRWAY + BREATHING + CIRCULATION;
+	
+	
 	// RTE
 	var RTEPerformed = getRadioVal(document.getElementById("RTE"), "rteExam");
 	if (RTEPerformed == "Yes") {
@@ -1210,7 +1301,7 @@ function getOption() {
 		var PTOA = "";
 	}
 	
-	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + AVPU + AIRWAY + BREATHING + CIRCULATION + RTEstr + cspineAssess + PTOA + newP3;
+	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + AVPU + ABCs + RTEstr + cspineAssess + PTOA + newP3;
 
 	// ************************************************************************
 	// ASSESSMENT
