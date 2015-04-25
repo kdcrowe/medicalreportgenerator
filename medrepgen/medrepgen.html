@@ -255,11 +255,12 @@ What location...<br></br>
 	<label><input type="radio" name="cspineInitSt" value="" checked />No</label><br>
 <br><br>
 </form>
+<br><br>
 
 
 <!-- General Impression
      see Patient Care Protocols, Patient Approach, General Impression section -->
-<form action="#" method="post" class="generalImpression" id="generalImpression">General Impression (aka the "look test"):<br></br>
+<form action="#" method="post" class="generalImpression" id="generalImpression" title="Across the room, or as you enter the room, what is your first, overall, general impression of the patient before you've even laid hands on them?">General Impression (aka the "look test"):<br></br>
 	<!-- First, is it an adult or a child?  Radio button to select one or the other -->
 	<label><input type="radio" onclick="toggleSub2(this, 'adultImp', 'pediImp')" name="adultOrPedi" value="adult" checked />Adult</label>
 	<label><input type="radio" onclick="toggleSub2(this, 'pediImp', 'adultImp')" name="adultOrPedi" value="pediatric" title="Pediatric Patient is defined as a child who fits on a length-based resuscitation tape up to 36kg (79 lbs) or 145cm (57 in)."/>Pediatric</label><br><br>
@@ -316,6 +317,7 @@ What location...<br></br>
 	</form>
 	</div id="pediImp">
 </form>
+<br><br>
 
 
 <!-- Maybe a pre-AVPU section?  "Approaching the pt I asked their name (or how they were doing) and the pt responded appropriately with their name (or complaint.)  This would allow a nice flow into the actual AVPU - this pre-section might include:  (select all that apply)
@@ -328,7 +330,7 @@ What location...<br></br>
 	you elicited a painful reaction? -->
 
 <!-- AVPU:  Alert, Verbal, Painful, Unconscious -->
-<form action="#" method="post" class="traumaAVPU" id="traumaAVPU">AVPU:  What was patients alertness level?<br></br>
+<form action="#" method="post" class="traumaAVPU" id="traumaAVPU" title="You are now at the patients side, you have a close up look at them, you're checking for verbal or painful responses, etc.">AVPU:  What was patients alertness level?<br></br>
 	<label><input type="radio" name="avpuSt" value="fully alert and oriented to situation." />fully alert and oriented to situation</label><br>
 	<label><input type="radio" name="avpuSt" value="alert but disoriented." />alert but disoriented</label><br>
 	<label><input type="radio" name="avpuSt" value="verbally responsive." />verbally responsive</label><br>
@@ -337,6 +339,7 @@ What location...<br></br>
 	<label><input type="radio" name="avpuSt" value="{patients AVPU level}." />Other</label>
 	<br><br>
 </form>
+<br><br>
 
 
 <!-- Airway - visually patent, interventions:  OPA, NPA, suction -->
@@ -400,12 +403,13 @@ What location...<br></br>
 		<label><input type="checkbox" name="circulationSt" value="other bleeding noted & cared for via XXX" />other bleeding noted & cared for via XXX</label><br>
 		<br><br>
 	</form>
+<br><br>
 
 
 <!-- RTE -->
 <form action="#" method="post" class="RTE" id="RTE">Rapid Trauma Exam done?<br>
-<input type="radio" onclick="toggleSub(this, 'rte_sub')" name="rteExam" id="rteExam" value="Yes" />Yes<br>
-<input type="radio" onclick="toggleSubOff(this, 'rte_sub')" name="rteExam" id="rteExam" value="No" checked />No<br>
+	<label><input type="radio" onclick="toggleSub(this, 'rte_sub')" name="rteExam" id="rteExam" value="Yes" />Yes</label><br>
+	<label><input type="radio" onclick="toggleSubOff(this, 'rte_sub')" name="rteExam" id="rteExam" value="No" checked />No</label><br>
 </form>
 <fieldset>
 <div id="rte_sub">
@@ -491,7 +495,7 @@ What location...<br></br>
 
 </div> <!-- rte_sub -->
 </fieldset>
-
+<br><br>
 		
 	<!-- Trauma Team Activation, Paramedic intercept, call for ALS or
 		fire department -->
@@ -584,7 +588,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 	Was pt connected to cardiac monitor?  Or just on PulseOx?  Or neither,
 	and why if that's the case? i.e.
 -->
-<form action="#" method="post" class="monitoringSec" id="monitoringSec"><label>Monitoring during transport and 12-lead, select all that apply:</label><br>
+<form action="#" method="post" class="monitoringSec" id="monitoringSec">Monitoring during transport and 12-lead, select all that apply:<br><br>
 	<label><input type="checkbox" name="monitoringSt" value="Pt connected to LP12, 4-lead for cardiac monitoring." />Pt connected to LP12, 4-lead for cardiac monitoring.</label><br>
 	<label><input type="checkbox" name="monitoringSt" value="12-lead performed by { crew member }." />12-lead performed by { crew member }.</label><br>
 	<label><input type="checkbox" name="monitoringSt" value="LP12 pulse ox applied to XXX hand, XXX finger." />LP12 pulse ox applied to XXX hand, XXX finger.</label><br>
@@ -602,7 +606,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 	LP12 rhythm strip analysis (see newsletter for how to indicate that the
 		only rhythm analysis was done by the LP12.)
 -->
-<form action="#" method="post" class="twelveleadSec" id="twelveLeadSec"><label>Was a 12-lead interpreted by anyone?:</label><br>
+<form action="#" method="post" class="twelveleadSec" id="twelveLeadSec">Was a 12-lead interpreted by anyone?:<br><br>
 	<label><input type="radio" name="twelveLeadSt" value="{ crew member } analysis of 12-lead indicates:" />{ crew member } analysis of 12-lead indicates:</label><br>
 	<label><input type="radio" name="twelveLeadStSt" value="12-lead faxed to { hospital }, call to hospital to alert to incoming 12-lead and 12-lead results interpreted by Dr { doctor name } indicate:" />12-lead faxed to { hospital }, call to hospital to alert to incoming 12-lead and 12-lead results interpreted by Dr { doctor name } indicate:</label><br>
 	<label><input type="radio" name="twelveLeadSt" value="LP12 rhythm strip analysis by monitor indicate:" />LP12 rhythm strip analysis by monitor indicate:</label><br>
@@ -885,9 +889,9 @@ How was patient during transport?
   <option>Pt appeared in pain throughout transport</option>
   <option>Transport was XXX</option>
 </select>
-<br></br>
+<br><br>
 </form>
-
+<br>
 
 <form action="#" method="post" class="T002" id="T002">
 Which hospital did you transport to?<br></br>
@@ -898,7 +902,7 @@ Which hospital did you transport to?<br></br>
 <label><input type="radio" name="hospital" value=" to Monadnock Community." />Monadnock</label>
 <br></br>
 </form>
-
+<br>
 
 <form action="#" method="post" class="T003" id="T003">
 How was patient moved to hospital bed?<br></br>
