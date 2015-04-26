@@ -15,8 +15,14 @@ label2 {
 gr {
 	color: green;
 }
+gr1 {
+	color: #005200;
+}
 rd {
 	color: red;
+}
+rd1 {
+	color: #800000;
 }
 bl {
 	color: blue;
@@ -172,7 +178,7 @@ Patient was found...<br></br>
 
 <form action="#" method="post" class="H002a" id="H002a">
 If <u>seated</u>, on what...<br></br>
-<label><input type="radio" name="foundSeat" value="" checked />&lt;blank&gt</label>
+<label><input type="radio" name="foundSeat" value="" checked />N.A.</label>
 <label><input type="radio" name="foundSeat" value=" on couch" />couch</label>
 <label><input type="radio" name="foundSeat" value=" on a chair" />chair</label>
 <label><input type="radio" name="foundSeat" value=" on the floor" />floor</label>
@@ -184,7 +190,7 @@ If <u>seated</u>, on what...<br></br>
 
 <form action="#" method="post" class="H002b" id="H002b">
 If <u>lying</u>, how...<br></br>
-<label><input type="radio" name="foundLying" value="" checked />&lt;blank&gt</label>
+<label><input type="radio" name="foundLying" value="" checked />N.A.</label>
 <label><input type="radio" name="foundLying" value=", fowlers" />fowlers</label>
 <label><input type="radio" name="foundLying" value=", semi-fowlers" />semi-fowlers</label>
 <label><input type="radio" name="foundLying" value=", prone" />prone</label>
@@ -196,7 +202,7 @@ If <u>lying</u>, how...<br></br>
 
 <form action="#" method="post" class="H002c" id="H002c">
 If <u>lying</u>, on what...<br></br>
-<label><input type="radio" name="foundLyingOn" value="" checked />&lt;blank&gt</label>
+<label><input type="radio" name="foundLyingOn" value="" checked />N.A.</label>
 <label><input type="radio" name="foundLyingOn" value=", on a bed" />bed</label>
 <label><input type="radio" name="foundLyingOn" value=", on the couch" />couch</label>
 <label><input type="radio" name="foundLyingOn" value=", on the floor" />floor</label>
@@ -215,26 +221,8 @@ What location...<br></br>
 <label><input type="radio" name="location" value=" bathroom" />bathroom</label>
 <label><input type="radio" name="location" value=" ER, in room XXX" />in hospital room</label>
 <label><input type="radio" name="location" value=" XXX" />other</label>
-<br><br>
 </form>
-
-
-<form action="#" method="post" class="H004" id="H004">
-<p><input type="checkbox" onclick="toggleSub(this, 'traumaCall_sub')" name="traumaCall" id="traumaCall" value="1" />Click if this was a trauma call</p>
-</form>
-<fieldset>
-<div id="traumaCall_sub">
-
-	<!-- Might ditch this "Click if this was a trauma call"
-			OR, make it so clicking trauma gives options for trauma style calls
-			while clicking medical gives medical style call options?  
-			i.e. roll the "scene size-up (next section) into the "is this trauma"
-			or "is this medical" call flow? -->
-
-</div> <!-- traumasub_call -->
-</fieldset>
 <br><br>
-
 
 
 <!-- Scene Size Up - MVA (airbags, fluids), Fall (height, how fall was
@@ -250,24 +238,26 @@ What location...<br></br>
 
 
 <!-- Manual C-spine or not necessary?  If not, why? -->
-<form action="#" method="post" class="cspineManual" id="cspineManual">C-spine manually stabilized?<br></br>
-	<label><input type="radio"name="cspineInitSt" value="Manual c-spine stabilization of the pt initiated by XXX." />Yes</label><br>
+<fieldset><legend>C-spine manually stabilized?</legend>
+<form action="#" method="post" class="cspineManual" id="cspineManual">
+	<label><input type="radio"name="cspineInitSt" value="Manual c-spine stabilization of the pt initiated by XXX." />Yes</label>
 	<label><input type="radio" name="cspineInitSt" value="" checked />No</label><br>
-<br><br>
 </form>
+</fieldset>
 <br><br>
-
 
 <!-- General Impression
      see Patient Care Protocols, Patient Approach, General Impression section -->
-<form action="#" method="post" class="generalImpression" id="generalImpression" title="Across the room, or as you enter the room, what is your first, overall, general impression of the patient before you've even laid hands on them?">General Impression (aka the "look test"):<br></br>
+<fieldset>
+<legend><span title="Across the room, or as you enter the room, what is your first, overall, general impression of the patient before you've even laid hands on them?">General Impression (aka the "look test"):</span></legend>
+<form action="#" method="post" class="generalImpression" id="generalImpression">
 	<!-- First, is it an adult or a child?  Radio button to select one or the other -->
 	<label><input type="radio" onclick="toggleSub2(this, 'adultImp', 'pediImp')" name="adultOrPedi" value="adult" />Adult</label>
 	<label><input type="radio" onclick="toggleSub2(this, 'pediImp', 'adultImp')" name="adultOrPedi" value="pediatric" title="Pediatric Patient is defined as a child who fits on a length-based resuscitation tape up to 36kg (79 lbs) or 145cm (57 in)."/>Pediatric</label><br><br>
 </form>
 
 	<div id="adultImp">
-	<form action="#" method="post" class="adultImpression" id="adultImpression"><label>If Adult:</label><br>
+	<form action="#" method="post" class="adultImpression" id="adultImpression">
 	<label2><bl>Appearance</bl><label2><br>
 	<label2><input type="checkbox" name="adultImpAppSt" value="awake" />awake</label><br>
 	<label2><input type="checkbox" name="adultImpAppSt" value="speaking" />speaking</label2><br>
@@ -283,16 +273,16 @@ What location...<br></br>
 	<label2><input type="checkbox" name="adultImpBre" value="unequal chest rise" />unequeal chest rise</label2><br><br>
 	<label2><rd>Circulation to skin</rd><label2><br>
 	<label2><input type="checkbox" name="adultImpCirSt" value="pink" />pink</label><br>
-	<label2><input type="checkbox" name="adultImpCirSt" value="flushed" />flushed</label2><br>
+	<label2><input type="checkbox" name="adultImpCirSt" value="flushed" /><span title="Flushed:  a blush or rosy color.">flushed</span></label2><br>
 	<label2><input type="checkbox" name="adultImpCirSt" value="pale" />pale</label2><br>
 	<label2><input type="checkbox" name="adultImpCirSt" value="ashen" />ashen</label2><br>
 	<label2><input type="checkbox" name="adultImpCirSt" value="cyanotic" />cyanotic</label2><br>
-	<br><br>
+	<br>
 	</form>
 	</div id="adultImp">
 	
 	<div id="pediImp">
-	<form action="#" method="post" class="pediImpression" id="pediImpression"><label>If Pediatric:</label><br>
+	<form action="#" method="post" class="pediImpression" id="pediImpression">
 	<label2><bl>Appearance</bl><label2><br>
 	<label2><input type="checkbox" name="pediImpAppSt" value="{ good, poor } muscle tone" />{ good, poor } muscle tone</label><br>
 	<label2><input type="checkbox" name="pediImpAppSt" value="{ good, poor } interactivity" />{ good, poor } interactivity</label2><br>
@@ -314,10 +304,11 @@ What location...<br></br>
 	<label2><input type="checkbox" name="pediImpCirSt" value="mottled" />mottled</label2><br>
 	<label2><input type="checkbox" name="pediImpCirSt" value="ashen" />ashen</label2><br>
 	<label2><input type="checkbox" name="pediImpCirSt" value="cyanotic" />cyanotic</label2><br>
-	<br><br>
+	<br>
 	</form>
 	</div id="pediImp">
 </form>
+</fieldset>
 <br><br>
 
 
@@ -331,15 +322,16 @@ What location...<br></br>
 	you elicited a painful reaction? -->
 
 <!-- AVPU:  Alert, Verbal, Painful, Unconscious -->
-<form action="#" method="post" class="traumaAVPU" id="traumaAVPU" title="You are now at the patients side, you have a close up look at them, you're checking for verbal or painful responses, etc.">AVPU:  What was patients alertness level?<br></br>
+<fieldset><legend><span title="You are now at the patients side, you have a close up look at them, you're checking for verbal or painful responses, etc.">AVPU:  What was patients alertness level?</span></legend>
+<form action="#" method="post" class="traumaAVPU" id="traumaAVPU" >
 	<label><input type="radio" name="avpuSt" value="fully alert and oriented to situation." />fully alert and oriented to situation</label><br>
 	<label><input type="radio" name="avpuSt" value="alert but disoriented." />alert but disoriented</label><br>
 	<label><input type="radio" name="avpuSt" value="verbally responsive." />verbally responsive</label><br>
 	<label><input type="radio" name="avpuSt" value="responsive to painful stimuli." />responsive to painful stimuli</label><br>
 	<label><input type="radio" name="avpuSt" value="unresponsive to painful stimuli." />unresponsive to painful stimuli</label><br>
 	<label><input type="radio" name="avpuSt" value="{patients AVPU level}." />Other</label>
-	<br><br>
 </form>
+</fieldset>
 <br><br>
 
 
@@ -408,90 +400,90 @@ What location...<br></br>
 
 
 <!-- RTE -->
-<form action="#" method="post" class="RTE" id="RTE">Rapid Trauma Exam done?<br>
-	<label><input type="radio" onclick="toggleSub(this, 'rte_sub')" name="rteExam" id="rteExam" value="Yes" />Yes</label><br>
-	<label><input type="radio" onclick="toggleSubOff(this, 'rte_sub')" name="rteExam" id="rteExam" value="No" checked />No</label><br>
+<fieldset><legend>Rapid Trauma Exam done?</legend>
+<form action="#" method="post" class="RTE" id="RTE">
+	<label><input type="radio" onclick="toggleSub(this, 'rte_sub')" name="rteExam" id="rteExam" value="Yes" />Yes</label>
+	<label><input type="radio" onclick="toggleSubOff(this, 'rte_sub')" name="rteExam" id="rteExam" value="No" checked />No</label><br><br>
 </form>
-<fieldset>
 <div id="rte_sub">
 
 	<!-- RTE HEAD -->
 	<form action="#" method="post" class="RTEHEAD" id="RTEHEAD"><label>HEAD:</label><br>
-		<label2><input type="checkbox" name="rteHeadSt" value="NC/AT" />NC/AT</label2><br>
-		<label2><input type="checkbox" name="rteHeadSt" value="life threatening injuries to the head including XXX" />life threatening injuries to the head including XXX</label2><br>
-		<label2><input type="checkbox" name="rteHeadSt" value="secondary injuries to the head noted including XXX" />secondary injuries to the head noted including XXX</label2><br>
-	<br><br>
+		<label2><input type="checkbox" name="rteHeadSt" value="NC/AT" /><span title="NC - Normocephalic; AT - Atraumatic"><gr1>NC/AT</gr1></span></label2><br>
+		<label2><input type="checkbox" name="rteHeadSt" value="life threatening injuries to the head including XXX" /><rd1>life threatening injuries to the head including XXX</rd1></label2><br>
+		<label2><input type="checkbox" name="rteHeadSt" value="secondary injuries to the head noted including XXX" /><rd1>secondary injuries to the head noted including XXX</rd1></label2><br>
+	<br>
 	</form>
 
 	<!-- RTE NECK -->
 	<form action="#" method="post" class="RTENECK" id="RTENECK"><label>NECK:</label><br>
-		<label2><input type="checkbox" name="rteNeckSt" value="no tracheal deviation" />no tracheal deviation</label2><br>
-		<label2><input type="checkbox" name="rteNeckSt" value="no excessive JVD" />no excessive JVD</label2><br>
-		<label2><input type="checkbox" name="rteNeckSt" value="no step-offs" />no step-offs</label2><br>
-		<label2><input type="checkbox" name="rteNeckSt" value="tracheal deviation to the XXX side" />tracheal deviation to the XXX side</label2><br>
-		<label2><input type="checkbox" name="rteNeckSt" value="excessive JVD" />excessive JVD</label2><br>
-		<label2><input type="checkbox" name="rteNeckSt" value="step-offs present" />step-offs present</label2><br>
-		<label2><input type="checkbox" name="rteNeckSt" value="cervical collar applied" />cervical collar applied</label2><br>
-	<br><br>
+		<label2><input type="checkbox" name="rteNeckSt" value="no tracheal deviation" /><gr1>no tracheal deviation</gr1></label2><br>
+		<label2><input type="checkbox" name="rteNeckSt" value="no excessive JVD" /><gr1>no excessive JVD</gr1></label2><br>
+		<label2><input type="checkbox" name="rteNeckSt" value="no step-offs" /><gr1>no step-offs</gr1></label2><br>
+		<label2><input type="checkbox" name="rteNeckSt" value="tracheal deviation to the XXX side" /><rd1>tracheal deviation to the XXX side</rd1></label2><br>
+		<label2><input type="checkbox" name="rteNeckSt" value="excessive JVD" /><rd1>excessive JVD</rd1></label2><br>
+		<label2><input type="checkbox" name="rteNeckSt" value="step-offs present" /><rd1>step-offs present</rd1></label2><br>
+		<label2><input type="checkbox" name="rteNeckSt" value="cervical collar applied" /><rd1>cervical collar applied</rd1></label2><br>
+	<br>
 	</form>
 
 	<!-- RTE CHEST -->
 	<form action="#" method="post" class="RTECHEST" id="RTECHEST"><label>CHEST:</label><br>
-		<label2><input type="checkbox" name="rteChestSt" value="no punctures" />no punctures</label2><br>
-		<label2><input type="checkbox" name="rteChestSt" value="no flail chest" />no flail chest</label2><br>
-		<label2><input type="checkbox" name="rteChestSt" value="no crepitice" />no crepitice</label2><br>
-		<label2><input type="checkbox" name="rteChestSt" value="puncture to the XXX side" />puncture to the XXX side</label2><br>
-		<label2><input type="checkbox" name="rteChestSt" value="flail chest to the XXX side including XXX ribs" />flail chest to the XXX side including XXX ribs</label2><br>
-		<label2><input type="checkbox" name="rteChestSt" value="crepitice to the XXX area" />crepitice to the XXX area</label2><br>
-	<br><br>
+		<label2><input type="checkbox" name="rteChestSt" value="no punctures" /><gr1>no punctures</gr1></label2><br>
+		<label2><input type="checkbox" name="rteChestSt" value="no flail chest" /><gr1>no flail chest</gr1></label2><br>
+		<label2><input type="checkbox" name="rteChestSt" value="no crepitice" /><gr1>no crepitice</gr1></label2><br>
+		<label2><input type="checkbox" name="rteChestSt" value="puncture to the XXX side" /><rd1>puncture to the XXX side</rd1></label2><br>
+		<label2><input type="checkbox" name="rteChestSt" value="flail chest to the XXX side including XXX ribs" /><rd1>flail chest to the XXX side including XXX ribs</rd1></label2><br>
+		<label2><input type="checkbox" name="rteChestSt" value="crepitice to the XXX area" /><rd1>crepitice to the XXX area</rd1></label2><br>
+	<br>
 	</form>
 
 	<!-- RTE Abdomen -->
 	<form action="#" method="post" class="RTEABS" id="RTEABS"><label>ABDOMEN:</label><br>
-		<label2><input type="checkbox" name="rteAbsSt" value="no guarding or sensitivity" />no guarding or sensitivity</label2><br>
-		<label2><input type="checkbox" name="rteAbsSt" value="no pulsating masses" />no pulsating masses</label2><br>
-		<label2><input type="checkbox" name="rteAbsSt" value="no rigidity" />no rigidity</label2><br>
-		<label2><input type="checkbox" name="rteAbsSt" value="{guarding, sensitivity} to the XXX quadrant" />{guarding, sensitivity} to the XXX quadrant</label2><br>
-		<label2><input type="checkbox" name="rteAbsSt" value="pulsating mass in the XXX quadrant" />pulsating mass in the XXX quadrant</label2><br>
-		<label2><input type="checkbox" name="rteAbsSt" value="rigidity in the XXX quadrant" />rigidity in the XXX quadrant</label2><br>
-	<br><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="no guarding or sensitivity" /><gr1>no guarding or sensitivity</gr1></label2><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="no pulsating masses" /><gr1>no pulsating masses</gr1></label2><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="no rigidity" /><gr1>no rigidity</gr1></label2><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="{guarding, sensitivity} to the XXX quadrant" /><rd1>{guarding, sensitivity} to the XXX quadrant</rd1></label2><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="pulsating mass in the XXX quadrant" /><rd1>pulsating mass in the XXX quadrant</rd1></label2><br>
+		<label2><input type="checkbox" name="rteAbsSt" value="rigidity in the XXX quadrant" /><rd1>rigidity in the XXX quadrant<rd1></label2><br>
+	<br>
 	</form>
 
 	<!-- RTE Hips -->
 	<form action="#" method="post" class="RTEHIPS" id="RTEHIPS"><label>HIPS:</label><br>
-		<label2><input type="checkbox" name="rteHipsSt" value="hips pressed in and down reveal no splaying or evidence of pain" />hips pressed in and down reveal no splaying or evidence of pain</label2><br>
-		<label2><input type="checkbox" name="rteHipsSt" value="hips pressed in and down reveal excessive movement" />hips pressed in and down reveal excessive movement</label2><br>
-		<label2><input type="checkbox" name="rteHipsSt" value="hips pressed in adn down show evidence of pain" />hips pressed in and down show evidence of pain</label2><br>
-	<br><br>
+		<label2><input type="checkbox" name="rteHipsSt" value="hips pressed in and down reveal no splaying or evidence of pain" /><gr1>hips pressed in and down reveal no splaying or evidence of pain</gr1></label2><br>
+		<label2><input type="checkbox" name="rteHipsSt" value="hips pressed in and down reveal excessive movement" /><rd1>hips pressed in and down reveal excessive movement</rd1></label2><br>
+		<label2><input type="checkbox" name="rteHipsSt" value="hips pressed in adn down show evidence of pain" /><rd1>hips pressed in and down show evidence of pain</rd1></label2><br>
+	<br>
 	</form>
 
 	<!-- RTE Legs -->
 	<form action="#" method="post" class="RTELEGS" id="RTELEGS"><label>LEGS:</label><br>
-		<label2><input type="checkbox" name="rteLegsSt" value="no remarkable DCAP-BTLS" />no remarkable DCAP-BTLS</label2><br>
-		<label2><input type="checkbox" name="rteLegsSt" value="CSM's present and equal bilaterally" />CSM's present and equal bilaterally</label2><br>
-		<label2><input type="checkbox" name="rteLegsSt" value="DCAP-BTLS of note including XXX" />DCAP-BTLS of note including XXX</label2><br>
-		<label2><input type="checkbox" name="rteLegsSt" value="CSM's not {present, adequate} in XXX leg" />CSM's not {present, adequate} in XXX leg</label2><br>
-	<br><br>
+		<label2><input type="checkbox" name="rteLegsSt" value="no remarkable DCAP-BTLS" /><gr1>no remarkable DCAP-BTLS</gr1></label2><br>
+		<label2><input type="checkbox" name="rteLegsSt" value="CSM's present and equal bilaterally" /><gr1>CSM's present and equal bilaterally</gr1></label2><br>
+		<label2><input type="checkbox" name="rteLegsSt" value="DCAP-BTLS of note including XXX" /><rd1>DCAP-BTLS of note including XXX</rd1></label2><br>
+		<label2><input type="checkbox" name="rteLegsSt" value="CSM's not {present, adequate} in XXX leg" /><rd1>CSM's not {present, adequate} in XXX leg</rd1></label2><br>
+	<br>
 	</form>
 
 	<!-- RTE Arms -->
 	<form action="#" method="post" class="RTEARMS" id="RTEARMS"><label>ARMS:</label><br>
-		<label2><input type="checkbox" name="rteArmssSt" value="no remarkable DCAP-BTLS" />no remarkable DCAP-BTLS</label2><br>
-		<label2><input type="checkbox" name="rteArmsSt" value="CSM's present and equal bilaterally" />CSM's present and equal bilaterally</label2><br>
-		<label2><input type="checkbox" name="rteArmsSt" value="DCAP-BTLS of note including XXX" />DCAP-BTLS of note including XXX</label2><br>
-		<label2><input type="checkbox" name="rteArmsSt" value="CSM's not {present, adequate} in XXX arm" />CSM's not {present, adequate} in XXX arm</label2><br>
-	<br><br>
+		<label2><input type="checkbox" name="rteArmssSt" value="no remarkable DCAP-BTLS" /><gr1>no remarkable DCAP-BTLS</gr1></label2><br>
+		<label2><input type="checkbox" name="rteArmsSt" value="CSM's present and equal bilaterally" /><gr1>CSM's present and equal bilaterally</gr1></label2><br>
+		<label2><input type="checkbox" name="rteArmsSt" value="DCAP-BTLS of note including XXX" /><rd1>DCAP-BTLS of note including XXX</rd1></label2><br>
+		<label2><input type="checkbox" name="rteArmsSt" value="CSM's not {present, adequate} in XXX arm" /><rd1>CSM's not {present, adequate} in XXX arm</rd1></label2><br>
+	<br>
 	</form>
 
 	<!-- RTE Back -->
 	<form action="#" method="post" class="RTEBACK" id="RTEBACK"><label>BACK:</label><br>
-		<label2><input type="checkbox" name="rteBackSt" value="no remarkable DCAP-BTLS" />no remarkable DCAP-BTLS</label2><br>
-		<label2><input type="checkbox" name="rteBackSt" value="no punctures" />no punctures</label2><br>
-		<label2><input type="checkbox" name="rteBackSt" value="no step-offs" />no step-offs</label2><br>
-		<label2><input type="checkbox" name="rteBackSt" value="DCAP-BTLS of note including XXX" />DCAP-BTLS of note including XXX</label2><br>
-		<label2><input type="checkbox" name="rteBackSt" value="punctures to the XXX side" />punctures to the XXX side</label2><br>
-		<label2><input type="checkbox" name="rteBackSt" value="step-offs in the area of XXX" />step-offs in the area of XXX</label2><br>
-	<br><br>
+		<label2><input type="checkbox" name="rteBackSt" value="no remarkable DCAP-BTLS" /><gr1>no remarkable DCAP-BTLS</gr1></label2><br>
+		<label2><input type="checkbox" name="rteBackSt" value="no punctures" /><gr1>no punctures</gr1></label2><br>
+		<label2><input type="checkbox" name="rteBackSt" value="no step-offs" /><gr1>no step-offs</gr1></label2><br>
+		<label2><input type="checkbox" name="rteBackSt" value="DCAP-BTLS of note including XXX" /><rd1>DCAP-BTLS of note including XXX</rd1></label2><br>
+		<label2><input type="checkbox" name="rteBackSt" value="punctures to the XXX side" /><rd1>punctures to the XXX side</rd1></label2><br>
+		<label2><input type="checkbox" name="rteBackSt" value="step-offs in the area of XXX" /><rd1>step-offs in the area of XXX</rd1></label2><br>
+	<br>
 	</form>
 
 </div> <!-- rte_sub -->
@@ -503,14 +495,14 @@ What location...<br></br>
 
 
 <!-- C-spine precautions -->
-<p><form action="#" method="post" class="cspineAssess" id="cspineAssess">Advanced Spinal Assessment<br></br>
+<fieldset><legend>Advanced Spinal Assessment:</legend>
+<form action="#" method="post" class="cspineAssess" id="cspineAssess">
 	<label><input type="radio" name="cspineSt" value="" checked />N.A.</label><br>
 	<label><input type="radio" name="cspineSt" value="ASAN" />Advanced Spinal Assessment <gr>NEGATIVE</gr> FINDINGS</label><br>
 	<label><input type="radio" name="cspineSt" value="ASAP" />Advanced Spinal Assessment <rd>POSITIVE</rd> FINDINGS</label><br>
-<br><br>
 </form>
-
-
+</fieldset>
+<br><br>
 
 	<!-- Re-assessed mental status including:
 		Appearance, Attitude, Behaviour, Mood & Affect, Speech.
@@ -525,7 +517,7 @@ What location...<br></br>
 		color/temp/condition, BG, Lung sounds -->
 <fieldset>
 <legend>On-scene vitals:</legend>
-<form action="#" method="post" class="onSceneVitals" id="onSceneVitals"><br>
+<form action="#" method="post" class="onSceneVitals" id="onSceneVitals">
 	<label>Heart Rate: <input type="text" name="osHR" value="" /></label><br>
 	<label>Blood Pressure: <input type="text" name="osBP" value="" /></label><br>
 	<label>SpO2: <input type="text" name="osSpO2" value="" /></label><br>
@@ -533,8 +525,8 @@ What location...<br></br>
 	<label>Skin color/temp/condition: <input type="text" name="osSkin" value="" /></label><br>
 	<label>Lung Sounds: <input type="text" name="osLungSounds" value="" /></label><br>
 <br>
-</fieldset>
 </form>
+</fieldset>
 
 		
 	<!-- on-site SAMPLE -->
@@ -1288,7 +1280,7 @@ function getOption() {
 		var adultImpApp = getCheckDataConcatCO(document.getElementById("adultImpression"), "adultImpAppSt");
 		if (adultImpApp.length > 1) {
 			adultImpApp = adultImpApp.replace('.','');
-			adultImpApp = "Pt's general appearance:  " + adultImpApp;
+			adultImpApp = "  General impression of pt's appearance:  " + adultImpApp;
 		} else 
 			adultImpApp = "";
 
@@ -1311,7 +1303,7 @@ function getOption() {
 		var pediImpApp = getCheckDataConcatCO(document.getElementById("pediImpression"), "pediImpAppSt");
 		if (pediImpApp.length > 1) {
 			pediImpApp = pediImpApp.replace('.','');
-			pediImpApp = "Pt's general appearance:  " + pediImpApp;
+			pediImpApp = "  General impression of pt's appearance:  " + pediImpApp;
 		} else 
 			pediImpApp = "";
 
@@ -1336,25 +1328,25 @@ function getOption() {
 
 	// AVPU
 	var AVPU = getRadioVal(document.getElementById("traumaAVPU"), "avpuSt");
-	AVPU = sp2 + "Pt was " + AVPU;
+	AVPU = newP + "AVPU check reveals that pt was " + AVPU;
 	if (AVPU.length <= 27)
 		AVPU = "";
 	
 	// Airway
 	var AIRWAY = getCheckDataConcatCO(document.getElementById("traumaAirway"), "airwaySt");
-	AIRWAY = sp2 + "Airway: " + AIRWAY;
+	AIRWAY = newL + "Airway: " + AIRWAY;
 	if (AIRWAY.length <= 20)
 		AIRWAY = "";
 
 	// Breathing
 	var BREATHING = getCheckDataConcatCO(document.getElementById("Breathing"), "breathSt");
-	BREATHING = sp2 + "Breathing: " + BREATHING;
+	BREATHING = newL + "Breathing: " + BREATHING;
 	if (BREATHING.length <= 23)
 		BREATHING = "";
 
 	// Circulation
 	var CIRCULATION = getCheckDataConcatCO(document.getElementById("Circulation"), "circulationSt");
-	CIRCULATION = sp2 + "Circulation: " + CIRCULATION;
+	CIRCULATION = newL + "Circulation: " + CIRCULATION;
 	if (CIRCULATION.length <= 25)
 		CIRCULATION = "";
 	
@@ -1381,10 +1373,10 @@ function getOption() {
 	var cspineAssess = getRadioVal(document.getElementById("cspineAssess"), "cspineSt");
 	switch (cspineAssess) {
 		case "ASAN":
-			cspineAssess = sp2 + "Pt was negative on Advanced Spinal Assessment as they were older than 9, calm and cooperative and did not have AMS.  Pt was not under the influence of drugs or alcohol, suffering from an accute stress reaction or otherwise distracted by injuries to themselves or others, and had no barriers to communication.  Pt did not exhibit spinal pain or tenderness upon palpation and had no step-offs or deformaties the length of the palpable spine.  Pt had no paresthesia in extremities and had full and symmetrical motor strength and sensation in all extremities.  Pt had full cervical flexion, extension and rotation without pain and did not require any physical assistence.";
+			cspineAssess = newL + "Pt was negative on Advanced Spinal Assessment as they were older than 9, calm and cooperative and did not have AMS.  Pt was not under the influence of drugs or alcohol, suffering from an accute stress reaction or otherwise distracted by injuries to themselves or others, and had no barriers to communication.  Pt did not exhibit spinal pain or tenderness upon palpation and had no step-offs or deformaties the length of the palpable spine.  Pt had no paresthesia in extremities and had full and symmetrical motor strength and sensation in all extremities.  Pt had full cervical flexion, extension and rotation without pain and did not require any physical assistence.";
 			break;
 		case "ASAP":
-			cspineAssess = sp2 + "Pt was positive on Advanced Spinal Assessment as they were {under 10 YO, excited and uncooperative, exhibiting AMS, under the influence of drugs or alcohol, suffering from an accute stress reaction, distracted by injuries to themselves or others, had barriers to communication.}  Pt exhibited {spinal pain or tenderness upon palpation, palpable step-offs or deformaties, paresthesia in XXX extremities, only partial and/or asymmetrical motor strength and sensation in XXX extremities, only partial cervical flexion, extension and rotation with pain, required physical assistence including XXX.}";
+			cspineAssess = newL + "Pt was positive on Advanced Spinal Assessment as they were {under 10 YO, excited and uncooperative, exhibiting AMS, under the influence of drugs or alcohol, suffering from an accute stress reaction, distracted by injuries to themselves or others, had barriers to communication.}  Pt exhibited {spinal pain or tenderness upon palpation, palpable step-offs or deformaties, paresthesia in XXX extremities, only partial and/or asymmetrical motor strength and sensation in XXX extremities, only partial cervical flexion, extension and rotation with pain, required physical assistence including XXX.}";
 	}
 
 	
