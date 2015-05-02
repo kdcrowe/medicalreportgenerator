@@ -334,6 +334,8 @@ What location...<br></br>
 </fieldset>
 <br><br>
 
+<fieldset>
+<legend>ABC's</legend>
 
 <!-- Airway - visually patent, interventions:  OPA, NPA, suction -->
 <form action="#" method="post" class="traumaAirway" id="traumaAirway">Airway status and interventions, select all that apply.<br></br>
@@ -394,8 +396,9 @@ What location...<br></br>
 		<label><input type="checkbox" name="circulationSt" value="tourniquet applied to XXX {arm, leg}" />tourniquet applied to XXX {arm, leg}</label><br>
 		<label><input type="checkbox" name="circulationSt" value="direct pressure applied to control the bleeding" />direct pressure applied to control the bleeding</label><br>
 		<label><input type="checkbox" name="circulationSt" value="other bleeding noted & cared for via XXX" />other bleeding noted & cared for via XXX</label><br>
-		<br><br>
+		<br>
 	</form>
+</fieldset> <!-- ABC's -->
 <br><br>
 
 
@@ -513,8 +516,8 @@ What location...<br></br>
 			AND add the Title label for explanations! -->
 
 
-	<!-- On-site Vitals - especially SpO2, BP, HR, skin
-		color/temp/condition, BG, Lung sounds -->
+<!-- On-site Vitals - especially SpO2, BP, HR, skin color/temp/condition,
+	BG, Lung sounds -->
 <fieldset>
 <legend>On-scene vitals:</legend>
 <form action="#" method="post" class="onSceneVitals" id="onSceneVitals">
@@ -588,11 +591,14 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 <a id="assessmentsection"></a>
 <p1><b>ASSESSMENT</b></p1>
 <fieldset>
+<br>
 
 <!-- Transport monitoring:
 	Was pt connected to cardiac monitor?  Or just on PulseOx?  Or neither,
 	and why if that's the case? i.e.
 -->
+<fieldset>
+<legend>Transport Monitoring & 12-lead</legend>
 <form action="#" method="post" class="monitoringSec" id="monitoringSec">Monitoring during transport and 12-lead, select all that apply:<br><br>
 	<label><input type="checkbox" name="monitoringSt" value="Pt connected to LP12, 4-lead for cardiac monitoring." />Pt connected to LP12, 4-lead for cardiac monitoring.</label><br>
 	<label><input type="checkbox" name="monitoringSt" value="12-lead performed by { crew member }." />12-lead performed by { crew member }.</label><br>
@@ -603,19 +609,11 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 <br><br>
 </form>
 
-
-<!-- Was 12-lead performed - determine from above checkbox?
-	{ crew member } analysis of 12-lead indicates: 
-	12-lead faxed to { hospital }, call to hospital to alert to incoming 12-lead
-		and 12-lead results interpreted by Dr { doctor name }.
-	LP12 rhythm strip analysis (see newsletter for how to indicate that the
-		only rhythm analysis was done by the LP12.)
--->
+<!-- Was 12-lead performed - determine from above checkbox? -->
 <form action="#" method="post" class="twelveleadSec" id="twelveLeadSec">Was a 12-lead interpreted by anyone?:<br><br>
 	<label><input type="radio" name="twelveLeadSt" value="{ crew member } analysis of 12-lead indicates:" />{ crew member } analysis of 12-lead indicates:</label><br>
-	<label><input type="radio" name="twelveLeadStSt" value="12-lead faxed to { hospital }, call to hospital to alert to incoming 12-lead and 12-lead results interpreted by Dr { doctor name } indicate:" />12-lead faxed to { hospital }, call to hospital to alert to incoming 12-lead and 12-lead results interpreted by Dr { doctor name } indicate:</label><br>
+	<label><input type="radio" name="twelveLeadSt" value="12-lead faxed to { hospital }, call to hospital to alert to incoming 12-lead and 12-lead results interpreted by Dr { doctor name } indicate:" />12-lead faxed to { hospital }, call to hospital to alert to incoming 12-lead and 12-lead results interpreted by Dr { doctor name } indicate:</label><br>
 	<label><input type="radio" name="twelveLeadSt" value="LP12 rhythm strip analysis by monitor indicate:" />LP12 rhythm strip analysis by monitor indicate:</label><br>
-<br><br>
 </form>
 
 
@@ -627,16 +625,28 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 		Then, will need to talk to Andrew about this.
 -->
 
-<!-- Initial transport vitals:
-	HR XXX
-	BP XXX/XXX
-	Skin { color/temp/condition }
-	SpO2 XXX
-	BG XXX
-	Temperature
-	Lung sounds { XXX } <- actually this should be it's own category with
-		choices for the lung sounds
+
+<br>
+</fieldset> <!-- Transport Monitoring & 12-lead -->
+<br><br>
+
+
+<!-- Initial transport vitals
 -->
+<fieldset>
+<legend>Initial transport vitals:</legend>
+<form action="#" method="post" class="onSceneVitals" id="onSceneVitals">
+	<label>Heart Rate: <input type="text" name="txHR" value="" /></label><br>
+	<label>Blood Pressure: <input type="text" name="txBP" value="" /></label><br>
+	<label>SpO2: <input type="text" name="txSpO2" value="" /></label><br>
+	<label>Blood Glucose: <input type="text" name="txBG" value="" /></label><br>
+	<label>Skin color/temp/condition: <input type="text" name="txSkin" value="" /></label><br>
+	<label>Lung Sounds: <input type="text" name="txLungSounds" value="" /></label><br>
+	<label>Temperature: <input type="text" name="txLungSounds" value="" /></label><br>
+<br>
+</form>
+</fieldset> <!-- Initial transport vitals. -->
+<br>
 
 <!-- Detailed/follow-up SAMPLE history
 		Probably each one of these is it's own form of answers.
@@ -1329,7 +1339,7 @@ function getOption() {
 	// AVPU
 	var AVPU = getRadioVal(document.getElementById("traumaAVPU"), "avpuSt");
 	AVPU = newP + "AVPU check reveals that pt was " + AVPU;
-	if (AVPU.length <= 27)
+	if (AVPU.length <= 48)
 		AVPU = "";
 	
 	// Airway
@@ -1396,6 +1406,8 @@ function getOption() {
 
 	MONITORING = getCheckDataConcat(document.getElementById("monitoringSec"), "monitoringSt");
 	
+	// Determine if a 12 lead was performed from this sub-text, and if so, only
+	// then include the 12 lead statements.
 	if (MONITORING.indexOf("12-lead") > -1) {
 		TWELVELEAD = sp2 + getRadioVal(document.getElementById("twelveLeadSec"), "twelveLeadSt");
 	} else {
