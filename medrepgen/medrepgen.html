@@ -532,7 +532,7 @@ What location...<br></br>
 </fieldset>
 
 		
-	<!-- on-site SAMPLE -->
+<!-- on-site SAMPLE -->
 	<!-- Signs & Symptoms -->
 	
 	<!-- Allergies -->
@@ -545,11 +545,10 @@ What location...<br></br>
 
 	<!-- Events Leading Up To -->
 
-
 <br><br>
 
 
-<!-- 2nd paragraph -->
+<!-- xx paragraph -->
 <form action="#" method="post" class="H100" id="H100">
 Did anything happen prior to your arrival that should be noted?<br></br>
 <label><input type="radio" name="PTA" value="Yes" checked />Yes</label>
@@ -559,22 +558,44 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 
 
 
-	<!-- How was pt moved to the ambulance?
-		Scoop, backboard, stair chair or the (fabric style) carry device
-			used to move the pt?  OR Pt walked to ambulance, stepped up in
-			and sat on stretcher/bench seat/tech seat?  This might nullify
-			the other options if selected.
-		How did you get pt to the carry device?  Pt moved on own: assisted
-			pt to stand, walk, turn, sit; pt slid themselves onto it (scoop
-			or backboard on ground for example); pt was carried/lifted by XXX
-			people to device.
-		How was pt secured to device?  Straps; buckles; sheet wrap; other means?
-		How was carrying device moved to ambulance?  Carried, wheeled?
-		Was pt moved from the carry device to the stretcher prior to loading
-			in the ambulance?
-		How was stretcher loaded into ambulance?  OR just state fact:  Stretcher
-			was loaded into ambulance and secured, doors closed.
-		Collar already applied in neck section of RTE above. -->
+<!-- How was pt moved to the ambulance?
+	Scoop, backboard, stair chair or the (fabric style) carry device
+		used to move the pt?  OR Pt walked to ambulance, stepped up in
+		and sat on stretcher/bench seat/tech seat?  This might nullify
+		the other options if selected.
+	How did you get pt to the carry device?  Pt moved on own: assisted
+		pt to stand, walk, turn, sit; pt slid themselves onto it (scoop
+		or backboard on ground for example); pt was carried/lifted by XXX
+		people to device.
+	How was pt secured to device?  Straps; buckles; sheet wrap; other means?
+	How was carrying device moved to ambulance?  Carried, wheeled?
+	Was pt moved from the carry device to the stretcher prior to loading
+		in the ambulance?
+	How was stretcher loaded into ambulance?  OR just state fact:  Stretcher
+		was loaded into ambulance and secured, doors closed.
+	Collar already applied in neck section of RTE above. -->
+<fieldset>
+<legend>How was patient moved to ambulance?</legend>
+
+
+	<!-- How was patient moved to stretcher? -->
+	<form action="#" method="post" class="ptOntoStretcher" id="ptOntoStretcher">How was patient moved to the stretcher?:<br><br>
+		<label><input type="radio" name="ptOntoStretcherSt" value="Pt assisted by crew to stand, shuffle a few steps, turn and sit on the stretcher." checked />Pt assisted by crew to stand, shuffle a few steps, turn and sit on the stretcher.</label><br>
+		<label><input type="radio" name="ptOntoStretcherSt" value="Pt moved to stretcher under their own power and seated themselves." />Pt moved to stretcher under their own power and seated themselves.</label><br>
+		<label><input type="radio" name="ptOntoStretcherSt" value="" />N.A.</label><br>
+		<label><input type="radio" name="ptOntoStretcherSt" value="" /></label><br>
+	</form> <!-- ptOntoStretcher -->
+	<br>
+
+
+	<!-- Finally, how was patient loaded into the ambulance -->
+	<form action="#" method="post" class="ptIntoAmbulance" id="ptIntoAmbulance">How was patient actually moved into the ambulance?:<br><br>
+		<label><input type="radio" name="ptIntoAmbulanceSt" value="Pt seated on stretcher, covered with blanket, all buckles secured, rails raised and stretcher loaded into ambulance." checked />Pt seated on stretcher, covered with blanket...etc...</label><br>
+		<label><input type="radio" name="ptIntoAmbulanceSt" value="Pt assisted to step up into ambulance and seated on stretcher, covered with blanket, all buckles secured and rails raised." />Pt assisted to step up into ambulance and seated on stretcher...etc...</label><br>
+		<label><input type="radio" name="ptIntoAmbulanceSt" value="Pt assisted to step up into ambulance, directed to { tech, bench } seat and seatbelt fastened." />Pt assisted to step up into ambulance, directed to { tech, bench } seat and seatbelt fastened.</label><br>
+	</form> <!-- ptIntoAmbulance -->
+
+</fieldset> <!-- How was patient moved to ambulance -->
 
 
 <br><a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
@@ -984,9 +1005,9 @@ Was oxygen transferred over, patient connected to NIBP, pulse ox, etc?<br></br>
 
 <br></br>
 <!--
- ==============================================================================
- OTHER section
- ==============================================================================
+==============================================================================
+OTHER section
+==============================================================================
  -->
 <a id="othersection"></a>
 <p1><b>OTHER</b></p1>
@@ -1000,9 +1021,9 @@ Other field automatically filled in with primary care physician & ER Doctor XXX 
 
 <br></br>
 <!--
- ==============================================================================
-  Generate the document by calling javascript function
- ==============================================================================
+==============================================================================
+Generate the document by calling javascript function
+==============================================================================
   -->
 <a id="generatesection">
 
@@ -1011,9 +1032,9 @@ Other field automatically filled in with primary care physician & ER Doctor XXX 
 
 
 <!-- 
- ==============================================================================
- Display the "demo" document
- ==============================================================================
+==============================================================================
+Display the "demo" document
+==============================================================================
  -->
 <p id="demo"></p>
 
