@@ -861,10 +861,26 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 		</div> <!-- dpeNeck_sub -->
 
 
-
-			<form action="#" method="post" class="RTEUPAIRWAY" id="RTEUPAIRWAY">Select statements about upper airway<br></br>
+	<!-- UPPERAIRWAY -->
+	<form action="#" method="post" class="dpeUpperAirwayForm" id="dpeUpperAirwayForm">
+	<input type="checkbox" onclick="toggleSub(this, 'dpeUpperAirway_sub')" name="dpeUpperAirway" id="dpeUpperAirway" value="1" />UPPER AIRWAY, click to expand</p>
+		<div id="dpeUpperAirway_sub">
+	</form>
+			<form action="#" method="post" class="dpeUpperAirwaySec" id="dpeUpperAirwaySec">Select statements about upper airway:<br></br>
+				<label><input type="checkbox" name="upperAirwaySt" value="Gag reflex intact." /><span title="">Gag reflex intact.</span></label><br>
+				<label><input type="checkbox" name="upperAirwaySt" value="Patient able to clear airway without assistance and routinely swallows without snoring, coughing or gagging." /><span title="">Patient able to clear airway without assistance and routinely swallows without snoring, coughing or gagging.</span></label><br>
+				<label><input type="checkbox" name="upperAirwaySt" value="Patient is breathing normally and speaking in full sentences." /><span title="">Patient is breathing normally and speaking in full sentences.</span></label><br>
+			<label>INJURIES:</label><br>
+				<label><input type="checkbox" name="upperAirwaySt" value="No gag reflex evident." /><span title="">No gag reflex evident.</span></label><br>
+				<label><input type="checkbox" name="upperAirwaySt" value="Patient unable to clear airway without assistance." /><span title="">Patient unable to clear airway without assistance.</span></label><br>
+				<label><input type="checkbox" name="upperAirwaySt" value="Pt is not routinely swallowing" /><span title="">Pt is not routinely swallowing.</span></label><br>
+				<label><input type="checkbox" name="upperAirwaySt" value="Pt repeatedly { snoring, coughing, gagging }." /><span title="">Pt repeatedly { snoring, coughing, gagging }.</span></label><br>
+				<label><input type="checkbox" name="upperAirwaySt" value="Pt is not able to speak in full sentences." /><span title="">Pt is not able to speak in full sentences.</span></label><br>
+				<label><input type="checkbox" name="upperAirwaySt" value="Pt speaking in XXX word sentences." /><span title="">Pt speaking in XXX word sentences.</span></label><br>
 			<br><br>
 			</form>
+		</div> <!-- dpeUpperAirway_sub -->
+
 
 			
 
@@ -1030,6 +1046,8 @@ function PgLoadFunc() {
 		toggleSub('dpeNose', 'dpeNose_sub');
 		toggleSub('dpeMouth', 'dpeMouth_sub');
 		toggleSub('dpeNeck', 'dpeNeck_sub');
+		toggleSub('dpeUpperAirway', 'dpeUpperAirway_sub');
+
 }
 
 
@@ -1064,10 +1082,10 @@ function getCheckData(form, name) {
 	// get list of radio buttons with specified name
     var cboxes = form.elements[name];
 
-	console.log("getCheckData: form = %s, name = %s, cboxes.length = %s", form, name, cboxes.length);
+	// console.log("getCheckData: form = %s, name = %s, cboxes.length = %s", form, name, cboxes.length);
 	// Find out how many checkboxes are checked:
 	for (var j = 0, len = cboxes.length; j < len; j++) {
-		console.log("j = ", j);
+		// console.log("j = ", j);
         if ( cboxes[j].checked ) { // check box checked?
 			totalchecked++;
 		}
@@ -1075,7 +1093,7 @@ function getCheckData(form, name) {
 
     // loop through list of check boxes
     for (var i = 0, len = cboxes.length; i < len; i++) {
-		console.log("i = ", i);
+		// console.log("i = ", i);
         if ( cboxes[i].checked ) { // check box checked?
 			if (timesthrough > 0) {
 				join = ", ";
@@ -1084,8 +1102,8 @@ function getCheckData(form, name) {
 				join = " and ";
 			}
             val = val + join + cboxes[i].value; // if so, add its value in val
-			console.log("val = ", val);
-			console.log("val length = ", val.length);
+			// console.log("val = ", val);
+			// console.log("val length = ", val.length);
 			timesthrough++;
         }
     }
@@ -1105,10 +1123,10 @@ function getCheckDataConcatCO(form, name) {
 	// get list of radio buttons with specified name
     var cboxes = form.elements[name];
 
-	console.log("getCheckData: form = %s, name = %s, cboxes.length = %s", form, name, cboxes.length);
+	// console.log("getCheckData: form = %s, name = %s, cboxes.length = %s", form, name, cboxes.length);
 	// Find out how many checkboxes are checked:
 	for (var j = 0, len = cboxes.length; j < len; j++) {
-		console.log("j = ", j);
+		// console.log("j = ", j);
         if ( cboxes[j].checked ) { // check box checked?
 			totalchecked++;
 		}
@@ -1116,14 +1134,14 @@ function getCheckDataConcatCO(form, name) {
 
     // loop through list of check boxes
     for (var i = 0, len = cboxes.length; i < len; i++) {
-		console.log("i = ", i);
+		// console.log("i = ", i);
         if ( cboxes[i].checked ) { // check box checked?
 			if (timesthrough > 0) {
 				join = ", ";
 			}
             val = val + join + cboxes[i].value; // if so, add its value in val
-			console.log("val = ", val);
-			console.log("val length = ", val.length);
+			// console.log("val = ", val);
+			// console.log("val length = ", val.length);
 			timesthrough++;
         }
     }
@@ -1465,7 +1483,15 @@ function getOption() {
 		NECK = "";
 	}
 
-	var BODY = HEAD + EYES + EARS + NOSE + MOUTH + NECK;
+	var UPPERAIRWAY = "Upper Airway:";
+	var UPPERAIRWAYstrings = getCheckDataConcat(document.getElementById("dpeUpperAirwaySec"), "upperAirwaySt");
+	if (UPPERAIRWAYstrings.length != 0) {
+		UPPERAIRWAY = UPPERAIRWAY + UPPERAIRWAYstrings + newL;
+	} else {
+		UPPERAIRWAY = "";
+	}
+
+	var BODY = HEAD + EYES + EARS + NOSE + MOUTH + NECK + UPPERAIRWAY;
 	if (BODY.length != 0) {
 		DPE = DPE + newL;
 	} else {
