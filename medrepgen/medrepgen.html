@@ -916,6 +916,33 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 		</div> <!-- dpeUpperAirway_sub -->
 
 
+	<!-- BREATHING -->
+	<form action="#" method="post" class="dpeBreathingForm" id="dpeBreathingForm">
+	<input type="checkbox" onclick="toggleSub(this, 'dpeBreathing_sub')" name="dpeBreathing" id="dpeBreathing" value="1" />BREATHING, click to expand</p>
+		<div id="dpeBreathing_sub">
+	</form>
+			<form action="#" method="post" class="dpeBreathingSec" id="dpeBreathingSec">Select statements about breathing:<br></br>
+				<label><input type="checkbox" name="breathingSt" value="Patient is breathing normally and speaking in full sentences." /><span title="">Patient is breathing normally and speaking in full sentences.</span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="Breathing sounds clear when auscultated in XXX { anterior, posterior } regions." /><span title="">Breathing sounds clear when auscultated in XXX { anterior, posterior } regions.</span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="No audible { rales, crackles, rhonchi, stridor, wheezing }." /><span title="">No audible { rales, crackles, rhonchi, stridor, wheezing }.</span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="Equal and adequate bilateral chest rise observed." /><span title="">Equal and adequate bilateral chest rise observed.</span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="Rate, rhythm and quality of breathing all within normal limits." /><span title="">Rate, rhythm and quality of breathing all within normal limits.</span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="Breathing is not { labored, shallow, abnormally deep, no hyperventilation }." /><span title="">Breathing is not { labored, shallow, abnormally deep, no hyperventilation }. </span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="No pain on inspiration or expiration." /><span title="">No pain on inspiration or expiration.</span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="No evidence of see-saw breathing or use of accessory muscles." /><span title="">No evidence of see-saw breathing or use of accessory muscles.</span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="No sign of punctures or lacerations to the thorax." /><span title="">No sign of punctures or lacerations to the thorax.</span></label><br>
+			<label>INJURIES:</label><br>
+				<label><input type="checkbox" name="breathingSt" value="Patient unable to speak in full sentences." /><span title="">Patient unable to speak in full sentences.</span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="Breathing sounds include { rales, crackles, rhonchi, stridor, wheezing } when auscultated in XXX { anterior, posterior } regions." /><span title="">Breathing sounds include { rales, crackles, rhonchi, stridor, wheezing } when auscultated in XXX { anterior, posterior } regions.</span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="{ Unqual, Inadequate } chest rise observed { with left/right side apparent insufficiency }." /><span title="">{ Unqual, Inadequate } chest rise observed { with left/right side apparent insufficiency }.</span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="{ Rate, rhythm, quality } breathing problems including XXX." /><span title="">{ Rate, rhythm, quality } breathing problems including XXX.</span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="Breathing is not { labored, shallow, abnormally deep, no hyperventilation }." /><span title="">Breathing is { labored, shallow, abnormally deep, tachypneic, hypocapneic }. </span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="Pain on inspiration { and, or } expiration." /><span title="">No pain on inspiration { and, or } expiration.</span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="{ See-saw breathing, Use of accessory muscles }." /><span title="">{ See-saw breathing, Use of accessory muscles }.</span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="{ Punctures, Lacerations } to the thorax including XXX." /><span title="">{ Punctures, Lacerations } to the thorax including XXX.</span></label><br>
+			<br><br>
+			</form>
+		</div> <!-- dpeBreathing_sub -->
 			
 
 </div> <!-- HtoT_sub -->
@@ -1081,6 +1108,7 @@ function PgLoadFunc() {
 		toggleSub('dpeMouth', 'dpeMouth_sub');
 		toggleSub('dpeNeck', 'dpeNeck_sub');
 		toggleSub('dpeUpperAirway', 'dpeUpperAirway_sub');
+		toggleSub('dpeBreathing', 'dpeBreathing_sub');
 
 }
 
@@ -1466,7 +1494,7 @@ function getOption() {
 		var PTOA = "";
 	}
 	
-	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + LOOKTEST + AVPU + ABCs + RTEstr + cspineAssess + INTOAMBULANCE + sp2 + ONTOSTAIRCH.length + sp2 + ONTOSTRETCHER.length + sp2 + INTOAMBULANCE.length + sp2 + PTOA + newP3;
+	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + LOOKTEST + AVPU + ABCs + RTEstr + cspineAssess + INTOAMBULANCE + sp2 + PTOA + newP3;
 
 	// ************************************************************************
 	// ASSESSMENT
@@ -1541,7 +1569,15 @@ function getOption() {
 		UPPERAIRWAY = "";
 	}
 
-	var BODY = HEAD + EYES + EARS + NOSE + MOUTH + NECK + UPPERAIRWAY;
+	var BREATHING = "Breathing:";
+	var BREATHINGstrings = getCheckDataConcat(document.getElementById("dpeBreathingSec"), "breathingSt");
+	if (BREATHINGstrings.length != 0) {
+		BREATHING = BREATHING + BREATHINGstrings + newL;
+	} else {
+		BREATHING = "";
+	}
+
+	var BODY = HEAD + EYES + EARS + NOSE + MOUTH + NECK + UPPERAIRWAY + BREATHING;
 	if (BODY.length != 0) {
 		DPE = DPE + newL;
 	} else {
