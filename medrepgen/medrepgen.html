@@ -580,12 +580,10 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 
 	<!-- Was a stair chair used, select all that apply -->
 	<form action="#" method="post" class="ptStairChair" id="ptStairChair">Was a stair chair used, select all that apply:<br><br>
-		<label><input type="radio" name="ptStairChairSt" value="" checked />Pt assisted by crew to stand, shuffle a few steps, turn and sit on the stretcher.</label><br>
-		<label><input type="radio" name="ptStairChairSt" value="" />Pt moved to stretcher under their own power and seated themselves.</label><br>
-		<label><input type="radio" name="ptStairChairSt" value="" />Pt carried to stretcher with 2-person carry.</label><br>
-		<label><input type="radio" name="ptStairChairSt" value="" />Pt moved on backboard by XXX people and backboard placed on stretcher.</label><br>
-		<label><input type="radio" name="ptStairChairSt" value="" />Pt moved on scoop stretcher by XXX people, scoop stretcher split apart on stretcher and pt adjusted in place on stretcher.</label><br>
-		<label><input type="radio" name="ptStairChairSt" value="" />N.A.</label><br>
+		<label><input type="checkbox" name="ptStairChairSt" value="Pt assisted by crew to stand, shuffle a few steps, turn and sit on the stair chair" checked />Pt assisted by crew to stand, shuffle a few steps, turn and sit on the stair chair</label><br>
+		<label><input type="checkbox" name="ptStairChairSt" value="Pt carried to stair chair by 2-person carry" />Pt carried to stair chair by 2-person carry</label><br>
+		<label><input type="checkbox" name="ptStairChairSt" value="wrapped in blanket" />pt wrapped in blanket</label><br>
+		<label><input type="checkbox" name="ptStairChairSt" value="all buckles secured in place and pt moved { down, up } stairs and out of building to stretcher" checked />all buckles secured in place and pt moved { down, up } stairs and out of building to stretcher</label><br>
 	</form> <!-- ptOntoStretcher -->
 	<br>
 
@@ -738,9 +736,10 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 -->
 
 <form action="#" method="post" class="A001" id="A001">
-<p><input type="checkbox" onclick="toggleSub(this, 'HtoT_sub')" name="HtoT" id="HtoT" value="abc1" />Click if there was a detailed physical exam</p>
-</form>
 <fieldset>
+<legend>Detailed Physical Exam</legend>
+<p><input type="checkbox" onclick="toggleSub(this, 'HtoT_sub')" name="HtoT" id="HtoT" value="abc1" />Click to expand detailed physical exam section</p>
+</form>
 <div id="HtoT_sub">
 
 	<!-- Head -->
@@ -1442,6 +1441,22 @@ function getOption() {
 			cspineAssess = newL + "Pt was positive on Advanced Spinal Assessment as they were {under 10 YO, excited and uncooperative, exhibiting AMS, under the influence of drugs or alcohol, suffering from an accute stress reaction, distracted by injuries to themselves or others, had barriers to communication.}  Pt exhibited {spinal pain or tenderness upon palpation, palpable step-offs or deformaties, paresthesia in XXX extremities, only partial and/or asymmetrical motor strength and sensation in XXX extremities, only partial cervical flexion, extension and rotation with pain, required physical assistence including XXX.}";
 	}
 
+	// How was patient moved to ambulance?
+	var ONTOSTAIRCH = getCheckDataConcatCO(document.getElementById("ptStairChair"), "ptStairChairSt");
+	var ONTOSTRETCHER = getRadioVal(document.getElementById("ptOntoStretcher"), "ptOntoStretcherSt");
+	if (ONTOSTAIRCH.length <= 9) {
+		ONTOSTAIRCH = "";
+	} else {
+		ONTOSTRETCHER = sp2 + ONTOSTRETCHER;
+	}
+	var INTOAMBULANCE = getRadioVal(document.getElementById("ptIntoAmbulance"), "ptIntoAmbulanceSt");
+	if (ONTOSTRETCHER.length <= 0) {
+		ONTOSTRETCHER = "";
+	} else {
+		INTOAMBULANCE = sp2 + INTOAMBULANCE;
+	}
+	INTOAMBULANCE = newP + ONTOSTAIRCH + ONTOSTRETCHER + INTOAMBULANCE;
+	
 	
 	// PTOA
 	var PTA = getRadioVal(document.getElementById("H100"), "PTA");
@@ -1451,7 +1466,7 @@ function getOption() {
 		var PTOA = "";
 	}
 	
-	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + LOOKTEST + AVPU + ABCs + RTEstr + cspineAssess + PTOA + newP3;
+	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + LOOKTEST + AVPU + ABCs + RTEstr + cspineAssess + INTOAMBULANCE + sp2 + ONTOSTAIRCH.length + sp2 + ONTOSTRETCHER.length + sp2 + INTOAMBULANCE.length + sp2 + PTOA + newP3;
 
 	// ************************************************************************
 	// ASSESSMENT
