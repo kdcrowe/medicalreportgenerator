@@ -578,19 +578,33 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 <legend>How was patient moved to ambulance?</legend>
 
 
+	<!-- Was a stair chair used, select all that apply -->
+	<form action="#" method="post" class="ptStairChair" id="ptStairChair">Was a stair chair used, select all that apply:<br><br>
+		<label><input type="radio" name="ptStairChairSt" value="" checked />Pt assisted by crew to stand, shuffle a few steps, turn and sit on the stretcher.</label><br>
+		<label><input type="radio" name="ptStairChairSt" value="" />Pt moved to stretcher under their own power and seated themselves.</label><br>
+		<label><input type="radio" name="ptStairChairSt" value="" />Pt carried to stretcher with 2-person carry.</label><br>
+		<label><input type="radio" name="ptStairChairSt" value="" />Pt moved on backboard by XXX people and backboard placed on stretcher.</label><br>
+		<label><input type="radio" name="ptStairChairSt" value="" />Pt moved on scoop stretcher by XXX people, scoop stretcher split apart on stretcher and pt adjusted in place on stretcher.</label><br>
+		<label><input type="radio" name="ptStairChairSt" value="" />N.A.</label><br>
+	</form> <!-- ptOntoStretcher -->
+	<br>
+
+
 	<!-- How was patient moved to stretcher? -->
 	<form action="#" method="post" class="ptOntoStretcher" id="ptOntoStretcher">How was patient moved to the stretcher?:<br><br>
 		<label><input type="radio" name="ptOntoStretcherSt" value="Pt assisted by crew to stand, shuffle a few steps, turn and sit on the stretcher." checked />Pt assisted by crew to stand, shuffle a few steps, turn and sit on the stretcher.</label><br>
 		<label><input type="radio" name="ptOntoStretcherSt" value="Pt moved to stretcher under their own power and seated themselves." />Pt moved to stretcher under their own power and seated themselves.</label><br>
+		<label><input type="radio" name="ptOntoStretcherSt" value="Pt carried to stretcher with 2-person carry." />Pt carried to stretcher with 2-person carry.</label><br>
+		<label><input type="radio" name="ptOntoStretcherSt" value="Pt moved on backboard by XXX people and backboard placed on stretcher." />Pt moved on backboard by XXX people and backboard placed on stretcher.</label><br>
+		<label><input type="radio" name="ptOntoStretcherSt" value="Pt moved on scoop stretcher by XXX people, scoop stretcher split apart on stretcher and pt adjusted in place on stretcher." />Pt moved on scoop stretcher by XXX people, scoop stretcher split apart on stretcher and pt adjusted in place on stretcher.</label><br>
 		<label><input type="radio" name="ptOntoStretcherSt" value="" />N.A.</label><br>
-		<label><input type="radio" name="ptOntoStretcherSt" value="" /></label><br>
 	</form> <!-- ptOntoStretcher -->
 	<br>
 
 
 	<!-- Finally, how was patient loaded into the ambulance -->
 	<form action="#" method="post" class="ptIntoAmbulance" id="ptIntoAmbulance">How was patient actually moved into the ambulance?:<br><br>
-		<label><input type="radio" name="ptIntoAmbulanceSt" value="Pt seated on stretcher, covered with blanket, all buckles secured, rails raised and stretcher loaded into ambulance." checked />Pt seated on stretcher, covered with blanket...etc...</label><br>
+		<label><input type="radio" name="ptIntoAmbulanceSt" value="Pt covered with blanket, all buckles secured, rails raised and stretcher loaded into ambulance." checked />Pt covered with blanket, all buckles secured, rails raised and stretcher loaded into ambulance.</label><br>
 		<label><input type="radio" name="ptIntoAmbulanceSt" value="Pt assisted to step up into ambulance and seated on stretcher, covered with blanket, all buckles secured and rails raised." />Pt assisted to step up into ambulance and seated on stretcher...etc...</label><br>
 		<label><input type="radio" name="ptIntoAmbulanceSt" value="Pt assisted to step up into ambulance, directed to { tech, bench } seat and seatbelt fastened." />Pt assisted to step up into ambulance, directed to { tech, bench } seat and seatbelt fastened.</label><br>
 	</form> <!-- ptIntoAmbulance -->
