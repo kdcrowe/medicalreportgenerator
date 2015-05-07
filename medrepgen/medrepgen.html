@@ -181,6 +181,7 @@ If <u>seated</u>, on what...<br></br>
 <label><input type="radio" name="foundSeat" value="" checked />N.A.</label>
 <label><input type="radio" name="foundSeat" value=" on couch" />couch</label>
 <label><input type="radio" name="foundSeat" value=" on a chair" />chair</label>
+<label><input type="radio" name="foundSeat" value=" on stairs" />stairs</label>
 <label><input type="radio" name="foundSeat" value=" on the floor" />floor</label>
 <label><input type="radio" name="foundSeat" value=" on the ground" />ground</label>
 <label><input type="radio" name="foundSeat" value=" on the hospital bed" />hospital bed</label>
@@ -580,10 +581,10 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 
 	<!-- Was a stair chair used, select all that apply -->
 	<form action="#" method="post" class="ptStairChair" id="ptStairChair">Was a stair chair used, select all that apply:<br><br>
-		<label><input type="checkbox" name="ptStairChairSt" value="Pt assisted by crew to stand, shuffle a few steps, turn and sit on the stair chair" checked />Pt assisted by crew to stand, shuffle a few steps, turn and sit on the stair chair</label><br>
+		<label><input type="checkbox" name="ptStairChairSt" value="Pt assisted by crew to stand, shuffle a few steps, turn and sit on the stair chair" />Pt assisted by crew to stand, shuffle a few steps, turn and sit on the stair chair</label><br>
 		<label><input type="checkbox" name="ptStairChairSt" value="Pt carried to stair chair by 2-person carry" />Pt carried to stair chair by 2-person carry</label><br>
 		<label><input type="checkbox" name="ptStairChairSt" value="wrapped in blanket" />pt wrapped in blanket</label><br>
-		<label><input type="checkbox" name="ptStairChairSt" value="all buckles secured in place and pt moved { down, up } stairs and out of building to stretcher" checked />all buckles secured in place and pt moved { down, up } stairs and out of building to stretcher</label><br>
+		<label><input type="checkbox" name="ptStairChairSt" value="all buckles secured in place and pt moved { down, up } stairs and out of building to stretcher" />all buckles secured in place and pt moved { down, up } stairs and out of building to stretcher</label><br>
 	</form> <!-- ptOntoStretcher -->
 	<br>
 
@@ -976,6 +977,15 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 	Other Airway:  OPA, NPA, King
 -->
 
+<!-- Environmental interventions -->
+<form action="#" method="post" class="trEnvironment" id="trEnvironment">Select all environmental treatments that apply:<br><br>
+	<label><input type="checkbox" name="trEnvironmentSt" value="covered with blanket" />covered with blanket</label><br>
+	<label><input type="checkbox" name="trEnvironmentSt" value="head of stretcher raised" />head of stretcher raised</label><br>
+	<label><input type="checkbox" name="trEnvironmentSt" value="head of stretcher lowered" />head of stretcher lowered</label><br>
+	<label><input type="checkbox" name="trEnvironmentSt" value="cabin temperature adjusted" />cabin temperature adjusted</label><br>
+	<label><input type="checkbox" name="trEnvironmentSt" value="lights dimmed" />lights dimmed</label><br>
+</form> <!-- Environmental interventions -->
+<br>
 
 
 <br><a href="#dispatchedsection">Dispatched</a>&nbsp;&nbsp<a href="#chiefcomplaintsection">Chief Complaint</a>&nbsp;&nbsp<a href="#historysection">History</a>&nbsp;&nbsp<a href="#assessmentsection">Assessment</a>&nbsp;&nbsp<a href="#treatmentsection">Treatment</a>&nbsp;&nbsp<a href="#transportsection">Transport</a>&nbsp;&nbsp<a href="#othersection">Other</a>&nbsp;&nbsp<a href="#generatesection">GENERATE</a>&nbsp;&nbsp
@@ -1591,8 +1601,12 @@ function getOption() {
 	// TREATMENT
 	var trea1 = "R:" + sp2;
 
+	var ENVIRONMENTALS = getCheckData(document.getElementById("trEnvironment"), "trEnvironmentSt");
+	if (ENVIRONMENTALS.length > 1) {
+		ENVIRONMENTALS = "For pt comfort:" + sp2 + ENVIRONMENTALS + ".";
+	}
 
-	Treatment = trea1 + newP3;
+	Treatment = trea1 + ENVIRONMENTALS + newP3;
 
 	// ************************************************************************
 	// TRANSPORT
