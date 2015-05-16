@@ -957,7 +957,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 		<div id="dpeChest_sub">
 	</form>
 			<form action="#" method="post" class="dpeChestSec" id="dpeChestSec">Select statements about the chest:<br></br>
-				<gr1><label><input type="checkbox" name="ChestSt" value="No chest pain, pressure, or discomfort." /><span title="">No chest pain, pressure, or discomfort.</span></label><br>
+				<gr1><label><input type="checkbox" name="ChestSt" value="No chest pain, pressure, or discomfort reported by pt." /><span title="">No chest pain, pressure, or discomfort reported by pt.</span></label><br>
 				<label><input type="checkbox" name="ChestSt" value="No radiating chest pain to the jaw, arms or upper abdomen/epigastrium." /><span title="">No radiating chest pain to the jaw, arms or upper abdomen/epigastrium.</span></label><br>
 				<label><input type="checkbox" name="ChestSt" value="No shortness of breath or palpitations." /><span title="Palpitations:  a perceived abnormality of the heartbeat characterized by awareness of heart muscle contractions in the chest: hard beats, fast beats, irregular beats, and/or pauses.">No shortness of breath or palpitations.</span></label><br>
 				<label><input type="checkbox" name="ChestSt" value="Clavicles, scapula, sternum and ribs all intact with no signs of deformities, crepitus or pain from palpation." /><span title="">Clavicles, scapula, sternum and ribs all intact with no signs of deformities, crepitus or pain from palpation.</span></label><br>
@@ -975,7 +975,55 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 			</form>
 		</div> <!-- dpeChest_sub -->
 
-		
+
+	<!-- ABDOMEN -->
+	<form action="#" method="post" class="dpeAbdomenForm" id="dpeAbdomenForm">
+	<input type="checkbox" onclick="toggleSub(this, 'dpeAbdomen_sub')" name="dpeAbdomen" id="dpeAbdomen" value="1" />ABDOMEN, click to expand</p>
+		<div id="dpeAbdomen_sub">
+	</form>
+			<form action="#" method="post" class="dpeAbdomenSec" id="dpeAbdomenSec">Select statements about the abdomen:<br></br>
+				<gr1><label><input type="checkbox" name="AbdomenSt" value="No abdominal pain, pressure, or discomfort reported by pt." /><span title="">No abdominal pain, pressure, or discomfort reported by pt.</span></label><br>
+				<label><input type="checkbox" name="AbdomenSt" value="Visual inspection of the abdomen shows it to be free of masses, distension, skin abnormalities, scars or discoloration." /><span title="">Visual inspection of the abdomen shows it to be free of masses, distension, skin abnormalities, scars or discoloration.</span></label><br>
+				<label><input type="checkbox" name="AbdomenSt" value="No visual or palpable organomegaly (hepatomegaly, splenomegaly.)" /><span title="Organomegaly:  abnormal enlargement of the organs;  Hepatomegaly:  abnormal enlargement of the liver;  Splenomegaly:  abnormal enlargement of the spleen.">No visual or palpable organomegaly (hepatomegaly, splenomegaly.)</span></label><br>
+				<label><input type="checkbox" name="AbdomenSt" value="Circular inward and outward palpation of all four quadrants of the abdomen reveals no rigidity, tenderness or rebound tenderness and no pulsating masses." /><span title="Pulsating mass:  abdominal aortic aneurysm.  Other masses:  distended bladder, ovarian cysts, kidney cancer, diverticulitis, Chron's disease, etc.">Circular inward and outward palpation of all four quadrants of the abdomen reveals no rigidity, tenderness or rebound tenderness and no pulsating masses.</span></label><br>
+				<label><input type="checkbox" name="AbdomenSt" value="No signs of scars from previous surgeries." /><span title="">No signs of scars from previous surgeries.</span></label><br>
+				<label><input type="checkbox" name="AbdomenSt" value="No signs of guarding or voluntary or involuntary retraction of the abdominal wall." /><span title="Abdominal Guarding:  voluntary or involuntary tensing of the abdominal muscles to guard inflamed organs in the abdomen.">No signs of guarding or voluntary or involuntary retraction of the abdominal wall.</span></label><br></gr1>
+			<label>INJURIES:</label><br>
+				<rd1><label><input type="checkbox" name="AbdomenSt" value="Pt reports { pain, pressure, discomfort } in the XXX quadrant." /><span title="">Pt reports { pain, pressure, discomfort } in the XXX quadrant.</span></label><br>
+				<label><input type="checkbox" name="AbdomenSt" value="Visual inspection of the abdomen reveals { masses, distension, skin abnormalities, scars, discoloration } in the XXX quadrant." /><span title="">Visual inspection of the abdomen reveals { masses, distension, skin abnormalities, scars, discoloration } in the XXX quadrant.</span></label><br>
+				<label><input type="checkbox" name="AbdomenSt" value="{ Visual, palpable } { organomegaly, hepatomegaly, splenomegaly }." /><span title="Organomegaly:  abnormal enlargement of the organs;  Hepatomegaly:  abnormal enlargement of the liver;  Splenomegaly:  abnormal enlargement of the spleen.">{ Visual, palpable } { organomegaly, hepatomegaly, splenomegaly }.</span></label><br>
+				<label><input type="checkbox" name="AbdomenSt" value="Circular inward and outward palpation of the abdomen reveals { rigidity, tenderness, rebound tenderness, pulsating masses } in the XXX quadrant." /><span title="Pulsating mass:  abdominal aortic aneurysm.  Other masses:  distended bladder, ovarian cysts, kidney cancer, diverticulitis, Chron's disease, etc.">Circular inward and outward palpation of the abdomen reveals { rigidity, tenderness, rebound tenderness, pulsating masses } in the XXX quadrant.</span></label><br>
+				<label><input type="checkbox" name="AbdomenSt" value="Signs of scars from previous surgeries in the XXX quadrant." /><span title="">Signs of scars from previous surgeries in the XXX quadrant.</span></label><br>
+				<label><input type="checkbox" name="AbdomenSt" value="Pt exhibits signs of { guarding, voluntary or involuntary retraction of the abdominal wall }." /><span title="Abdominal Guarding:  voluntary or involuntary tensing of the abdominal muscles to guard inflamed organs in the abdomen.">Pt exhibits signs of { guarding, voluntary or involuntary retraction of the abdominal wall }.</span></label><br></rd1>
+			<br><br>
+			</form>
+		</div> <!-- dpeAbdomen_sub -->
+
+
+	<!-- HIPS -->
+	<form action="#" method="post" class="dpeHipsForm" id="dpeHipsForm">
+	<input type="checkbox" onclick="toggleSub(this, 'dpeHips_sub')" name="dpeHips" id="dpeHips" value="1" />HIPS, click to expand</p>
+		<div id="dpeHips_sub">
+	</form>
+			<form action="#" method="post" class="dpeHipsSec" id="dpeHipsSec">Select statements about the abdomen:<br></br>
+				<gr1><label><input type="checkbox" name="HipsSt" value="Hips non-tender and not painful to palpation." /><span title="">Hips non-tender and not painful to palpation.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="Compressing hips from either side in and down reveals no pain." /><span title="">Compressing hips from either side in and down reveals no pain.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="Full range of motion of each leg including the ability to lift each leg using quadriceps and associated muscles with no pain or tenderness." /><span title="">Full range of motion of each leg including the ability to lift each leg using quadriceps and associated muscles with no pain or tenderness.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="Abduction and adduction of the legs is pain free." /><span title="">Abduction and adduction of the legs is pain free.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="No angulation of hips or femur outward from normal angle." /><span title="">No angulation of hips or femur outward from normal angle.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="Legs symmetrical and of equal length." /><span title="">Legs symmetrical and of equal length.</span></label><br></gr1>
+			<label>INJURIES:</label><br>
+				<rd1><label><input type="checkbox" name="HipsSt" value="Pt reports { pain, pressure, discomfort } in the XXX quadrant." /><span title="">Pt reports { pain, pressure, discomfort } in the XXX quadrant.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="Visual inspection of the abdomen reveals { masses, distension, skin abnormalities, scars, discoloration } in the XXX quadrant." /><span title="">Visual inspection of the abdomen reveals { masses, distension, skin abnormalities, scars, discoloration } in the XXX quadrant.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="{ Visual, palpable } { organomegaly, hepatomegaly, splenomegaly }." /><span title="">{ Visual, palpable } { organomegaly, hepatomegaly, splenomegaly }.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="Circular inward and outward palpation of the abdomen reveals { rigidity, tenderness, rebound tenderness, pulsating masses } in the XXX quadrant." /><span title="">Circular inward and outward palpation of the abdomen reveals { rigidity, tenderness, rebound tenderness, pulsating masses } in the XXX quadrant.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="Signs of scars from previous surgeries in the XXX quadrant." /><span title="">Signs of scars from previous surgeries in the XXX quadrant.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="Pt exhibits signs of { guarding, voluntary or involuntary retraction of the abdominal wall }." /><span title="">Pt exhibits signs of { guarding, voluntary or involuntary retraction of the abdominal wall }.</span></label><br></rd1>
+			<br><br>
+			</form>
+		</div> <!-- dpeHips_sub -->
+
+
 </div> <!-- HtoT_sub -->
 </fieldset>
 <br><br>	
@@ -1150,7 +1198,9 @@ function PgLoadFunc() {
 		toggleSub('dpeUpperAirway', 'dpeUpperAirway_sub');
 		toggleSub('dpeBreathing', 'dpeBreathing_sub');
 		toggleSub('dpeChest', 'dpeChest_sub');
-
+		toggleSub('dpeAbdomen', 'dpeAbdomen_sub');
+		toggleSub('dpeHips', 'dpeHips_sub');
+		
 }
 
 
@@ -1625,8 +1675,25 @@ function getOption() {
 	} else {
 		CHEST = "";
 	}
-	
-	var BODY = HEAD + EYES + EARS + NOSE + MOUTH + NECK + UPPERAIRWAY + BREATHING + CHEST;
+
+	var ABDOMEN = "ABDOMEN:";
+	var ABDOMENstrings = getCheckDataConcat(document.getElementById("dpeAbdomenSec"), "AbdomenSt");
+	if (ABDOMENstrings.length != 0) {
+		ABDOMEN = ABDOMEN + ABDOMENstrings + newL;
+	} else {
+		ABDOMEN = "";
+	}
+
+	var HIPS = "HIPS:";
+	var HIPSstrings = getCheckDataConcat(document.getElementById("dpeHipsSec"), "HipsSt");
+	if (HIPSstrings.length != 0) {
+		HIPS = HIPS + HIPSstrings + newL;
+	} else {
+		HIPS = "";
+	}
+
+	// Compose the BODY from each Detailed Physical Exam Body part.
+	var BODY = HEAD + EYES + EARS + NOSE + MOUTH + NECK + UPPERAIRWAY + BREATHING + CHEST + ABDOMEN + HIPS;
 
 	if (BODY.length != 0) {
 		DPE = DPE + newL;
