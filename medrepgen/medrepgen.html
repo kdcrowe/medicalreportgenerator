@@ -435,10 +435,10 @@ What location...<br></br>
 	<form action="#" method="post" class="RTECHEST" id="RTECHEST"><label>CHEST:</label><br>
 		<label2><input type="checkbox" name="rteChestSt" value="no punctures" /><gr1>no punctures</gr1></label2><br>
 		<label2><input type="checkbox" name="rteChestSt" value="no flail chest" /><gr1>no flail chest</gr1></label2><br>
-		<label2><input type="checkbox" name="rteChestSt" value="no crepitice" /><gr1>no crepitice</gr1></label2><br>
+		<label2><input type="checkbox" name="rteChestSt" value="no crepitus" /><gr1>no crepitus</gr1></label2><br>
 		<label2><input type="checkbox" name="rteChestSt" value="puncture to the XXX side" /><rd1>puncture to the XXX side</rd1></label2><br>
 		<label2><input type="checkbox" name="rteChestSt" value="flail chest to the XXX side including XXX ribs" /><rd1>flail chest to the XXX side including XXX ribs</rd1></label2><br>
-		<label2><input type="checkbox" name="rteChestSt" value="crepitice to the XXX area" /><rd1>crepitice to the XXX area</rd1></label2><br>
+		<label2><input type="checkbox" name="rteChestSt" value="crepitus to the XXX area" /><rd1>crepitus to the XXX area</rd1></label2><br>
 	<br>
 	</form>
 
@@ -748,13 +748,14 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 </form>
 <div id="HtoT_sub">
 
-	<!-- Head -->
+	<!-- HEAD -->
 	<form action="#" method="post" class="dpeheadForm" id="dpeheadForm">
 	<input type="checkbox" onclick="toggleSub(this, 'dpehead_sub')" name="dpehead" id="dpehead" value="1" />HEAD, click to expand</p>
 		<div id="dpehead_sub">
 	</form>
 			<form action="#" method="post" class="dpeheadSec" id="dpeheadSec">Select statements about head:<br></br>
 				<gr1><label><input type="checkbox" name="headst" value="Head round, intact, normocephalic and atraumatic." /><span title="Normocephalic: head of normal shape/size; Atraumatic: no trauma.">Head round, intact, normocephalic and atraumatic.</span></label><br>
+				<label><input type="checkbox" name="headst" value="No soft tissue injuries." />No soft tissue injuries.</label><br>
 				<label><input type="checkbox" name="headst" value="No deformities, contusions or crepitus to the front, top, sides or back of the skull." />No deformities, contusions or crepitus to the front, top, sides or back of the skull.</label><br>
 				<label><input type="checkbox" name="headst" value="No facial soft tissue injuries noted." />No facial soft tissue injuries noted.</label><br>
 				<label><input type="checkbox" name="headst" value="Face and facial reactions symmetrical." />Face and facial reactions symmetrical.</label><br>
@@ -766,6 +767,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 				<label><input type="checkbox" name="headst" value="The nasopharynx, oropharynx and pharynx are all patent with no stridor sounds." />The nasopharynx, oropharynx and pharynx are all patent with no stridor sounds.</label><br></gr1>
 			<label>INJURIES:</label><br>
 				<rd1><label><input type="checkbox" name="headst" value="Injuries to the posterior/anterior/superior cranium including XXX." />Injuries to the posterior/anterior/superior cranium including XXX.</label><br>
+				<label><input type="checkbox" name="headst" value="Soft tissue injuries including XXX." />Soft tissue injuries including XXX.</label><br>
 				<label><input type="checkbox" name="headst" value="{Deformities, contusions, crepitus} to the {front, top, sides, back} of the skull." />{Deformities, contusions, crepitus} to the {front, top, sides, back} of the skull.</label><br>
 				<label><input type="checkbox" name="headst" value="Facial soft-tissue injuries including XXX." />Facial soft-tissue injuries including XXX.</label><br>
 				<label><input type="checkbox" name="headst" value="Face and facial reactions do not appear symmetrical including XXX." />Face and facial reactions do not appear symmetrical including XXX.</label><br>
@@ -779,7 +781,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 			</form>
 		</div> <!-- dpehead_sub -->
 
-	<!-- Eyes -->
+	<!-- EYES -->
 	<form action="#" method="post" class="dpeeyesForm" id="dpeeyesForm">
 	<input type="checkbox" onclick="toggleSub(this, 'dpeeyes_sub')" name="dpeeyes" id="dpeeyes" value="1" />EYES, click to expand:</p>		
 		<div id="dpeeyes_sub">
@@ -809,7 +811,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 			</form>
 		</div> <!-- dpeeyes_sub -->
 
-	<!-- Ears -->
+	<!-- EARS -->
 	<form action="#" method="post" class="dpeearsForm" id="dpeearsForm">
 	<input type="checkbox" onclick="toggleSub(this, 'dpeears_sub')" name="dpeears" id="dpeears" value="1" />EARS, click to expand</p>
 		<div id="dpeears_sub">
@@ -837,12 +839,12 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 			<form action="#" method="post" class="dpeNoseSec" id="dpeNoseSec">Select statements about nose:<br></br>
 				<gr1><label><input type="checkbox" name="noseSt" value="Nose intact with no deformities or soft tissue damage." /><span title="">Nose intact with no deformities or soft tissue damage.</span></label><br>
 				<label><input type="checkbox" name="noseSt" value="No pain or sensitivity to palpation around the sinus areas." /><span title="">No pain or sensitivity to palpation around the sinus areas.</span></label><br>
-				<label><input type="checkbox" name="noseSt" value="No crepitice or deviated septum." /><span title="Deviated septum:  sideways displacement of the wall between the nostrils">No crepitice or deviated septum.</span></label><br>
+				<label><input type="checkbox" name="noseSt" value="No crepitus or deviated septum." /><span title="Deviated septum:  sideways displacement of the wall between the nostrils">No crepitus or deviated septum.</span></label><br>
 				<label><input type="checkbox" name="noseSt" value="Mucus membranes are moist with no congestion, rhinorrhea or blockage to nares." /><span title="Rhinorrhea:  significant mucus fluid in nasal cavity (runny nose);  Nares:  nostrils">Mucus membranes are moist with no congestion, rhinorrhea or blockage to nares.</span></label><br></gr1>
 			<label>INJURIES:</label><br>
 				<rd1><label><input type="checkbox" name="noseSt" value="Soft tissue damage to nose {and, or} deformities including XXX." /><span title="">Soft tissue damage to nose {and, or} deformities including XXX.</span></label><br>
 				<label><input type="checkbox" name="noseSt" value="{Pain, Sensitivity} to palpation around the sinus areas." /><span title="">{Pain, Sensitivity} to palpation around the sinus areas.</span></label><br>
-				<label><input type="checkbox" name="noseSt" value="{Crepitice, Deviated septum} apparent." /><span title="Deviated septum:  sideways displacement of the wall between the nostrils">{Crepitice, Deviated septum} apparent.</span></label><br>
+				<label><input type="checkbox" name="noseSt" value="{Crepitus, Deviated septum} apparent." /><span title="Deviated septum:  sideways displacement of the wall between the nostrils">{Crepitus, Deviated septum} apparent.</span></label><br>
 				<label><input type="checkbox" name="noseSt" value="{Congestion, Rhinorrhea, Blockage} to {nares, XXX nostril}." /><span title="Rhinorrhea:  significant mucus fluid in nasal cavity (runny nose);  Nares:  nostrils">{Congestion, Rhinorrhea, Blockage} to {nares, XXX nostril}.</span></label><br></rd1>
 			<br><br>
 			</form>
@@ -929,7 +931,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 	</form>
 			<form action="#" method="post" class="dpeBreathingSec" id="dpeBreathingSec">Select statements about breathing:<br></br>
 				<gr1><label><input type="checkbox" name="breathingSt" value="Patient is breathing normally and speaking in full sentences." /><span title="">Patient is breathing normally and speaking in full sentences.</span></label><br>
-				<label><input type="checkbox" name="breathingSt" value="Breathing sounds clear when auscultated in XXX { anterior, posterior } regions." /><span title="">Breathing sounds clear when auscultated in XXX { anterior, posterior } regions.</span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="Breath sounds clear when auscultated in XXX { anterior, posterior } regions." /><span title="">Breath sounds clear when auscultated in XXX { anterior, posterior } regions.</span></label><br>
 				<label><input type="checkbox" name="breathingSt" value="No audible { rales, crackles, rhonchi, stridor, wheezing }." /><span title="">No audible { rales, crackles, rhonchi, stridor, wheezing }.</span></label><br>
 				<label><input type="checkbox" name="breathingSt" value="Equal and adequate bilateral chest rise observed." /><span title="">Equal and adequate bilateral chest rise observed.</span></label><br>
 				<label><input type="checkbox" name="breathingSt" value="Rate, rhythm and quality of breathing all within normal limits." /><span title="">Rate, rhythm and quality of breathing all within normal limits.</span></label><br>
@@ -939,7 +941,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 				<label><input type="checkbox" name="breathingSt" value="No sign of punctures or lacerations to the thorax." /><span title="">No sign of punctures or lacerations to the thorax.</span></label><br></gr1>
 			<label>INJURIES:</label><br>
 				<rd1><label><input type="checkbox" name="breathingSt" value="Patient unable to speak in full sentences." /><span title="">Patient unable to speak in full sentences.</span></label><br>
-				<label><input type="checkbox" name="breathingSt" value="Breathing sounds include { rales, crackles, rhonchi, stridor, wheezing } when auscultated in XXX { anterior, posterior } regions." /><span title="">Breathing sounds include { rales, crackles, rhonchi, stridor, wheezing } when auscultated in XXX { anterior, posterior } regions.</span></label><br>
+				<label><input type="checkbox" name="breathingSt" value="Breath sounds include { rales, crackles, rhonchi, stridor, wheezing } when auscultated in XXX { anterior, posterior } regions." /><span title="">Breath sounds include { rales, crackles, rhonchi, stridor, wheezing } when auscultated in XXX { anterior, posterior } regions.</span></label><br>
 				<label><input type="checkbox" name="breathingSt" value="{ Unqual, Inadequate } chest rise observed { with left/right side apparent insufficiency }." /><span title="">{ Unqual, Inadequate } chest rise observed { with left/right side apparent insufficiency }.</span></label><br>
 				<label><input type="checkbox" name="breathingSt" value="{ Rate, rhythm, quality } breathing problems including XXX." /><span title="">{ Rate, rhythm, quality } breathing problems including XXX.</span></label><br>
 				<label><input type="checkbox" name="breathingSt" value="Breathing is not { labored, shallow, abnormally deep, no hyperventilation }." /><span title="">Breathing is { labored, shallow, abnormally deep, tachypneic, hypocapneic }. </span></label><br>
@@ -958,6 +960,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 	</form>
 			<form action="#" method="post" class="dpeChestSec" id="dpeChestSec">Select statements about the chest:<br></br>
 				<gr1><label><input type="checkbox" name="ChestSt" value="No chest pain, pressure, or discomfort reported by pt." /><span title="">No chest pain, pressure, or discomfort reported by pt.</span></label><br>
+				<label><input type="checkbox" name="ChestSt" value="No soft tissue injuries." />No soft tissue injuries.</label><br>
 				<label><input type="checkbox" name="ChestSt" value="No radiating chest pain to the jaw, arms or upper abdomen/epigastrium." /><span title="">No radiating chest pain to the jaw, arms or upper abdomen/epigastrium.</span></label><br>
 				<label><input type="checkbox" name="ChestSt" value="No shortness of breath or palpitations." /><span title="Palpitations:  a perceived abnormality of the heartbeat characterized by awareness of heart muscle contractions in the chest: hard beats, fast beats, irregular beats, and/or pauses.">No shortness of breath or palpitations.</span></label><br>
 				<label><input type="checkbox" name="ChestSt" value="Clavicles, scapula, sternum and ribs all intact with no signs of deformities, crepitus or pain from palpation." /><span title="">Clavicles, scapula, sternum and ribs all intact with no signs of deformities, crepitus or pain from palpation.</span></label><br>
@@ -965,6 +968,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 				<label><input type="checkbox" name="ChestSt" value="No visible or palpable implanted pacemaker/defibrillator." /><span title="">No visible or palpable implanted pacemaker/defibrillator.</span></label><br></gr1>
 			<label>INJURIES:</label><br>
 				<rd1><label><input type="checkbox" name="ChestSt" value="Chest { pain, pressure, discomfort } in the region of XXX." /><span title="">Chest { pain, pressure, discomfort } in the region of XXX.</span></label><br>
+				<label><input type="checkbox" name="ChestSt" value="Soft tissue injuries including XXX." />Soft tissue injuries including XXX.</label><br>
 				<label><input type="checkbox" name="ChestSt" value="Radiating chest pain to the { jaw, arms, upper abdomen/epigastrium }." /><span title="">Radiating chest pain to the { jaw, arms, upper abdomen/epigastrium }.</span></label><br>
 				<label><input type="checkbox" name="ChestSt" value="Shortness of breath." /><span title="">Shortness of breath.</span></label><br>
 				<label><input type="checkbox" name="ChestSt" value="Heart palpitations." /><span title="Palpitations:  a perceived abnormality of the heartbeat characterized by awareness of heart muscle contractions in the chest: hard beats, fast beats, irregular beats, and/or pauses.">Heart palpitations.</span></label><br>
@@ -983,6 +987,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 	</form>
 			<form action="#" method="post" class="dpeAbdomenSec" id="dpeAbdomenSec">Select statements about the abdomen:<br></br>
 				<gr1><label><input type="checkbox" name="AbdomenSt" value="No abdominal pain, pressure, or discomfort reported by pt." /><span title="">No abdominal pain, pressure, or discomfort reported by pt.</span></label><br>
+				<label><input type="checkbox" name="AbdomenSt" value="No soft tissue injuries." />No soft tissue injuries.</label><br>
 				<label><input type="checkbox" name="AbdomenSt" value="Visual inspection of the abdomen shows it to be free of masses, distension, skin abnormalities, scars or discoloration." /><span title="">Visual inspection of the abdomen shows it to be free of masses, distension, skin abnormalities, scars or discoloration.</span></label><br>
 				<label><input type="checkbox" name="AbdomenSt" value="No visual or palpable organomegaly (hepatomegaly, splenomegaly.)" /><span title="Organomegaly:  abnormal enlargement of the organs;  Hepatomegaly:  abnormal enlargement of the liver;  Splenomegaly:  abnormal enlargement of the spleen.">No visual or palpable organomegaly (hepatomegaly, splenomegaly.)</span></label><br>
 				<label><input type="checkbox" name="AbdomenSt" value="Circular inward and outward palpation of all four quadrants of the abdomen reveals no rigidity, tenderness or rebound tenderness and no pulsating masses." /><span title="Pulsating mass:  abdominal aortic aneurysm.  Other masses:  distended bladder, ovarian cysts, kidney cancer, diverticulitis, Chron's disease, etc.">Circular inward and outward palpation of all four quadrants of the abdomen reveals no rigidity, tenderness or rebound tenderness and no pulsating masses.</span></label><br>
@@ -990,6 +995,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 				<label><input type="checkbox" name="AbdomenSt" value="No signs of guarding or voluntary or involuntary retraction of the abdominal wall." /><span title="Abdominal Guarding:  voluntary or involuntary tensing of the abdominal muscles to guard inflamed organs in the abdomen.">No signs of guarding or voluntary or involuntary retraction of the abdominal wall.</span></label><br></gr1>
 			<label>INJURIES:</label><br>
 				<rd1><label><input type="checkbox" name="AbdomenSt" value="Pt reports { pain, pressure, discomfort } in the XXX quadrant." /><span title="">Pt reports { pain, pressure, discomfort } in the XXX quadrant.</span></label><br>
+				<label><input type="checkbox" name="AbdomenSt" value="Soft tissue injuries including XXX." />Soft tissue injuries including XXX.</label><br>
 				<label><input type="checkbox" name="AbdomenSt" value="Visual inspection of the abdomen reveals { masses, distension, skin abnormalities, scars, discoloration } in the XXX quadrant." /><span title="">Visual inspection of the abdomen reveals { masses, distension, skin abnormalities, scars, discoloration } in the XXX quadrant.</span></label><br>
 				<label><input type="checkbox" name="AbdomenSt" value="{ Visual, palpable } { organomegaly, hepatomegaly, splenomegaly }." /><span title="Organomegaly:  abnormal enlargement of the organs;  Hepatomegaly:  abnormal enlargement of the liver;  Splenomegaly:  abnormal enlargement of the spleen.">{ Visual, palpable } { organomegaly, hepatomegaly, splenomegaly }.</span></label><br>
 				<label><input type="checkbox" name="AbdomenSt" value="Circular inward and outward palpation of the abdomen reveals { rigidity, tenderness, rebound tenderness, pulsating masses } in the XXX quadrant." /><span title="Pulsating mass:  abdominal aortic aneurysm.  Other masses:  distended bladder, ovarian cysts, kidney cancer, diverticulitis, Chron's disease, etc.">Circular inward and outward palpation of the abdomen reveals { rigidity, tenderness, rebound tenderness, pulsating masses } in the XXX quadrant.</span></label><br>
@@ -1554,10 +1560,10 @@ function getOption() {
 	var cspineAssess = getRadioVal(document.getElementById("cspineAssess"), "cspineSt");
 	switch (cspineAssess) {
 		case "ASAN":
-			cspineAssess = newL + "Pt was negative on Advanced Spinal Assessment as they were older than 9, calm and cooperative and did not have AMS.  Pt was not under the influence of drugs or alcohol, suffering from an accute stress reaction or otherwise distracted by injuries to themselves or others, and had no barriers to communication.  Pt did not exhibit spinal pain or tenderness upon palpation and had no step-offs or deformaties the length of the palpable spine.  Pt had no paresthesia in extremities and had full and symmetrical motor strength and sensation in all extremities.  Pt had full cervical flexion, extension and rotation without pain and did not require any physical assistence.";
+			cspineAssess = newL + "Pt was negative on Advanced Spinal Assessment as they were older than 9, calm and cooperative and did not have AMS.  Pt was not under the influence of drugs or alcohol, suffering from an accute stress reaction or otherwise distracted by injuries to themselves or others, and had no barriers to communication.  Pt did not exhibit spinal pain or tenderness upon palpation and had no step-offs or deformities the length of the palpable spine.  Pt had no paresthesia in extremities and had full and symmetrical motor strength and sensation in all extremities.  Pt had full cervical flexion, extension and rotation without pain and did not require any physical assistence.";
 			break;
 		case "ASAP":
-			cspineAssess = newL + "Pt was positive on Advanced Spinal Assessment as they were {under 10 YO, excited and uncooperative, exhibiting AMS, under the influence of drugs or alcohol, suffering from an accute stress reaction, distracted by injuries to themselves or others, had barriers to communication.}  Pt exhibited {spinal pain or tenderness upon palpation, palpable step-offs or deformaties, paresthesia in XXX extremities, only partial and/or asymmetrical motor strength and sensation in XXX extremities, only partial cervical flexion, extension and rotation with pain, required physical assistence including XXX.}";
+			cspineAssess = newL + "Pt was positive on Advanced Spinal Assessment as they were {under 10 YO, excited and uncooperative, exhibiting AMS, under the influence of drugs or alcohol, suffering from an accute stress reaction, distracted by injuries to themselves or others, had barriers to communication.}  Pt exhibited {spinal pain or tenderness upon palpation, palpable step-offs or deformities, paresthesia in XXX extremities, only partial and/or asymmetrical motor strength and sensation in XXX extremities, only partial cervical flexion, extension and rotation with pain, required physical assistence including XXX.}";
 	}
 
 	// How was patient moved to ambulance?
