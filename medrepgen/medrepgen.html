@@ -1016,18 +1016,41 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 				<label><input type="checkbox" name="HipsSt" value="Compressing hips from either side in and down reveals no pain." /><span title="">Compressing hips from either side in and down reveals no pain.</span></label><br>
 				<label><input type="checkbox" name="HipsSt" value="Full range of motion of each leg including the ability to lift each leg using quadriceps and associated muscles with no pain or tenderness." /><span title="">Full range of motion of each leg including the ability to lift each leg using quadriceps and associated muscles with no pain or tenderness.</span></label><br>
 				<label><input type="checkbox" name="HipsSt" value="Abduction and adduction of the legs is pain free." /><span title="">Abduction and adduction of the legs is pain free.</span></label><br>
-				<label><input type="checkbox" name="HipsSt" value="No angulation of hips or femur outward from normal angle." /><span title="">No angulation of hips or femur outward from normal angle.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="No angulation of hips or femur from normal and expected alignment." /><span title="">No angulation of hips or femur from normal and expected alignment.</span></label><br>
 				<label><input type="checkbox" name="HipsSt" value="Legs symmetrical and of equal length." /><span title="">Legs symmetrical and of equal length.</span></label><br></gr1>
 			<label>INJURIES:</label><br>
-				<rd1><label><input type="checkbox" name="HipsSt" value="Pt reports { pain, pressure, discomfort } in the XXX quadrant." /><span title="">Pt reports { pain, pressure, discomfort } in the XXX quadrant.</span></label><br>
-				<label><input type="checkbox" name="HipsSt" value="Visual inspection of the abdomen reveals { masses, distension, skin abnormalities, scars, discoloration } in the XXX quadrant." /><span title="">Visual inspection of the abdomen reveals { masses, distension, skin abnormalities, scars, discoloration } in the XXX quadrant.</span></label><br>
-				<label><input type="checkbox" name="HipsSt" value="{ Visual, palpable } { organomegaly, hepatomegaly, splenomegaly }." /><span title="">{ Visual, palpable } { organomegaly, hepatomegaly, splenomegaly }.</span></label><br>
-				<label><input type="checkbox" name="HipsSt" value="Circular inward and outward palpation of the abdomen reveals { rigidity, tenderness, rebound tenderness, pulsating masses } in the XXX quadrant." /><span title="">Circular inward and outward palpation of the abdomen reveals { rigidity, tenderness, rebound tenderness, pulsating masses } in the XXX quadrant.</span></label><br>
-				<label><input type="checkbox" name="HipsSt" value="Signs of scars from previous surgeries in the XXX quadrant." /><span title="">Signs of scars from previous surgeries in the XXX quadrant.</span></label><br>
-				<label><input type="checkbox" name="HipsSt" value="Pt exhibits signs of { guarding, voluntary or involuntary retraction of the abdominal wall }." /><span title="">Pt exhibits signs of { guarding, voluntary or involuntary retraction of the abdominal wall }.</span></label><br></rd1>
+				<rd1><label><input type="checkbox" name="HipsSt" value="Hips { tender, painful } to palpation." /><span title="">Hips { tender, painful } to palpation.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="Compressing hips from either side in and down reveals { pain, evidence of splaying }." /><span title="">Compressing hips from either side in and down reveals { pain, evidence of splaying }.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="Range of motion of { left, right } limited to XXX and includes { pain, tenderness } when trying to move in XXX direction." /><span title="">Range of motion of { left, right } limited to XXX and includes { pain, tenderness } when trying to move in XXX direction.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="Abduction and adduction of the {left, right } leg is { painful, limited }." /><span title="">Abduction and adduction of the {left, right } leg is { painful, limited }.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="Angulation of hips/femur from normal and expected alignment." /><span title="">Angulation of hips/femur from normal and expected alignment.</span></label><br>
+				<label><input type="checkbox" name="HipsSt" value="Legs { asymmetrical, of unequal length }." /><span title="">Legs { asymmetrical, of unequal length }.</span></label><br></rd1>
 			<br><br>
 			</form>
 		</div> <!-- dpeHips_sub -->
+
+	<!-- LEGS -->
+	<form action="#" method="post" class="dpeLegsForm" id="dpeLegsForm">
+	<input type="checkbox" onclick="toggleSub(this, 'dpeLegs_sub')" name="dpeLegs" id="dpeLegs" value="1" />LEGS, click to expand</p>
+		<div id="dpeLegs_sub">
+	</form>
+			<form action="#" method="post" class="dpeHipsSec" id="dpeHipsSec">Select statements about the legs:<br></br>
+				<gr1><label><input type="checkbox" name="LegsSt" value="Hips non-tender and not painful to palpation." /><span title="">Hips non-tender and not painful to palpation.</span></label><br>
+				<label><input type="checkbox" name="LegsSt" value="Compressing hips from either side in and down reveals no pain." /><span title="">Compressing hips from either side in and down reveals no pain.</span></label><br>
+				<label><input type="checkbox" name="LegsSt" value="Full range of motion of each leg including the ability to lift each leg using quadriceps and associated muscles with no pain or tenderness." /><span title="">Full range of motion of each leg including the ability to lift each leg using quadriceps and associated muscles with no pain or tenderness.</span></label><br>
+				<label><input type="checkbox" name="LegsSt" value="Abduction and adduction of the legs is pain free." /><span title="">Abduction and adduction of the legs is pain free.</span></label><br>
+				<label><input type="checkbox" name="LegsSt" value="No angulation of hips or femur outward from normal angle." /><span title="">No angulation of hips or femur outward from normal angle.</span></label><br>
+				<label><input type="checkbox" name="LegsSt" value="Legs symmetrical and of equal length." /><span title="">Legs symmetrical and of equal length.</span></label><br></gr1>
+			<label>INJURIES:</label><br>
+				<rd1><label><input type="checkbox" name="LegsSt" value="Pt reports { pain, pressure, discomfort } in the XXX quadrant." /><span title="">Pt reports { pain, pressure, discomfort } in the XXX quadrant.</span></label><br>
+				<label><input type="checkbox" name="LegsSt" value="Visual inspection of the abdomen reveals { masses, distension, skin abnormalities, scars, discoloration } in the XXX quadrant." /><span title="">Visual inspection of the abdomen reveals { masses, distension, skin abnormalities, scars, discoloration } in the XXX quadrant.</span></label><br>
+				<label><input type="checkbox" name="LegsSt" value="{ Visual, palpable } { organomegaly, hepatomegaly, splenomegaly }." /><span title="">{ Visual, palpable } { organomegaly, hepatomegaly, splenomegaly }.</span></label><br>
+				<label><input type="checkbox" name="LegsSt" value="Circular inward and outward palpation of the abdomen reveals { rigidity, tenderness, rebound tenderness, pulsating masses } in the XXX quadrant." /><span title="">Circular inward and outward palpation of the abdomen reveals { rigidity, tenderness, rebound tenderness, pulsating masses } in the XXX quadrant.</span></label><br>
+				<label><input type="checkbox" name="LegsSt" value="Signs of scars from previous surgeries in the XXX quadrant." /><span title="">Signs of scars from previous surgeries in the XXX quadrant.</span></label><br>
+				<label><input type="checkbox" name="LegsSt" value="Pt exhibits signs of { guarding, voluntary or involuntary retraction of the abdominal wall }." /><span title="">Pt exhibits signs of { guarding, voluntary or involuntary retraction of the abdominal wall }.</span></label><br></rd1>
+			<br><br>
+			</form>
+		</div> <!-- dpeLegs_sub -->
 
 
 </div> <!-- HtoT_sub -->
@@ -1206,6 +1229,7 @@ function PgLoadFunc() {
 		toggleSub('dpeChest', 'dpeChest_sub');
 		toggleSub('dpeAbdomen', 'dpeAbdomen_sub');
 		toggleSub('dpeHips', 'dpeHips_sub');
+		toggleSub('dpeLegs', 'dpeLegs_sub');
 		
 }
 
@@ -1698,8 +1722,16 @@ function getOption() {
 		HIPS = "";
 	}
 
+	var LEGS = "LEGS:";
+	var LEGSstrings = getCheckDataConcat(document.getElementById("dpeLegsSec"), "LegsSt");
+	if (LEGSstrings.length != 0) {
+		LEGS = LEGS + LEGSstrings + newL;
+	} else {
+		LEGS = "";
+	}
+
 	// Compose the BODY from each Detailed Physical Exam Body part.
-	var BODY = HEAD + EYES + EARS + NOSE + MOUTH + NECK + UPPERAIRWAY + BREATHING + CHEST + ABDOMEN + HIPS;
+	var BODY = HEAD + EYES + EARS + NOSE + MOUTH + NECK + UPPERAIRWAY + BREATHING + CHEST + ABDOMEN + HIPS + LEGS;
 
 	if (BODY.length != 0) {
 		DPE = DPE + newL;
