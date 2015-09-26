@@ -100,6 +100,7 @@ Is the patient male or female?<br></br>
 <form action="#" method="post" class="D003" id="D003">
 Was there a designation on the call?<br></br>
 <label><input type="radio" name="designation" value="" checked />N.A.</label>
+<label><input type="radio" name="designation" value="Omega level" />Omega</label>
 <label><input type="radio" name="designation" value="Alpha level" />Alpha</label>
 <label><input type="radio" name="designation" value="Bravo level" />Bravo</label>
 <label><input type="radio" name="designation" value="Charlie level" />Charlie</label>
@@ -158,10 +159,11 @@ How did you get the chief complaint?
 Who did you meet on scene?<br></br>
 <label><input type="checkbox" name="meet" value="pt" checked />the patient</label>
 <label><input type="checkbox" name="meet" value="pt's family" />patients family</label>
-<label><input type="checkbox" name="meet" value="Doctor XXX" />Doctor</label>
 <label><input type="checkbox" name="meet" value="MPD" />Milford Police</label>
 <label><input type="checkbox" name="meet" value="MFD" />Milford Fire</label>
 <label><input type="checkbox" name="meet" value="bystanders" />bystanders</label>
+<label><input type="checkbox" name="meet" value="Doctor XXX" />Doctor</label>
+<label><input type="checkbox" name="meet" value="Nurse XXX" />Nurse</label>
 <label><input type="checkbox" name="meet" value="XXX" />Other</label>
 <br><br>
 </form>
@@ -172,6 +174,7 @@ Patient was found...<br></br>
 <label><input type="radio" name="found" value=" seated" checked />seated</label>
 <label><input type="radio" name="found" value=" lying" />lying</label>
 <label><input type="radio" name="found" value=" standing" />standing</label>
+<label><input type="radio" name="found" value=" standing" />kneeling</label>
 <label><input type="radio" name="found" value=" XXX" />other</label>
 <br><br>
 </form>
@@ -232,9 +235,11 @@ What location...<br></br>
 		-High Speed MVC
 		-Falls Greater than 3x pt.’s body height
 		-Axial Loading
-		-Violent situations near the spine including: Stabbing, Gun shots, etc.
+		-Violent situations near the spine including:  Stabbing, Gun shots, etc.
 		-Sports Injuries
 		-Other High Impact Situations
+		-Fight/Assault
+		-Environmental - lightning, downed power line, water hazard, etc
 		-Consideration to special pt. Population:  pediatrics, geriatrics, history of Down’s, spino bifoda-->
 
 
@@ -319,8 +324,7 @@ What location...<br></br>
 	Asked pt their name & complaint and pt did not respond.
 	{Sternum rub, Shoulder Pinch, Triceps monkey-grab} elicited a slight response.
 	{Sternum rub, Shoulder Pinch, Triceps monkey-grab} did not elicit a response.
-       I wonder if some of these above ^^^  should go into AVPU below vvv ?  At least 'how
-	you elicited a painful reaction? -->
+       I wonder if some of these above ^^^  should go into AVPU below vvv ?  At least 'how' you elicited a painful reaction? -->
 
 <!-- AVPU:  Alert, Verbal, Painful, Unconscious -->
 <fieldset><legend><span title="You are now at the patients side, you have a close up look at them, you're checking for verbal or painful responses, etc.">AVPU:  What was patients alertness level?</span></legend>
@@ -379,7 +383,8 @@ What location...<br></br>
 					Need to note:  rate, rhythm & quality!
 					Also:  skin color, temp & condition!
 					TODO - really need to break this out into multiple questions to	
-						better cover things like skin color, temp, condition, etc. -->
+						better cover things like skin color, temp, condition, etc.
+	-->
 	<form action="#" method="post" class="Circulation" id="Circulation">Circulation status and interventions, select all that apply.<br></br>
 		<label><input type="checkbox" name="circulationSt" value="measured at the {radial, carotid, femoral} artery" />measured at the {radial, carotid, femoral} artery</label><br>
 		<label><input type="checkbox" name="circulationSt" value="rate is XXX" />rate is XXX</label><br>
@@ -508,13 +513,13 @@ What location...<br></br>
 </fieldset>
 <br><br>
 
-	<!-- Re-assessed mental status including:
-		Appearance, Attitude, Behaviour, Mood & Affect, Speech.
-		Not so detailed as in ambulance but rather a follow-up from
-		the initial on-scene appearance.
-		Even better!  Make an Initial GCS section here so as to start
-		working GCS into pt assessment!  Eye 1-4, Verbal 1-5, Motor 1-6
-			AND add the Title label for explanations! -->
+<!-- Re-assessed mental status including:
+	Appearance, Attitude, Behaviour, Mood & Affect, Speech.
+	Not so detailed as in ambulance but rather a follow-up from
+	the initial on-scene appearance.
+	Even better!  Make an Initial GCS section here so as to start
+	working GCS into pt assessment!  Eye 1-4, Verbal 1-5, Motor 1-6
+		AND add the Title label for explanations! -->
 
 
 <!-- On-site Vitals - especially SpO2, BP, HR, skin color/temp/condition,
@@ -546,6 +551,10 @@ What location...<br></br>
 
 	<!-- Events Leading Up To -->
 
+<!-- on-site OPQRST
+	etc etc...
+	-->
+
 <br><br>
 
 
@@ -564,7 +573,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 		used to move the pt?  OR Pt walked to ambulance, stepped up in
 		and sat on stretcher/bench seat/tech seat?  This might nullify
 		the other options if selected.
-	How did you get pt to the carry device?  Pt moved on own: assisted
+	How did you get pt to the carry device?  Pt moved on own:  assisted
 		pt to stand, walk, turn, sit; pt slid themselves onto it (scoop
 		or backboard on ground for example); pt was carried/lifted by XXX
 		people to device.
@@ -648,6 +657,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 	<label><input type="radio" name="twelveLeadSt" value="{ crew member } analysis of 12-lead indicates:" />{ crew member } analysis of 12-lead indicates:</label><br>
 	<label><input type="radio" name="twelveLeadSt" value="12-lead faxed to { hospital }, call to hospital to alert to incoming 12-lead and 12-lead results interpreted by Dr { doctor name } indicate:" />12-lead faxed to { hospital }, call to hospital to alert to incoming 12-lead and 12-lead results interpreted by Dr { doctor name } indicate:</label><br>
 	<label><input type="radio" name="twelveLeadSt" value="LP12 rhythm strip analysis by monitor indicate:" />LP12 rhythm strip analysis by monitor indicate:</label><br>
+<br><br>
 </form>
 
 
@@ -690,7 +700,11 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 <!-- Detailed/follow-up SAMPLE history
 		Probably each one of these is it's own form of answers.
 	Signs/Symptoms
+		Signs - (text box?)
+		Symptoms - (text box?)
 	Allergies
+		Food
+		Medications
 	Medications
 	Past Pertinent History
 	Last Oral Intake
@@ -708,14 +722,22 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 -->
 
 <!-- Glasgow-Coma Scale follow-up
-	Might just duplicate the GCS from the History - onscene section here.
+	Might just duplicate the GCS from the History - on scene section here.
 		Maybe give an option "GCS of:  "   Or "GCS { unchanged, improved,
 			worsening } of:  "
 -->
 
-<!-- Cincinatti Pre-Hospital Stroke scale
-
+<!-- Cincinnati Pre-Hospital Stroke scale
 -->
+<fieldset><legend>Cincinnati Pre-Hospital Stroke scale:</legend>
+<form action="#" method="post" class="strokeAssess" id="strokeAssess">
+	<label><input type="radio" name="strokeSt" value="" checked />N.A.</label><br>
+	<label><input type="radio" name="strokeSt" value="CPHSCN" />Cincinnati Pre-Hospital Stroke Scale <gr>NEGATIVE</gr> FINDINGS</label><br>
+	<label><input type="radio" name="strokeSt" value="CPHSCP" />Cincinnati Pre-Hospital Stroke Scale <rd>POSITIVE</rd> FINDINGS</label><br>
+</form>
+</fieldset>
+<br><br>
+
 
 <!-- What other scales & assessments do I need here?
 	Burn scale/measurements?
@@ -728,6 +750,8 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 		If not some specific stuff for each one, how to summarize them?  Or maybe
 		just leave them blank if unchecked but leave checks for "was it checked?"
 		or "problems found with?" each system?  This will require some thought.
+	Patient attitude, agitation level, things they've said that indicate their 
+		state of mind, etc.
 -->
 
 <!-- Past Medical History
@@ -783,7 +807,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 
 	<!-- EYES -->
 	<form action="#" method="post" class="dpeeyesForm" id="dpeeyesForm">
-	<input type="checkbox" onclick="toggleSub(this, 'dpeeyes_sub')" name="dpeeyes" id="dpeeyes" value="1" />EYES, click to expand:</p>		
+	<input type="checkbox" onclick="toggleSub(this, 'dpeeyes_sub')" name="dpeeyes" id="dpeeyes" value="1" />EYES, click to expand</p>		
 		<div id="dpeeyes_sub">
 	</form>
 			<form action="#" method="post" class="dpeeyesSec" id="dpeeyesSec">Select statements about eyes<br></br>
@@ -1061,6 +1085,36 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 		</div> <!-- dpeLegs_sub -->
 
 
+	<!-- ARMS -->
+	<form action="#" method="post" class="dpeArmsForm" id="dpeArmsForm">
+	<input type="checkbox" onclick="toggleSub(this, 'dpeArms_sub')" name="dpeArms" id="dpeArms" value="1" />ARMS, click to expand</p>
+		<div id="dpeArms_sub">
+	</form>
+			<form action="#" method="post" class="dpeArmsSec" id="dpeArmsSec">Select statements about the arms:<br></br>
+				<gr1><label><input type="checkbox" name="ArmsSt" value="Arms, including the biceps, triceps and other muscles are soft, non-tender, free of any skin defects." /><span title="">Arms, including the biceps, triceps and other muscles are soft, non-tender, free of any skin defects.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="No deformities or crepitus." /><span title="">No deformities or crepitus.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="No elbow, wrist or shoulder pain or stiffness and all joints can be moved through a full range of motion with no pain." /><span title="">No elbow, wrist or shoulder pain or stiffness and all joints can be moved through a full range of motion with no pain.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="No cyanosis, clubbing of the fingers, or edema in the upper arm, forearm, or hand." /><span title="">No cyanosis, clubbing of the fingers, or edema in the upper arm, forearm, or hand.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="Arms symmetrical and of equal length." /><span title="">Arms symmetrical and of equal length.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="Skin color and turgor normal." /><span title="turgor:  swelling and distention, so 'normal turgor' is skin with normal tenting, elasticity, rebound, with normal rebound/recoil time">Skin color and turgor normal.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="No abnormal arm weakness." /><span title="">No abnormal arm weakness.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="CSM's present and normal." /><span title="">CSM's present and normal.</span></label><br></gr1>
+			<label>INJURIES:</label><br>
+				<rd1><label><input type="checkbox" name="ArmsSt" value="Soft tissue and/or muscle injury to { left, right, both } leg in the { anterior, posterior, medial, lateral } area of the { thigh, quadriceps, knee, calf, ankle, foot }." /><span title="">Soft tissue and/or muscle injury to { left, right, both } leg in the { anterior, posterior, medial, lateral } area of the { thigh, quadriceps, knee, calf, ankle, foot }.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="No deformities or crepitus." /><span title="">{ Deformities, Crepitus } to the { upper, middle, lower } area of the { left, right } { femur, tibia, fibula, patella, ankle, heel, metatarsals, phalanges }.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="No knee or ankle pain or stiffness and both joints can be moved through a full range of motion with no pain." /><span title="">No knee or ankle pain or stiffness and both joints can be moved through a full range of motion with no pain.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="No shortening or angulation of either leg." /><span title="">No shortening or angulation of either leg.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="No cyanosis, clubbing or edema." /><span title="">No cyanosis, clubbing or edema.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="Legs symmetrical and of equal length." /><span title="">Legs symmetrical and of equal length.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="Skin color and turgor normal." /><span title="">Skin color and turgor normal.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="No weakness." /><span title="">No weakness.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="Normal gait." /><span title="">Normal gait.</span></label><br>
+				<label><input type="checkbox" name="ArmsSt" value="CSM's present and normal." /><span title="">CSM's present and normal.</span></label><br></rd1>
+			<br><br>
+			</form>
+		</div> <!-- dpeArms_sub -->
+
+
 </div> <!-- HtoT_sub -->
 </fieldset>
 <br><br>	
@@ -1083,12 +1137,17 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 <fieldset>
 
 <!-- Treatments:
-	Medications:  aspirin, Tylenol, Ibuprofen, Epi-Pen, Epi-Pen Jr, Oxygen, oral glucose, activated
-		charcoal
+	Medications:  aspirin, Tylenol, Ibuprofen, Epi-Pen, Epi-Pen Jr, Oxygen,
+		oral  glucose, activated charcoal, oxygen (nasal cannula, NRB,
+		BVM), hot/cold pack, narcan
+		-Rate of oxygen delivery
+		-why tylenol vs ibuprofen
+		-was med control or poison control notified
 	Assisted Pt with their own:  inhaler, nitro
-	Other Interventions:  stretcher in position of comfort; pt in position of comfort on stretcher;
-		covered with blanket for warmth; cabin temperature increased/reduced to keep pt warm/cool - or for pt's comfort; hot/cold pack given to pt for comfort/warmth/cooling/etc; water (only
-		for Tylenol or Ibuprofen)
+	Other Interventions:  stretcher in position of comfort;
+		pt in position of comfort on stretcher;
+		covered with blanket for warmth; cabin temperature increased/reduced to keep pt warm/cool - or for pt's comfort; water (only for Tylenol
+		or Ibuprofen)
 	Other Airway:  OPA, NPA, King
 -->
 
@@ -1166,10 +1225,10 @@ Was oxygen transferred over, patient connected to NIBP, pulse ox, etc?<br></br>
 <form action="#" method="post" class="T005" id="T005">
 What was done with patients belongings?<br></br>
 <label><input type="radio" name="ptBelongings" value="Pt had no personal belongings with them other than what they were wearing and holding when patient care was transferred to the nurse receiving the patient." checked />Pt had no personal belongings other than what they were wearing.</label><br>
-<label><input type="radio" name="ptBelongings" value="Pt's personal belongings including {keys, wallet, purse, bags, clothing, prescription bottles, paperwork, other } were noted and handed to the nurse receiving the patient." />Pt's personal belongings handed to nurse.</label><br>
+<label><input type="radio" name="ptBelongings" value="Pt's personal belongings including { keys, wallet, purse, bags, clothing, prescription bottles, paperwork, other } were noted and handed to the nurse receiving the patient." />Pt's personal belongings handed to nurse.</label><br>
 <label><input type="radio" name="ptBelongings" value="Pt's personal belongings including { keys, wallet, purse, bags, clothing, prescription bottles, paperwork, other } were pointed out to nursing staff and placed on counter." />Pt's personal belongings placed on counter in ER room.</label><br>
-<label><input type="radio" name="ptBelongings" value="Pt's personal belongings including {keys, wallet, purse, bags, clothing, prescription bottles, paperwork, other } were { in the pt's hands, on the blanket on patients legs } when pt care was transferred to the nurse." />Pt's personal belongings in pt's hands / on blanket on pt's legs.</label><br>
-<label><input type="radio" name="ptBelongings" value="Pt's personal belongings including {keys, wallet, purse, bags, clothing, prescription bottles, paperwork, other } were XXX." />Other</label><br>
+<label><input type="radio" name="ptBelongings" value="Pt's personal belongings including { keys, wallet, purse, bags, clothing, prescription bottles, paperwork, other } were { in the pt's hands, on the blanket on patients legs } when pt care was transferred to the nurse." />Pt's personal belongings in pt's hands / on blanket on pt's legs.</label><br>
+<label><input type="radio" name="ptBelongings" value="Pt's personal belongings including { keys, wallet, purse, bags, clothing, prescription bottles, paperwork, other } were XXX." />Other</label><br>
 <br></br>
 </form>
 
@@ -1249,7 +1308,7 @@ function PgLoadFunc() {
 		toggleSub('dpeAbdomen', 'dpeAbdomen_sub');
 		toggleSub('dpeHips', 'dpeHips_sub');
 		toggleSub('dpeLegs', 'dpeLegs_sub');
-		
+		toggleSub('dpeArms', 'dpeArms_sub');
 }
 
 
@@ -1650,6 +1709,18 @@ function getOption() {
 		TWELVELEAD = "";
 	}
 
+	// Initial Transport Vitals
+
+	// Cincinnati Pre-Hospital Stroke Scale
+	var strokeAssess = getRadioVal(document.getElementById("strokeAssess"), "strokeSt");
+	switch (strokeAssess) {
+		case "CPHSCN":
+			strokeAssess = newL + "Pt was negative on Cincinnati Pre-Hospital Stroke Scale:  pt smiling and showing teeth has even smile and both sides of face move equally;  arms extended straight out and eyes closed while counting to 10, pt arms { move equally, not at all } ;  when asked to repeat a phrase pt repeats the correct words with no slurred speech.";
+			break;
+		case "CPHSCP":
+			strokeAssess = newL + "Pt was positive on Cincinnati Pre-Hospital Stroke Scale:  pt's { smile was uneven, facial movements were not equal };  arms extended straight out and eyes closed while counting to 10 pt arms { do not drift equally, XXX side tends to drift downward } ;  when asked to repeat a phrase pt { does not repeat the correct words, has slurred speech } .";
+	}
+	
 	// Detailed Physical Exam
 	var DPE = "Detailed Physical Exam:";
 
@@ -1749,8 +1820,16 @@ function getOption() {
 		LEGS = "";
 	}
 
+	var ARMS = "ARMS:";
+	var ARMSstrings = getCheckDataConcat(document.getElementById("dpeArmsSec"), "ArmsSt");
+	if (ARMSstrings.length != 0) {
+		ARMS = ARMS + ARMSstrings + newL;
+	} else {
+		ARMS = "";
+	}
+
 	// Compose the BODY from each Detailed Physical Exam Body part.
-	var BODY = HEAD + EYES + EARS + NOSE + MOUTH + NECK + UPPERAIRWAY + BREATHING + CHEST + ABDOMEN + HIPS + LEGS;
+	var BODY = HEAD + EYES + EARS + NOSE + MOUTH + NECK + UPPERAIRWAY + BREATHING + CHEST + ABDOMEN + HIPS + LEGS + ARMS;
 
 	if (BODY.length != 0) {
 		DPE = DPE + newL;
@@ -1759,7 +1838,7 @@ function getOption() {
 	}
 	DetailedPhysicalExam = DPE + BODY;
 
-	Assessment = asse1 + MONITORING + TWELVELEAD + newP + DetailedPhysicalExam + newP3;
+	Assessment = asse1 + MONITORING + TWELVELEAD + newP + strokeAssess + newP + DetailedPhysicalExam + newP3;
 
 	// ************************************************************************
 	// TREATMENT
