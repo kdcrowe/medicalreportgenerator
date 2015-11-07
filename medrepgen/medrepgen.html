@@ -188,6 +188,7 @@ If <u>seated</u>, on what...<br></br>
 <label><input type="radio" name="foundSeat" value=" on the floor" />floor</label>
 <label><input type="radio" name="foundSeat" value=" on the ground" />ground</label>
 <label><input type="radio" name="foundSeat" value=" on the hospital bed" />hospital bed</label>
+<label><input type="radio" name="foundSeat" value=" on the toilet" />toilet</label>
 <label><input type="radio" name="foundSeat" value=" on XXX" />other</label>
 <br><br>
 </form>
@@ -503,7 +504,7 @@ What location...<br></br>
 		fire department -->
 
 
-<!-- C-spine precautions -->
+<!-- Advanced Spinal Assessment -->
 <fieldset><legend>Advanced Spinal Assessment:</legend>
 <form action="#" method="post" class="cspineAssess" id="cspineAssess">
 	<label><input type="radio" name="cspineSt" value="" checked />N.A.</label><br>
@@ -520,6 +521,18 @@ What location...<br></br>
 	Even better!  Make an Initial GCS section here so as to start
 	working GCS into pt assessment!  Eye 1-4, Verbal 1-5, Motor 1-6
 		AND add the Title label for explanations! -->
+
+
+<!-- On-Scene Cincinnati Pre-Hospital Stroke scale
+-->
+<fieldset><legend>On-Scene Cincinnati Pre-Hospital Stroke scale:</legend>
+<form action="#" method="post" class="strokeAssessOS" id="strokeAssessOS">
+	<label><input type="radio" name="strokeStOS" value="" checked />N.A.</label><br>
+	<label><input type="radio" name="strokeStOS" value="CPHSCN" />Cincinnati Pre-Hospital Stroke Scale <gr>NEGATIVE</gr> FINDINGS</label><br>
+	<label><input type="radio" name="strokeStOS" value="CPHSCP" />Cincinnati Pre-Hospital Stroke Scale <rd>POSITIVE</rd> FINDINGS</label><br>
+</form>
+</fieldset>
+<br><br>
 
 
 <!-- On-site Vitals - especially SpO2, BP, HR, skin color/temp/condition,
@@ -586,7 +599,6 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 	Collar already applied in neck section of RTE above. -->
 <fieldset>
 <legend>How was patient moved to ambulance?</legend>
-
 
 	<!-- Was a stair chair used, select all that apply -->
 	<form action="#" method="post" class="ptStairChair" id="ptStairChair">Was a stair chair used, select all that apply:<br><br>
@@ -1138,7 +1150,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 
 <!-- Treatments:
 	Medications:  aspirin, Tylenol, Ibuprofen, Epi-Pen, Epi-Pen Jr, Oxygen,
-		oral  glucose, activated charcoal, oxygen (nasal cannula, NRB,
+		oral glucose, activated charcoal, oxygen (nasal cannula, NRB,
 		BVM), hot/cold pack, narcan
 		-Rate of oxygen delivery
 		-why tylenol vs ibuprofen
@@ -1150,6 +1162,18 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 		or Ibuprofen)
 	Other Airway:  OPA, NPA, King
 -->
+
+<!-- Medications -->
+<form action="#" method="post" class="trMedications" id="trMedications">Select all medications that apply:<br><br>
+	<label><input type="checkbox" name="trMedicationsSt" value="oxygen @ XXX LPM via { nasal cannula; non-rebreather; BVM } for { breathing difficulty; low SpO2 reading xx%; smoke inhalation }" />oxygen @ XXX LPM via { nasal cannula; non-rebreather; BVM } for { breathing difficulty; low SpO2 reading xx%; smoke inhalation }</label><br>
+	<label><input type="checkbox" name="trMedicationsSt" value="aspirin, 324 Mg PO, for cardiac related chest pain" />aspirin, 324 Mg PO, for cardiac related chest pain</label><br>
+	<label><input type="checkbox" name="trMedicationsSt" value="ibuprofen, { 400 - 800 adult } Mg PO, for fever of XXX F" />ibuprofen, { 400 - 800 adult } Mg PO, for fever of XXX F (our service does not stock liquid Ibuprofen/Motrin so we don't give pediatric ibuprofen here)</label><br>
+	<label><input type="checkbox" name="trMedicationsSt" value="acetaminophen, { 500 - 1000 adult } Mg PO, for fever XXX F" />acetaminophen, { 500 - 1000 adult } Mg PO, for fever XXX F (we only stock childrens Tylenol in liquid format in red medic bag so basic EMT's won't likely give it)</label><br>
+	<label><input type="checkbox" name="trMedicationsSt" value="{ Epi-Pen, Epi-Pen Jr} for anaphylaxis reaction" />{ Epi-Pen, Epi-Pen Jr} for anaphylaxis reaction</label><br>
+	<label><input type="checkbox" name="trMedicationsSt" value="oral glucose for hypoglycemia" />oral glucose for hypoglycemia</label><br>
+	<label><input type="checkbox" name="trMedicationsSt" value="activated charcoal { 25 - 50 adult; per-Breslow tape pediatric } grams PO as advised by { poison control; medical control } for { poisoning; substance abuse; overdose }" />activated charcoal { 25 - 50 adult; per-Breslow tape pediatric } grams PO as advised by { poison control; medical control } for { poisoning; substance abuse; overdose }</label><br>
+</form> <!-- Medications -->
+<br>
 
 <!-- Environmental interventions -->
 <form action="#" method="post" class="trEnvironment" id="trEnvironment">Select all environmental treatments that apply:<br><br>
@@ -1668,6 +1692,17 @@ function getOption() {
 			cspineAssess = newL + "Pt was positive on Advanced Spinal Assessment as they were {under 10 YO, excited and uncooperative, exhibiting AMS, under the influence of drugs or alcohol, suffering from an accute stress reaction, distracted by injuries to themselves or others, had barriers to communication.}  Pt exhibited {spinal pain or tenderness upon palpation, palpable step-offs or deformities, paresthesia in XXX extremities, only partial and/or asymmetrical motor strength and sensation in XXX extremities, only partial cervical flexion, extension and rotation with pain, required physical assistence including XXX.}";
 	}
 
+	// On-Site Cincinnati Pre-Hospital Stroke Scale
+	var strokeAssessOS = getRadioVal(document.getElementById("strokeAssessOS"), "strokeStOS");
+	switch (strokeAssessOS) {
+		case "CPHSCN":
+			strokeAssessOS = newP + "Pt was negative on Cincinnati Pre-Hospital Stroke Scale:  pt smiling and showing teeth has even smile and both sides of face move equally;  arms extended straight out and eyes closed while counting to 10, pt arms { move equally, not at all } ;  when asked to repeat a phrase pt repeats the correct words with no slurred speech.";
+			break;
+		case "CPHSCP":
+			strokeAssessOS = newP + "Pt was positive on Cincinnati Pre-Hospital Stroke Scale:  pt's { smile was uneven, facial movements were not equal };  arms extended straight out and eyes closed while counting to 10 pt arms { do not drift equally, XXX side tends to drift downward } ;  when asked to repeat a phrase pt { does not repeat the correct words, has slurred speech } .";
+	}
+
+
 	// How was patient moved to ambulance?
 	var ONTOSTAIRCH = getCheckDataConcatCO(document.getElementById("ptStairChair"), "ptStairChairSt");
 	var ONTOSTRETCHER = getRadioVal(document.getElementById("ptOntoStretcher"), "ptOntoStretcherSt");
@@ -1693,7 +1728,7 @@ function getOption() {
 		var PTOA = "";
 	}
 	
-	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + LOOKTEST + AVPU + ABCs + RTEstr + cspineAssess + INTOAMBULANCE + sp2 + PTOA + newP3;
+	History = hist1 + UOA + metonscene + sp2 + ptFound + cspine + LOOKTEST + AVPU + ABCs + RTEstr + cspineAssess + strokeAssessOS + INTOAMBULANCE + sp2 + PTOA + newP3;
 
 	// ************************************************************************
 	// ASSESSMENT
@@ -1844,12 +1879,17 @@ function getOption() {
 	// TREATMENT
 	var trea1 = "R:" + sp2;
 
+	var MEDICATIONS = getCheckData(document.getElementById("trMedications"), "trMedicationsSt");
+	if (MEDICATIONS.length > 1) {
+		MEDICATIONS = "Administered:" + sp2 + MEDICATIONS + "." + newP;
+	}
+	
 	var ENVIRONMENTALS = getCheckData(document.getElementById("trEnvironment"), "trEnvironmentSt");
 	if (ENVIRONMENTALS.length > 1) {
 		ENVIRONMENTALS = "For pt comfort:" + sp2 + ENVIRONMENTALS + ".";
 	}
 
-	Treatment = trea1 + ENVIRONMENTALS + newP3;
+	Treatment = trea1 + MEDICATIONS + ENVIRONMENTALS + newP3;
 
 	// ************************************************************************
 	// TRANSPORT
@@ -1877,10 +1917,10 @@ function getOption() {
 	var othe1 = "O:" + sp2;
 	var PtPCP = "Pt's PCP:  XXX;";
 	var ERDoc = sp2 + "ER Doctor:  XXX";
-	
+
 	Other = othe1 + PtPCP + ERDoc + newP3;
 
-	
+
 	// EOR
 	EOR = "EOR; KDC";
 
