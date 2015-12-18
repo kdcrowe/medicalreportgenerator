@@ -603,10 +603,11 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 	<!-- Was a stair chair used, select all that apply -->
 	<form action="#" method="post" class="ptStairChair" id="ptStairChair">Was a stair chair used, select all that apply:<br><br>
 		<label><input type="checkbox" name="ptStairChairSt" value="Pt assisted by crew to stand, shuffle a few steps, turn and sit on the stair chair" />Pt assisted by crew to stand, shuffle a few steps, turn and sit on the stair chair</label><br>
+		<label><input type="checkbox" name="ptStairChairSt" value="Pt moved to stair chair under their own power and seated themselves" />Pt moved to stair chair under their own power and seated themselves</label><br>
 		<label><input type="checkbox" name="ptStairChairSt" value="Pt carried to stair chair by 2-person carry" />Pt carried to stair chair by 2-person carry</label><br>
 		<label><input type="checkbox" name="ptStairChairSt" value="wrapped in blanket" />pt wrapped in blanket</label><br>
 		<label><input type="checkbox" name="ptStairChairSt" value="all buckles secured in place and pt moved { down, up } stairs and out of building to stretcher" />all buckles secured in place and pt moved { down, up } stairs and out of building to stretcher</label><br>
-	</form> <!-- ptOntoStretcher -->
+	</form> <!-- ptStairChair -->
 	<br>
 
 
@@ -664,7 +665,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 <br><br>
 </form>
 
-<!-- Was 12-lead performed - determine from above checkbox? -->
+<!-- Was 12-lead performed - determine from above checkbox in javascript -->
 <form action="#" method="post" class="twelveLeadSec" id="twelveLeadSec">Was a 12-lead interpreted by anyone?:<br><br>
 	<label><input type="radio" name="twelveLeadSt" value="{ crew member } analysis of 12-lead indicates:" />{ crew member } analysis of 12-lead indicates:</label><br>
 	<label><input type="radio" name="twelveLeadSt" value="12-lead faxed to { hospital }, call to hospital to alert to incoming 12-lead and 12-lead results interpreted by Dr { doctor name } indicate:" />12-lead faxed to { hospital }, call to hospital to alert to incoming 12-lead and 12-lead results interpreted by Dr { doctor name } indicate:</label><br>
@@ -1168,7 +1169,7 @@ Did anything happen prior to your arrival that should be noted?<br></br>
 	<label><input type="checkbox" name="trMedicationsSt" value="oxygen @ XXX LPM via { nasal cannula; non-rebreather; BVM } for { breathing difficulty; low SpO2 reading xx%; smoke inhalation }" />oxygen @ XXX LPM via { nasal cannula; non-rebreather; BVM } for { breathing difficulty; low SpO2 reading xx%; smoke inhalation }</label><br>
 	<label><input type="checkbox" name="trMedicationsSt" value="aspirin, 324 Mg PO, for cardiac related chest pain" />aspirin, 324 Mg PO, for cardiac related chest pain</label><br>
 	<label><input type="checkbox" name="trMedicationsSt" value="ibuprofen, { 400 - 800 adult } Mg PO, for fever of XXX F" />ibuprofen, { 400 - 800 adult } Mg PO, for fever of XXX F (our service does not stock liquid Ibuprofen/Motrin so we don't give pediatric ibuprofen here)</label><br>
-	<label><input type="checkbox" name="trMedicationsSt" value="acetaminophen, { 500 - 1000 adult } Mg PO, for fever XXX F" />acetaminophen, { 500 - 1000 adult } Mg PO, for fever XXX F (we only stock childrens Tylenol in liquid format in red medic bag so basic EMT's won't likely give it)</label><br>
+	<label><input type="checkbox" name="trMedicationsSt" value="acetaminophen, { 500 - 1000 adult } Mg PO, for fever XXX F" />acetaminophen, { 500 - 1000 adult } Mg PO, for fever XXX F (we only stock childrens Tylenol in liquid form in red medic bag so basic EMT's won't likely give it)</label><br>
 	<label><input type="checkbox" name="trMedicationsSt" value="{ Epi-Pen, Epi-Pen Jr} for anaphylaxis reaction" />{ Epi-Pen, Epi-Pen Jr} for anaphylaxis reaction</label><br>
 	<label><input type="checkbox" name="trMedicationsSt" value="oral glucose for hypoglycemia" />oral glucose for hypoglycemia</label><br>
 	<label><input type="checkbox" name="trMedicationsSt" value="activated charcoal { 25 - 50 adult; per-Breslow tape pediatric } grams PO as advised by { poison control; medical control } for { poisoning; substance abuse; overdose }" />activated charcoal { 25 - 50 adult; per-Breslow tape pediatric } grams PO as advised by { poison control; medical control } for { poisoning; substance abuse; overdose }</label><br>
@@ -1249,9 +1250,9 @@ Was oxygen transferred over, patient connected to NIBP, pulse ox, etc?<br></br>
 <form action="#" method="post" class="T005" id="T005">
 What was done with patients belongings?<br></br>
 <label><input type="radio" name="ptBelongings" value="Pt had no personal belongings with them other than what they were wearing and holding when patient care was transferred to the nurse receiving the patient." checked />Pt had no personal belongings other than what they were wearing.</label><br>
-<label><input type="radio" name="ptBelongings" value="Pt's personal belongings including { keys, wallet, purse, bags, clothing, prescription bottles, paperwork, other } were noted and handed to the nurse receiving the patient." />Pt's personal belongings handed to nurse.</label><br>
-<label><input type="radio" name="ptBelongings" value="Pt's personal belongings including { keys, wallet, purse, bags, clothing, prescription bottles, paperwork, other } were pointed out to nursing staff and placed on counter." />Pt's personal belongings placed on counter in ER room.</label><br>
-<label><input type="radio" name="ptBelongings" value="Pt's personal belongings including { keys, wallet, purse, bags, clothing, prescription bottles, paperwork, other } were { in the pt's hands, on the blanket on patients legs } when pt care was transferred to the nurse." />Pt's personal belongings in pt's hands / on blanket on pt's legs.</label><br>
+<label><input type="radio" name="ptBelongings" value="Pt's personal belongings including { keys, wallet, purse, bags, clothing, prescription bottles, paperwork, other } were noted and handed to the nurse receiving the patient." />Pt's personal belongings including { keys, bottles, etc } handed to nurse.</label><br>
+<label><input type="radio" name="ptBelongings" value="Pt's personal belongings including { keys, wallet, purse, bags, clothing, prescription bottles, paperwork, other } were pointed out to nursing staff and placed on counter." />Pt's personal belongings including { keys, purse, bags, etc } placed on counter in ER room.</label><br>
+<label><input type="radio" name="ptBelongings" value="Pt's personal belongings including { keys, wallet, purse, bags, clothing, prescription bottles, paperwork, other } were { in the pt's hands, on the blanket on patients legs } when pt care was transferred to the nurse." />Pt's personal belongings including { keys, wallet, purse, etc } in pt's hands / on blanket on pt's legs.</label><br>
 <label><input type="radio" name="ptBelongings" value="Pt's personal belongings including { keys, wallet, purse, bags, clothing, prescription bottles, paperwork, other } were XXX." />Other</label><br>
 <br></br>
 </form>
